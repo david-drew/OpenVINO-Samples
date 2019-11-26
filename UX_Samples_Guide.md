@@ -67,7 +67,9 @@ Note: There are 2 similar directories that contain samples, but we won't be usin
 
 This is where sample applications are installed, after they are compiled.  You will have to compile most of the samples.
 
-
+<details>
+   <summary>Installation Directory Structure</summary>
+    
 ## <a name="dldt-installation-directory-structure"></a> Installation Directory Structure
 
 By default, the installation directory is`/opt/intel/openvino`, though the location is up to the user.
@@ -89,6 +91,7 @@ By default, the installation directory is`/opt/intel/openvino`, though the locat
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`tools/`        | Contains the Model Downloader and Accuracy Checker tools. |
 | `tools/`                                | Contains a symbolic link to the Model Downloader folder and auxiliary tools to work with your models: Calibration tool, Benchmark and Collect Statistics tools.|
 
+</details>
 
 ## <a name="using-workbench"></a> Using OpenVINO: Deep Learning Workbench 
 The DL Workbench is a tool to help assess model performance in OpenVINO, in terms of both speed and accuracy.  The workbench will automatically run the Model Optimizer on supported Caffe, ONNX, MXNet, and TensorFlow models, and then provide performance estimates based on tuning model parameters and selected target hardware.
