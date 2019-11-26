@@ -19,8 +19,6 @@
 - Internet connectivity
 - Ubuntu 16.04 (18 probably works, untested)
 
-
-
 **Study Steps**
 1. User reads introduction. 
 2. Follow the introductory SqueezeNet steps.    
@@ -35,6 +33,8 @@
     - Run simple face detection
     - Run face detection with additional models (age/gender, landmarks, emotion recognition, etc.) 
 
+**Note:** there won't be time to complete Exercise 4, so I'm planning on cutting it.
+**Note2:** we're intending to add an extra "int8 conversion" step that's not currently detailed.
 
 ## ---- DELETE HERE ----
 
