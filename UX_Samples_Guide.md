@@ -10,20 +10,21 @@
 **Samples:** are the collection of example applications (code and demos) provided with OpenVINO™.<br><br>
 **DL Workbench:** is a tool for converting models and testing performance (speed and accuracy) with different model configuration settings.<br>
 
-1. Follow the introductory SqueezeNet steps.    
-2. Follow the human pose steps.
-3. Duplicate the SqueezeNet section, this time using the Workbench instead of Model Optimizer.
-4. Use the OpenVINO™ vehicle detection model to convert a model from FP32 to FP16.  
+1. User reads introduction. 
+2. Follow the introductory SqueezeNet steps.    
+3. Follow the human pose steps.
+4. Duplicate the SqueezeNet section, this time using the Workbench instead of Model Optimizer.
+5. Use the OpenVINO™ vehicle detection model to convert a model from FP32 to FP16.  
     - Run the FP16 model with the security barrier demo on the GPU.
     - This requires a "behind the scenes" download of the model via the Workbench.
     - [Optional] Encourage user to explore Workbench features?
-5. Use the DL Workbench to convert a face detection model (provided on desktop).
+6. Use the DL Workbench to convert a face detection model (provided on desktop).
     - [Optional] Encourage user to explore Workbench features?
     - Run simple face detection
     - Run face detection with additional models (age/gender, landmarks, emotion recognition, etc.) 
 
 
-## DELETE HERE
+## ---- DELETE HERE ----
 
 
 
@@ -75,6 +76,11 @@ By default, the installation directory is`/opt/intel/openvino`, though the locat
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`intel_models/` | OpenVINO pre-trained models and models documentation. See the [Overview of OpenVINO™ Toolkit Pre-Trained Models](./docs/Pre_Trained_Models.md).|
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`tools/`        | Contains the Model Downloader and Accuracy Checker tools. |
 | `tools/`                                | Contains a symbolic link to the Model Downloader folder and auxiliary tools to work with your models: Calibration tool, Benchmark and Collect Statistics tools.|
+
+
+## <a name="using-workbench"></a> Using OpenVINO: Deep Learning Workbench 
+The DL Workbench is a tool to help assess model perfromance in OpenVINO, in terms of both speed and accuracy.  The workbench will automatically run the Model Optimizer on supported Caffe, ONNX, MXNet, and TensorFlow models, and then provide performance estimates based on tuning model parameters and selected target hardware.
+
 
 ## <a name="using-sample-application"></a> Using OpenVINO: Sample Applications
 
