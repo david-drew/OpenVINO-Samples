@@ -22,7 +22,6 @@
 
 
 **Study Steps**
-
 1. User reads introduction. 
 2. Follow the introductory SqueezeNet steps.    
 3. Follow the human pose steps.
@@ -51,7 +50,7 @@ It consists of three primary components:
 ## <a name="workflow-overview"></a>OpenVINO Workflow Overview
 
 The basic OpenVINO workflow is as follows:
-1.	Run an existing trained model through the Model Optimizer. 
+1.	Run an existing trained model through the Model Optimizer (or DL Workbench). 
 2.	The Model Optimizer produces an Interemediate Representation file (IR).
 3.	Application (an Intel sample or one you have built) uses the Inference Engine to run inference against the Intermediate Representation (Optimized Model).
 4.	Application outputs inference results. 
