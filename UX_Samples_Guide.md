@@ -22,16 +22,16 @@
 **Study Steps**
 1. User reads introduction. 
 2. Follow the introductory SqueezeNet steps - "Run a Sample Application".    
-3. Follow the human pose steps - Exercise 1.
-4. Duplicate the SqueezeNet section, this time using the Workbench instead of Model Optimizer.
-5. Use the OpenVINO™ vehicle detection model to convert a model from FP32 to FP16.  
-    - Run the FP16 model with the security barrier demo on the GPU.
-    - This requires a "behind the scenes" download of the model via the Workbench.
+3. Duplicate the SqueezeNet section, this time using the Workbench instead of Model Optimizer.
+4. Use the OpenVINO™ vehicle detection model to convert a model from FP32 to FP16. 
+    - Redo the steps (object detection demo ssd async) 3 times:
+        1. FP32 - cpu, gpu (cpu faster)
+        2. FP16 - cpu, gpu (gpu faster)
+        3. int8 - cpu only
+
     - [Optional] Encourage user to explore Workbench features?
-6. Use the DL Workbench to convert a face detection model (provided on desktop).
-    - [Optional] Encourage user to explore Workbench features?
-    - Run simple face detection
-    - Run face detection with additional models (age/gender, landmarks, emotion recognition, etc.) 
+
+
 
 **Note:** there won't be time to complete Exercise 4, so I'm planning on cutting it.<br>
 **Note2:** we're intending to add an extra "int8 conversion" step that's not currently detailed.
