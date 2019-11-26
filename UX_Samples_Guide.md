@@ -179,11 +179,17 @@ There are several ways to find models suitable for use with OpenVINO:
 
 </details>
 
+<details>
+   <summary>Downloading Media</summary>
+
 ## <a name="downloading-media"></a> Downloading Media
 
 There are multiple sources for downloading video media for use with samples. Possibilities include: 
 - https://videos.pexels.com
 - https://images.google.com
+
+</details>
+
 
 ## <a name="syntax-examples"></a> Typical Sample Application Syntax Examples
 
