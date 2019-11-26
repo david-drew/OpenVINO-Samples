@@ -283,6 +283,10 @@ The following series of exercises guide you through using samples of increasing 
 
 **NOTE:** During this exercise you will be asked to move to multiple different directories, and occasionally to copy files (so that you don't have to specify full paths in commands).  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
 
+
+<details>
+   <summary>Exercise 1</summary>
+
 **Exercise 1: Human Pose Estimation**
 
 This demo detects people and draws a stick figure inside them to show limb positions. This model has already been converted for use with OpenVINO. 
@@ -335,7 +339,11 @@ https://www.pexels.com/video/couple-dancing-on-sunset-background-2035509/
 
     `./human_pose_estimation_demo -i ~/Videos/humpose.mp4 -m ~/ir/human-pose-estimation-0001.xml -d CPU`
 
+</details>
 
+<details>
+   <summary>Exercise 2</summary>
+    
 **Exercise 2: Interactive Face Detection**
 
 The face detection demo draws bounding boxes around faces, and optionally feeds the output of the primary model to additional models. This model has already been converted for use with OpenVINO.
@@ -361,7 +369,11 @@ Steps to complete:
 4.	OPTIONAL: Run the demo using additional models (age-gender, emotion recognition, head pose, etc.).
     - Note that when you use multiple models, there is always a primary model that is used, and then a number of optional models that use the output from the initial model.
 
+</details>
 
+<details>
+   <summary>Exercise 3</summary>
+    
 **Exercise 3: Object Detection (Vehicles with multiple models)**
 
 As mentioned in the previous exercise, it's possible to chain models together and use the output of an initial object detection model as input of additional models.
@@ -375,7 +387,7 @@ Steps to complete:
 4. Choose at least one additional model (such as attribute recognition), and run the application, now using the initial model plus the new one.
 5. OPTIONAL: Run the demo with vehicle detection (primary), plus attribute recognition and license plate recognition.
 
-
+</details>
 
 
 ## Additional Resources
