@@ -195,6 +195,8 @@ With sample information filled in, the command could look like this:
 `./object_detection_demo_ssd_async -i ~/Videos/catshow.mp4 \
 -m ~/ir/fp32/mobilenet-ssd.xml -d CPU`
 
+<br>
+
 <details>
    <summary>Advanced Use of Samples</summary>
     
