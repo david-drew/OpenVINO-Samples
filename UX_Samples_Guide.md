@@ -5,9 +5,9 @@
 ### Steps for participants in the study
 **Introduction**
     - Explain the basic process
-    - Brief overview of OpenVINO, samples, and workbench
+    - Brief overview of OpenVINO, samples/demos, and workbench.
 
-**Samples:** are the collection of example applications (code and demos) provided with OpenVINO™.<br>
+**Samples:** are the collection of example applications (code and demos) provided with OpenVINO™.<br><br>
 **DL Workbench:** is a tool for converting models and testing performance (speed and accuracy) with different model configuration settings.<br>
 
 1. Follow the introductory SqueezeNet steps.    
@@ -21,6 +21,9 @@
     - [Optional] Encourage user to explore Workbench features?
     - Run simple face detection
     - Run face detection with additional models (age/gender, landmarks, emotion recognition, etc.) 
+
+
+## DELETE HERE
 
 
 
