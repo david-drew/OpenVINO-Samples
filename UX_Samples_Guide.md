@@ -109,8 +109,11 @@ Inputs you'll need to specify:
 - **A media file** to run through the application. For these samples, the media is typically a video file, though some applications require a image files. 
 - **The processor type** to run on, which can be the CPU, GPU, FPGA, or VPU accelerator (e.g., Movidius board). 
 
+<br>
+
 <details>
    <summary>Guidelines for Using Sample Applications</summary>
+    
 ## <a name="basic-guidelines-sample-application"></a> Basic Guidelines for Using Sample Applications
 
 Following are some basic guidelines for executing the OpenVINO workflow and using the sample applications:
