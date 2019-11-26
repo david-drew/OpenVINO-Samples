@@ -67,6 +67,8 @@ Note: There are 2 similar directories that contain samples, but we won't be usin
 
 This is where sample applications are installed, after they are compiled.  You will have to compile most of the samples.
 
+<br>
+
 <details>
    <summary>Installation Directory Structure</summary>
     
