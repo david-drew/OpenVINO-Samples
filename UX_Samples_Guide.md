@@ -23,7 +23,7 @@
 1. User reads introduction. 
 2. Follow the introductory SqueezeNet steps - "Run a Sample Application".    
 3. Duplicate the SqueezeNet section, this time using the Workbench instead of Model Optimizer.
-4. Use the OpenVINO™ vehicle detection model to convert a model from FP32 to FP16. 
+4. Use the OpenVINO™ vehicle detection model to convert a model. 
     - Redo the steps (object detection demo ssd async) 3 times:
         1. FP32 - cpu, gpu (cpu faster)
         2. FP16 - cpu, gpu (gpu faster)
