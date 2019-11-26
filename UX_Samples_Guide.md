@@ -21,8 +21,8 @@
 
 **Study Steps**
 1. User reads introduction. 
-2. Follow the introductory SqueezeNet steps.    
-3. Follow the human pose steps.
+2. Follow the introductory SqueezeNet steps - "Run a Sample Application".    
+3. Follow the human pose steps - Exercise 1.
 4. Duplicate the SqueezeNet section, this time using the Workbench instead of Model Optimizer.
 5. Use the OpenVINO™ vehicle detection model to convert a model from FP32 to FP16.  
     - Run the FP16 model with the security barrier demo on the GPU.
