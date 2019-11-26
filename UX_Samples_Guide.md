@@ -109,6 +109,8 @@ Inputs you'll need to specify:
 - **A media file** to run through the application. For these samples, the media is typically a video file, though some applications require a image files. 
 - **The processor type** to run on, which can be the CPU, GPU, FPGA, or VPU accelerator (e.g., Movidius board). 
 
+<details>
+   <summary>Guidelines for Using Sample Applications</summary>
 ## <a name="basic-guidelines-sample-application"></a> Basic Guidelines for Using Sample Applications
 
 Following are some basic guidelines for executing the OpenVINO workflow and using the sample applications:
@@ -127,7 +129,11 @@ These are binaries located in:
 - FP32: Used when running the model on the CPU.
 - Int8: Experimental, but runs on the CPU.
 - FP16: Use when running on any hardware other than the CPU (except for some special cases, e.g., GPU can run FP32 but more slowly).
+</details>
 
+<details>
+   <summary>Models</summary>
+    
 ## <a name="models"></a> Models
 
 Models in an Intel compatible format (compatible with the Model Optimizer) always include an `.xml` and `.bin` file, and may also require other files, like `.json`, `.mapping`, etc.  Verify that you have all of the needed files.  They should be in the same directory for the Inference Engine to find them.
@@ -168,6 +174,8 @@ There are several ways to find models suitable for use with OpenVINO:
 
     3.	Always run the downloader with `sudo`.
 
+</details>
+
 ## <a name="downloading-media"></a> Downloading Media
 
 There are multiple sources for downloading video media for use with samples. Possibilities include: 
@@ -187,6 +195,9 @@ With sample information filled in, the command could look like this:
 `./object_detection_demo_ssd_async -i ~/Videos/catshow.mp4 \
 -m ~/ir/fp32/mobilenet-ssd.xml -d CPU`
 
+<details>
+   <summary>Advanced Use of Samples</summary>
+    
 ## <a name="advanced-samples"></a> Advanced Use of Samples 
 
 Some applications allow the use of multiple models for different purposes. Usually for these cases, the output of the first model is used as the input of later models.
@@ -215,6 +226,11 @@ For head pose:
 
 You can see all the sample application’s parameters by adding the `-h` or `--help` option at the command line.
 
+</details>
+
+<details>
+   <summary>Run A Sample Application</summary>
+    
 ## <a name="run-sample-application"></a> Run A Sample Application 
 
 Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
@@ -254,6 +270,8 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 7. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
 
     `./classification_sample -h`
+
+</details>
 
 ## <a name="Exercises"></a> Exercises
 
@@ -358,13 +376,6 @@ Steps to complete:
 5. OPTIONAL: Run the demo with vehicle detection (primary), plus attribute recognition and license plate recognition.
 
 
-**Exercise 4: Object Detection (YOLO v3)**
-
-This demo draws bounding boxes around detected objects. The class of objects detected depends on the model, but it’s often 1000 categories. 
-
-The YOLO topology is a very popular one because it offers both accuracy and performance. Intel does not provide any YOLO models in IR format, so you'll need to find a suitable model to download, convert it with the Model Optimizer, and then run it through the Inference Engine.
-
-Different sample applications are used for SSD and YOLO models because the output format of YOLO is different than the output format for SSD. The same application could support both, but in these samples they’re kept separate for simplicity. Different versions of YOLO have slightly different output. This sample only supports the most recent version, YOLO V3.
 
 
 ## Additional Resources
