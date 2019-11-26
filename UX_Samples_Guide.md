@@ -33,7 +33,7 @@
     - Run simple face detection
     - Run face detection with additional models (age/gender, landmarks, emotion recognition, etc.) 
 
-**Note:** there won't be time to complete Exercise 4, so I'm planning on cutting it.
+**Note:** there won't be time to complete Exercise 4, so I'm planning on cutting it.<br>
 **Note2:** we're intending to add an extra "int8 conversion" step that's not currently detailed.
 
 ## ---- DELETE HERE ----
