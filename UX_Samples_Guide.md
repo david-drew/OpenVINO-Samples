@@ -10,6 +10,19 @@
 **Samples:** are the collection of example applications (code and demos) provided with OpenVINO™.<br><br>
 **DL Workbench:** is a tool for converting models and testing performance (speed and accuracy) with different model configuration settings.<br>
 
+**Requirements**
+- OpenVINO 2019.r3.1
+- Docker Installation
+- DL Workbench (downloaded from Docker hub)
+- squeezenet, mobilenet-ssd models (on disk)
+- ImageNet dataset (on disk) 
+- Internet connectivity
+- Ubuntu 16.04 (18 probably works, untested)
+
+
+
+**Study Steps**
+
 1. User reads introduction. 
 2. Follow the introductory SqueezeNet steps.    
 3. Follow the human pose steps.
@@ -79,7 +92,7 @@ By default, the installation directory is`/opt/intel/openvino`, though the locat
 
 
 ## <a name="using-workbench"></a> Using OpenVINO: Deep Learning Workbench 
-The DL Workbench is a tool to help assess model perfromance in OpenVINO, in terms of both speed and accuracy.  The workbench will automatically run the Model Optimizer on supported Caffe, ONNX, MXNet, and TensorFlow models, and then provide performance estimates based on tuning model parameters and selected target hardware.
+The DL Workbench is a tool to help assess model performance in OpenVINO, in terms of both speed and accuracy.  The workbench will automatically run the Model Optimizer on supported Caffe, ONNX, MXNet, and TensorFlow models, and then provide performance estimates based on tuning model parameters and selected target hardware.
 
 
 ## <a name="using-sample-application"></a> Using OpenVINO: Sample Applications
@@ -91,7 +104,7 @@ Each of the included samples is a separate application, but there is a common be
 Inputs you'll need to specify:
 - **A sample application** from Intel that runs inferencing against a model that has been optimized by the Model Optimizer into an Intermediate Representation (IR), using the other inputs you provide.
 - **A model** must be provided for the application. Each model is trained for a specific task (pedestrian detection, face detection, vehicle detection, license plate recognition, head pose, etc.).  Different models will be used for different applications. Models can be chained together to provide multiple features (vehicle + make/model + license plate recognition).
-- **A media file** to run through the application. For these samples, the media is typically a video file but can be a still photo for some.
+- **A media file** to run through the application. For these samples, the media is typically a video file, though some applications require a image files. 
 - **The processor type** to run on, which can be the CPU, GPU, FPGA, or VPU accelerator (e.g., Movidius board). 
 
 ## <a name="basic-guidelines-sample-application"></a> Basic Guidelines for Using Sample Applications
