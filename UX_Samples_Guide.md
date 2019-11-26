@@ -1,5 +1,27 @@
 
-# Get Started with OpenVINO™ Samples for Linux*
+# Get Started with OpenVINO™ Deep Learning Workbench and Samples for Linux*
+
+## <a name="proposal"></a>Study Proposal (to delete later)
+### Steps for participants in the study
+**Introduction**
+    - Explain the basic process
+    - Brief overview of OpenVINO, samples, and workbench
+    - **Samples:** are the collection of example applications (code and demos) provided with OpenVINO™.
+    - **DL Workbench:** is a tool for converting models and testing performance (speed and accuracy) with different model configuration settings.
+
+1. Follow the introductory SqueezeNet steps.    
+2. Follow the human pose steps.
+3. Duplicate the SqueezeNet section, this time using the Workbench instead of Model Optimizer.
+4. Use the OpenVINO™ vehicle detection model to convert a model from FP32 to FP16.  
+    - Run the FP16 model with the security barrier demo on the GPU.
+    - This requires a "behind the scenes" download of the model via the Workbench.
+    - [Optional] Encourage user to explore Workbench features?
+5. Use the DL Workbench to convert a face detection model (provided on desktop).
+    - [Optional] Encourage user to explore Workbench features?
+    - Run simple face detection
+    - Run face detection with additional models (age/gender, landmarks, emotion recognition, etc.) 
+
+
 
 ## <a name="openvino-components"></a>OpenVINO Components
 The OpenVINO toolkit optimizes and runs Deep Learning Neural Network models on Intel hardware.
