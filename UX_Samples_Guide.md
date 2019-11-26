@@ -6,8 +6,8 @@
 **Introduction**
     - Explain the basic process
     - Brief overview of OpenVINO, samples, and workbench
-    - **Samples:** are the collection of example applications (code and demos) provided with OpenVINO™.
-    - **DL Workbench:** is a tool for converting models and testing performance (speed and accuracy) with different model configuration settings.
+    - **Samples:** are the collection of example applications (code and demos) provided with OpenVINO™.<br>
+    - **DL Workbench:** is a tool for converting models and testing performance (speed and accuracy) with different model configuration settings.<br>
 
 1. Follow the introductory SqueezeNet steps.    
 2. Follow the human pose steps.
