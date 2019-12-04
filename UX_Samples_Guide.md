@@ -250,13 +250,13 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 5.	Copy a sample image to the release directory. You will use this with your optimized model:
 
-    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  ~/omz_demos_build/intel64/Release`
+    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
 
 6. Once your setup is complete, you're ready to run a sample application:
 
-    `cd ~/omz_demos_build/intel64/Release`
+    `cd  ~/inference_engine_samples_build/intel64/Release`
 
-    `./classification_sample -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
+    `./classification_sample_async -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
 
 7. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
 
