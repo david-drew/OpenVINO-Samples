@@ -208,8 +208,6 @@ You can see all the sample application’s parameters by adding the `-h` or `--h
 </details>
 
 
-
-
 ## <a name="Exercises"></a> Exercises
 
 The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use OpenVINO in more sophisticated use cases. 
@@ -365,14 +363,23 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
     1. Workbench -> Import Model
     2. Select vehi cle-detection-adas-0002
-    3. Import
+    3. Select Import
+    4. Note: If there are problems downloading, try the alternate method below.
+
+Alternate Method:
+    1.  In the DLW Web GUI:
+        - Select Import Model -> Original Model
+    2. Select Choose File:
+        - ~/Desktop/Data/Models/Intel/FP32/vehicle-detection-adas-0002.xml
+    3. Select the Second Choose File Button:
+         - ~/Desktop/Data/Models/Intel/FP32/vehicle-detection-adas-0002.bin 
+    4. Select Import
 
 ***Step 2 - Import Dataset***
 
-    1. Import Local Dataset -> Choose File
+    1. Select Import Local Dataset -> Choose File
     2. Select: ~/Desktop/Data/datasets/VOC7_248.tar.gz
-    3. Import Dataset
-
+    3. Select Import Dataset
 
 ***Step 3 - Select Environment***
     1. Select CPU
