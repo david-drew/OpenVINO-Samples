@@ -445,7 +445,7 @@ And we're ready to execute the sample:
 
 
 <details>
-   <summary>Exercise 4 - Vehicle Detection with FP16 on CPU</summary>
+   <summary>Exercise 4 - Vehicle Detection with FP16 on GPU</summary>
 
 **Exercise 4: Vehicle Detection on GPU**
 
