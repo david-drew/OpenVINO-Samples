@@ -284,7 +284,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
 
-    `cp ~/openvino_models/ir/FP32/classification/squeezenet/1.1/caffe/squeezenet1.1.labels .`
+    `cp ~/openvino_models/ir/public/squeezenet1.1/FP16/squeezenet1.1.labels .`
 
 5.	Copy a sample image to the release directory. You will use this with your optimized model:
 
