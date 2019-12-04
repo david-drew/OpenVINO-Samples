@@ -46,6 +46,7 @@ It consists of three primary components:
 1.	**Model Optimizer:** Optimizes models for Intel architecture, as well as converts models into a format compatible with the Inference Engine. This format is called an Intemediate Representation (IR).
 2.	**Intermediate Representation (IR):** The output of the Model Optimizer. A model converted to a format that has been optimized for Intel architecture and is usable by the Inference Engine.
 3.	**Inference Engine:** The software libraries that run inference against the Intermediate Representation (Optimized Model) and produce inference results
+4. **DL (Deep Learning) Workbench:** The DL Worbench is a new utility that provides a simple GUI to run the Model Optimizer, and a set of tools to run perform tests, analyze and tune model parameters, and compare the results of different settings.
 
 ## <a name="workflow-overview"></a>OpenVINO Workflow Overview
 
