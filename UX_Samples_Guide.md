@@ -20,14 +20,13 @@ The basic OpenVINO workflow is as follows:
 
 ## <a name="openvino-installation"></a>OpenVINO Installation
 This guide assumes that you have completed installation of OpenVINO. <br>
-The installation created a new directory in your home directory:
+The installation created 2 new directories in your home directory:
 
 `~/omz_demos_build`
+`~/inference_engine_demos_build`
 
-Note: There are 2 similar directories that contain samples, but we won't be using them for this tutorial.  For completeness, they are:
-    `~/inference_engine_samples_build`
-    `~/inference_engine_demos_build`
-
+We'll use omz_demos_build for vehicle detection, and inference_engine_samples_build for the first 2 (classification with squeezenet) exercises.
+    
 This is where sample applications are installed, after they are compiled.  You will have to compile most of the samples.
 
 <br>
@@ -232,6 +231,9 @@ Convert a model using the Model Optmizer then use a sample application to load t
 
 In this section, you will convert an FP32 model suitable for running on a CPU.
 
+Note: Remember to setup the environment variables when logging in, changing users, or launching a new terminal.
+    `source /opt/intel/openvino/bin/setupvars.sh` 
+
 1.	Make a directory for the FP32 SqueezeNet Model:
 
     `mkdir ~/squeezenet1.1_FP32`
@@ -344,13 +346,13 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 8. Once your setup is complete, you're ready to run a sample application:
 
-    `cd ~/omz_demos_build/intel64/Release`
+    `cd  ~/inference_engine_samples_build/intel64/Release`
 
     `./classification_sample_async -i car.png -m ~/Downloads/squeezenet1.1/squeezenet1.1.xml -d CPU`
 
 9. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
 
-    `./classification_sample -h`
+    `./classification_sample_async -h`
 
 </details>
 
