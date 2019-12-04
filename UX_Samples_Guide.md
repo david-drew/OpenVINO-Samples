@@ -325,7 +325,14 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
         - This can be useful when tracking multiple loaded models
      9. Select "Import Model" when ready.  
         - This will create and FP16 model by default, though configuration settings may be edited later.
-     
+    10. In some cases this will work and you will be returned to the setup interface.  If the DL Workbench is unable to determine required information, it will display a configuration screen and specify information that is required.
+        - If you built the model, you will know all of the details of the model, but you may have to do some searching if the model was downloaded from a third party.
+     11. The "Import Model" screen is being displayed, because some additional information must be provided by the user.
+     12. The requirements are specified in the grey box on the right.
+     13. In this, the only missing information is the colorspace.  Click on the box next to "Original Color Space" and select "BGR".
+         - BGR is often used (as opposed to RGB and other color formats) when training models.
+     14. Note that the grey box no longer contains any red warning text.
+     15. Select "Convert" and you will be returned to the setup interface.  Model conversion may take several minutes.
 
 
 4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
