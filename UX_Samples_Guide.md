@@ -340,13 +340,13 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 7.	Copy a sample image to the release directory. You will use this with your optimized model:
 
-    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  ~/omz_demos_build/intel64/Release`
+    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
 
 8. Once your setup is complete, you're ready to run a sample application:
 
     `cd ~/omz_demos_build/intel64/Release`
 
-    `./classification_sample -i car.png -m ~/Downloads/squeezenet1.1/squeezenet1.1.xml -d CPU`
+    `./classification_sample_async -i car.png -m ~/Downloads/squeezenet1.1/squeezenet1.1.xml -d CPU`
 
 9. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
 
@@ -361,8 +361,8 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 ***Step 1 - Setup the Model***
 
-    1. Workbench -> Import Model
-    2. Select vehi cle-detection-adas-0002
+    1. In the Workbench GUI, Select "Import Model"
+    2. Select vehicle-detection-adas-0002 (FP32)
     3. Select Import
     4. Note: If there are problems downloading, try the alternate method below.
 
@@ -378,7 +378,7 @@ Alternate Method:
 ***Step 2 - Import Dataset***
 
     1. Select Import Local Dataset -> Choose File
-    2. Select: ~/Desktop/Data/datasets/VOC7_248.tar.gz
+    2. Select: ~/Desktop/Data/datasets/VOC7_248.zip
     3. Select Import Dataset
 
 ***Step 3 - Select Environment***
@@ -398,22 +398,23 @@ INT8 is for CPU.  Some models will be very fast in the INT8 format.
 
 NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
 
-    1. mkdir ir
-    2. mkdir ir/FP32
-    3. mkdir ir/FP16
-    4. mkdir ir/INT8
+    1. mkdir ~/ir
+    2. mkdir ~/ir/FP32
+    3. mkdir ~/ir/FP16
+    4. mkdir ~/ir/INT8
 
 Now we move some files around to make running the samples a little easier.
 
-    1.  cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16
-    2.  cd ~/ir/FP16
-    3. tar zxvf vehicle-detection-adas-0002.tar.gz
-    4. rm vehicle*tar.gz
-    5. cd ~/omz_demos_build/intel64/Release
+    1. cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP32
+    2. cd ~/ir/FP32
+    3. mv ~/Downloads/vehicle-detection-adas-*tar.gz .
+    4. tar zxvf vehicle-detection-adas-0002.tar.gz
+    5. rm vehicle*tar.gz
+    6. cd ~/omz_demos_build/intel64/Release
 
 And we're ready to execute the sample:
 
-    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP16/vehicle-detection-adas-0002.xml -d GPU`
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP16/vehicle-detection-adas-0002.xml -d CPU`
 
 </details>
 
@@ -464,6 +465,7 @@ INT8 is for CPU.  Some models will be very fast in the INT8 format.
 
 NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
 
+Skip this step if it was done in the previous exercise.
     1. `mkdir ~/ir`
     2. `mkdir ~/ir/FP32`
     3. `mkdir ~/ir/FP16`
