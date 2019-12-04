@@ -288,6 +288,52 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 </details>
 
+
+<details>
+   <summary>Run A Sample Application Using the DL Workbench</summary>
+    
+## <a name="run-sample-application"></a> Run A Sample Application with the DL Workbench
+
+Convert a model using the DL Workbench, then use a sample application to load the model and run inference.
+
+**NOTE:** If you are running inference only on a CPU, you already have the required FP32 model. If you want to run inference on any hardware other than the CPU, you'll need an FP16 version of the model.
+
+**Set Up a Neural Network Model**
+
+In this section, you will convert an FP32 model suitable for running on a CPU.
+
+1.	Return to the previously indicated FP32 SqueezeNet directory:
+
+    `cd ~/squeezenet1.1_FP32`
+
+2.	Use the DL Workbench to convert the FP32 SqueezeNet Caffe model into an FP16 optimized Intermediate Representation (IR):
+
+    1. In a web browser, launch the DL Workbench:
+    `http://127.0.0.1:5665/`
+    
+    
+
+4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
+
+    `cp ~/openvino_models/ir/FP32/classification/squeezenet/1.1/caffe/squeezenet1.1.labels .`
+
+5.	Copy a sample image to the release directory. You will use this with your optimized model:
+
+    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  ~/omz_demos_build/intel64/Release`
+
+6. Once your setup is complete, you're ready to run a sample application:
+
+    `cd ~/omz_demos_build/intel64/Release`
+
+    `./classification_sample -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
+
+7. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
+
+    `./classification_sample -h`
+
+</details>
+
+
 ## <a name="Exercises"></a> Exercises
 
 The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use OpenVINO in more sophisticated use cases. 
