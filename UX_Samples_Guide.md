@@ -211,7 +211,9 @@ With sample information filled in, the command could look like this:
 <details>
    <summary>Advanced Use of Samples</summary>
     
-## <a name="advanced-samples"></a> Advanced Use of Samples 
+## <a name="advanced-samples"></a> Advanced Use of Samples
+
+NOTE: The commands in this section are examples and not meant to be run.  These could be executed as displayed if the required setup (downloading models, etc.) was performed, but the details are left to the reader.
 
 Some applications allow the use of multiple models for different purposes. Usually for these cases, the output of the first model is used as the input of later models.
 
@@ -240,6 +242,20 @@ For head pose:
 You can see all the sample application’s parameters by adding the `-h` or `--help` option at the command line.
 
 </details>
+
+
+
+
+## <a name="Exercises"></a> Exercises
+
+The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use OpenVINO in more sophisticated use cases. 
+
+**NOTE:** Before starting these sample exercises, change directories into the samples directory:
+
+`cd ~/omz_demos_build/intel64/Release`
+
+**NOTE:** During this exercise you will be asked to move to multiple different directories, and occasionally to copy files (so that you don't have to specify full paths in commands).  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
+
 
 <details>
    <summary>Run A Sample Application</summary>
@@ -288,7 +304,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 
 <details>
-   <summary>Run A Sample Application Using the DL Workbench</summary>
+   <summary>Exercise 2 Using the DL Workbench</summary>
     
 ## <a name="run-sample-application"></a> Run A Sample Application with the DL Workbench
 
@@ -376,120 +392,12 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 </details>
 
-
-## <a name="Exercises"></a> Exercises
-
-The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use OpenVINO in more sophisticated use cases. 
-
-**NOTE:** Before starting these sample exercises, change directories into the samples directory:
-
-`cd ~/omz_demos_build/intel64/Release`
-
-**NOTE:** During this exercise you will be asked to move to multiple different directories, and occasionally to copy files (so that you don't have to specify full paths in commands).  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
-
-
-<details>
-   <summary>Exercise 1</summary>
-
-**Exercise 1: Human Pose Estimation**
-
-This demo detects people and draws a stick figure inside them to show limb positions. This model has already been converted for use with OpenVINO. 
-- Requires downloading the human-pose-estimation-0001 (ICV) Model.
-- Requires video or camera input.
-
-General Syntax:
-
-`./human_pose_estimation_demo -i path/to/video -m \
-path/to/model/human-pose-estimation-0001.xml -d CPU`
-
-**Steps to Run the Human Pose Demo:**
-
-1. Setup the environment variables:
-
-    `source /opt/intel/openvino/bin/setupvars.sh`
-
-2. Move to the Model Downloader Directory:
-
-    `cd /opt/intel/openvino/deployment_tools/tools/model_downloader/`
-
-3. Find a suitable model:
-
-    `grep human-pose list_topologies.yml |grep -vi int8|grep -vi fp16`
-
-**NOTE:** `list_topologies.yml` is a text (YAML) file with a list and details about every model available in the Intel Model Zoo.  Models can also be manually downloaded at the github page.
-
-4. Download the model:
-
-    `sudo ./downloader.py --name human-pose*`
-
-5. Move the model to a more convenient location:
-
-    `mkdir ~/ir`
-
-    `cp /opt/intel/openvino/deployment_tools/tools/model_downloader/Transportation/human_pose_estimation/mobilenet-v1/dldt/FP32/human-pose-estimation-0001* ~/ir/`
-
-6. Download an appropriate video:
-
-    Open a web browser to the following URL and download the video: 
-https://www.pexels.com/video/couple-dancing-on-sunset-background-2035509/
-
-    Rename the video for convenience:
-
-    `mv ~/Downloads/Pexels\ Videos\ 2035509.mp4 ~/Videos/humpose.mp4`
-
-7. Run the sample:
-
-    `cd ~/omz_demos_build/intel64/Release/`
-
-    `./human_pose_estimation_demo -i ~/Videos/humpose.mp4 -m ~/ir/human-pose-estimation-0001.xml -d CPU`
-
-</details>
-
-<details>
-   <summary>Exercise 2</summary>
-    
-**Exercise 2: Interactive Face Detection**
-
-The face detection demo draws bounding boxes around faces, and optionally feeds the output of the primary model to additional models. This model has already been converted for use with OpenVINO.
-
-The Face Detection Demo supports face detection, plus optional functions:
-
-- Age-gender recognition
-- Emotion recognition
-- Head pose
-- Facial landmark display
-
-Syntax:
-
-`./interactive_face_detection -i path/to/video -m path/to/face/model -d CPU`
-
-Steps to complete:
-
-1.	Find and download an appropriate face detection model (there are several already available in the Intel Model Zoo).
-    - You can use the [Pretrained Models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models) page from the online OpenVINO documentation to review model options.
-    - You may need to try out different models to find one that works, or that works best.
-2.	Find and download a video that features faces.
-3.	Run the demo with just the face detection model.
-4.	OPTIONAL: Run the demo using additional models (age-gender, emotion recognition, head pose, etc.).
-    - Note that when you use multiple models, there is always a primary model that is used, and then a number of optional models that use the output from the initial model.
-
-</details>
-
 <details>
    <summary>Exercise 3</summary>
     
-**Exercise 3: Object Detection (Vehicles with multiple models)**
+**Exercise 3: Vehicle Detection**
 
-As mentioned in the previous exercise, it's possible to chain models together and use the output of an initial object detection model as input of additional models.
 
-The following exercise expects the use of the `security_barrier_camera_demo`.
-
-Steps to complete:
-1. Find and download a model that supports vehicle detection.
-2. Find and download a video that contains cars to be detected.
-3. Run the `security_barrier_camera_demo` and check that vehicles are detected.
-4. Choose at least one additional model (such as attribute recognition), and run the application, now using the initial model plus the new one.
-5. OPTIONAL: Run the demo with vehicle detection (primary), plus attribute recognition and license plate recognition.
 
 </details>
 
