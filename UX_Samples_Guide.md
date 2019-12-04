@@ -1,42 +1,6 @@
 
 # Get Started with OpenVINO™ Deep Learning Workbench and Samples for Linux*
 
-## <a name="proposal"></a>Study Proposal (to delete later)
-### Steps for participants in the study
-**Introduction**
-    - Explain the basic process
-    - Brief overview of OpenVINO, samples/demos, and workbench.
-
-**Samples:** are the collection of example applications (code and demos) provided with OpenVINO™.<br><br>
-**DL Workbench:** is a tool for converting models and testing performance (speed and accuracy) with different model configuration settings.<br>
-
-**Requirements**
-- OpenVINO 2019.r3.1
-- Docker Installation
-- DL Workbench (downloaded from Docker hub)
-- squeezenet, mobilenet-ssd models (on disk)
-- ImageNet dataset (on disk) 
-- Internet connectivity
-- Ubuntu 16.04 (18 probably works, untested)
-
-**Study Steps**
-1. User reads introduction. 
-2. Follow the introductory SqueezeNet steps - "Run a Sample Application".    
-3. Duplicate the SqueezeNet section, this time using the Workbench instead of Model Optimizer.
-4. Use the OpenVINO™ vehicle detection model to convert a model. 
-    - Redo the steps (object detection demo ssd async) 3 times:
-        1. FP32 - cpu, gpu (cpu faster)
-        2. FP16 - cpu, gpu (gpu faster)
-        3. int8 - cpu only
-
-    - [Optional] Encourage user to explore Workbench features?
-
-
-
-## ---- DELETE HERE ----
-
-
-
 ## <a name="openvino-components"></a>OpenVINO Components
 The OpenVINO toolkit optimizes and runs Deep Learning Neural Network models on Intel hardware.
 It consists of three primary components:
