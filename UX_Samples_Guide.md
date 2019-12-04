@@ -258,7 +258,7 @@ The following series of exercises guide you through using samples of increasing 
 
 
 <details>
-   <summary>Run A Sample Application</summary>
+   <summary>Exercise 1 - Run A Sample Application</summary>
     
 ## <a name="run-sample-application"></a> Run A Sample Application 
 
@@ -304,7 +304,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 
 <details>
-   <summary>Exercise 2 Using the DL Workbench</summary>
+   <summary>Exercise 2 - Using the DL Workbench</summary>
     
 ## <a name="run-sample-application"></a> Run A Sample Application with the DL Workbench
 
@@ -395,9 +395,155 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 <details>
    <summary>Exercise 3</summary>
     
-**Exercise 3: Vehicle Detection**
+**Exercise 3: Vehicle Detection on CPU**
+
+***Step 1 - Setup the Model***
+
+    1. Workbench -> Import Model
+    2. Select vehi cle-detection-adas-0002
+    3. Import
+
+***Step 2 - Import Dataset***
+
+    1. Import Local Dataset -> Choose File
+    2. Select: ~/Desktop/Data/datasets/VOC7_248.tar.gz
+    3. Import Dataset
 
 
+***Step 3 - Select Environment***
+    1. Select GPU
+   
+***Step 4 - Additional Setup for Ease of Use***
+
+We'll create a set of directories to store our models, and separate them by their format.  
+
+Remember:
+FP32 is for CPU (CPU can run FP16, but it will be slower).  GPU can run FP32 models but it will be sub-optimal.
+FP16 is for all hardware except CPU.
+INT8 is for CPU.  Some models will be very fast in the INT8 format.
+
+NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
+
+    1. `mkdir ir`
+    2. `mkdir ir/FP32`
+    3. `mkdir ir/FP16`
+    4. `mkdir ir/INT8`
+
+Now we move some files around to make running the samples a little easier.
+
+    1.` cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16`
+    2.` cd ~/ir/FP16`
+    3. `tar zxvf vehicle-detection-adas-0002.tar.gz`
+    4. `rm vehicle*tar.gz`
+    5. `cd ~/omz_demos_build/intel64/Release`
+
+And we're ready to execute the sample:
+
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP16/vehicle-detection-adas-0002.xml -d GPU`
+
+</details>
+
+
+
+<details>
+   <summary>Exercise 4</summary>
+    
+**Exercise 4: Vehicle Detection on GPU**
+
+***Step 1 - Setup the Model***
+
+    1. Workbench -> Import Model
+    2. Select vehi cle-detection-adas-0002
+    3. Import
+
+***Step 2 - Import Dataset***
+
+    1. Import Local Dataset -> Choose File
+    2. Select: ~/Desktop/Data/datasets/VOC7_248.tar.gz
+    3. Import Dataset
+
+
+***Step 3 - Select Environment***
+    1. Select GPU
+   
+***Step 4 - Additional Setup for Ease of Use***
+
+We'll create a set of directories to store our models, and separate them by their format.  
+
+Remember:
+FP32 is for CPU (CPU can run FP16, but it will be slower).  GPU can run FP32 models but it will be sub-optimal.
+FP16 is for all hardware except CPU.
+INT8 is for CPU.  Some models will be very fast in the INT8 format.
+
+NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
+
+    1. `mkdir ir`
+    2. `mkdir ir/FP32`
+    3. `mkdir ir/FP16`
+    4. `mkdir ir/INT8`
+
+Now we move some files around to make running the samples a little easier.
+
+    1.` cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16`
+    2.` cd ~/ir/FP16`
+    3. `tar zxvf vehicle-detection-adas-0002.tar.gz`
+    4. `rm vehicle*tar.gz`
+    5. `cd ~/omz_demos_build/intel64/Release`
+
+And we're ready to execute the sample:
+
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP16/vehicle-detection-adas-0002.xml -d GPU`
+
+</details>
+
+<details>
+   <summary>Exercise 5</summary>
+    
+**Exercise 5: Vehicle Detection using INT8**
+
+***Step 1 - Setup the Model***
+
+    1. Workbench -> Import Model
+    2. Select vehi cle-detection-adas-0002
+    3. Import
+
+***Step 2 - Import Dataset***
+
+    1. Import Local Dataset -> Choose File
+    2. Select: ~/Desktop/Data/datasets/VOC7_248.tar.gz
+    3. Import Dataset
+
+
+***Step 3 - Select Environment***
+    1. Select GPU
+   
+***Step 4 - Additional Setup for Ease of Use***
+
+We'll create a set of directories to store our models, and separate them by their format.  
+
+Remember:
+FP32 is for CPU (CPU can run FP16, but it will be slower).  GPU can run FP32 models but it will be sub-optimal.
+FP16 is for all hardware except CPU.
+INT8 is for CPU.  Some models will be very fast in the INT8 format.
+
+NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
+
+    1. `mkdir ir`
+    2. `mkdir ir/FP32`
+    3. `mkdir ir/FP16`
+    4. `mkdir ir/INT8`
+
+Now we move some files around to make running the samples a little easier.
+
+    1.` cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16`
+    2.` cd ~/ir/FP16`
+    3. `tar zxvf vehicle-detection-adas-0002.tar.gz`
+    4. `rm vehicle*tar.gz`
+    5. `cd ~/omz_demos_build/intel64/Release`
+
+And we're ready to execute the sample:
+
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP16/vehicle-detection-adas-0002.xml -d GPU`
 
 </details>
 
