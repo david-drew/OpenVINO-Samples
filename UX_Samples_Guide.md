@@ -393,7 +393,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 </details>
 
 <details>
-   <summary>Exercise 3</summary>
+   <summary>Exercise 3 - Vehicle Detection on CPU with FP32</summary>
     
 **Exercise 3: Vehicle Detection on CPU**
 
@@ -411,7 +411,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 
 ***Step 3 - Select Environment***
-    1. Select GPU
+    1. Select CPU
    
 ***Step 4 - Additional Setup for Ease of Use***
 
@@ -444,10 +444,9 @@ And we're ready to execute the sample:
 </details>
 
 
-
 <details>
-   <summary>Exercise 4</summary>
-    
+   <summary>Exercise 4 - Vehicle Detection with FP16 on CPU</summary>
+
 **Exercise 4: Vehicle Detection on GPU**
 
 ***Step 1 - Setup the Model***
@@ -497,7 +496,7 @@ And we're ready to execute the sample:
 </details>
 
 <details>
-   <summary>Exercise 5</summary>
+   <summary>Exercise 5 - Vehicle Detection with INT8</summary>
     
 **Exercise 5: Vehicle Detection using INT8**
 
