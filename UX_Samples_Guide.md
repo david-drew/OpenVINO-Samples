@@ -166,7 +166,8 @@ There are several ways to find models suitable for use with OpenVINO:
 
 - Download from GitHub, Caffe Zoo, TensorFlow Zoo, etc.
 - Train your own model
-- Intel’s Model Downloader tool:
+- Use the "Import Model" option in the DL Workbench.
+- Use Intel’s Model Downloader tool:
     - https://software.intel.com/en-us/articles/model-downloader-essentials)
     
     1.	To list the FP32 models available in the downloader enter the following command: 
@@ -310,8 +311,22 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
     1. In a web browser, launch the DL Workbench:
     `http://127.0.0.1:5665/`
-    
-    
+    2. Select "Get Started" to show the setup interface.
+    3. The setup interface is divided into two sections.
+        - The top section is for loading models.
+        - The bottom section is for loading data sets (for example, images that will be used by the model during inference).
+     4. Select the "Original Model" tab - the default tab is for downloading models from the OpenVINO Model Zoo.
+     5. Select Framework -> "Caffe"
+     6. Choose the prototxt file with the first "Choose File" button.
+        - /home/vino/squezenet1.1_FP32/squeezenet1.1.protoxt
+     7. Choose the caffemodel file with the second "Choose File" button.
+        - /home/vino/squezenet1.1_FP32/squeezenet1.1.caffemodel
+     8. The Model Name will be automatically populated, but change it if desired.  
+        - This can be useful when tracking multiple loaded models
+     9. Select "Import Model" when ready.  
+        - This will create and FP16 model by default, though configuration settings may be edited later.
+     
+
 
 4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
 
