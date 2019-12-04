@@ -334,22 +334,46 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
      14. Note that the grey box no longer contains any red warning text.
      15. Select "Convert" and you will be returned to the setup interface.  Model conversion may take several minutes.
 
+3. Import a Dataset into the DL Workbench
+    1. We could autogenerate a set of simuluated imaged, but for this task we'll select a subset of the ImageNet dataset.
+        - Note: results will often be better using real images.
+    2. Select "Import Local Dataset"
+    3. Select "Choose File" and browse to "~/Desktop/Workbench/Data/Imagenet_200_224x224.zip"
+    4. Select "Import Dataset"
+        - Note: The height and width of images in the dataset must satisfy the requirements of the target model.
+        
+4. Run Inference with the DL Workbench
+    1. Select the model from the top part of the interface.
+    2. Select the dataset from teh bottom part of the interface.
+    3. Select the Environment (target hardware).
+    4. All items in the status box next to the Environment box should now have green checks.
+    5. Select 'Go'
+        - This will take a few minutes
 
-4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
+5. Normally, we would encourage analysis and optimization of the model, but for this exercise, we'll just export the model from the Workbench to our system.  
+    1. Take a few minutes to look at the output if desired.
+    2. When ready, find the download icon at the right, in the top squeezenet model bar.
+    3. Select Download.  This will drop a tar.gz archive in your default downloads directly (~/Downloads).
+    4. `cd ~/Downloads`
+    5. `tar zxvf ~/Downloads/squeezenet1.1.tar.gz`
+    6. `cd squeezenet1.1`
+    
+
+6.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
 
     `cp ~/openvino_models/ir/FP32/classification/squeezenet/1.1/caffe/squeezenet1.1.labels .`
 
-5.	Copy a sample image to the release directory. You will use this with your optimized model:
+7.	Copy a sample image to the release directory. You will use this with your optimized model:
 
     `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  ~/omz_demos_build/intel64/Release`
 
-6. Once your setup is complete, you're ready to run a sample application:
+8. Once your setup is complete, you're ready to run a sample application:
 
     `cd ~/omz_demos_build/intel64/Release`
 
-    `./classification_sample -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
+    `./classification_sample -i car.png -m ~/Downloads/squeezenet1.1/squeezenet1.1.xml -d CPU`
 
-7. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
+9. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
 
     `./classification_sample -h`
 
