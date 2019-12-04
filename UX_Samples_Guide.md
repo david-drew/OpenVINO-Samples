@@ -377,7 +377,10 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 ***Step 3 - Select Environment***
     1. Select CPU
    
-***Step 4 - Additional Setup for Ease of Use***
+***Step 4 - Download the Model***
+Find the download icon in the top right bar of the DL Workbench (next to the trash can).  This will download the model to the default directory: ~/Downloads, as a tar.gz file.  We'll move this file in the next step for convenience.
+   
+***Step 5 - Additional Setup for Ease of Use***
 
 We'll create a set of directories to store our models, and separate them by their format.  
 
@@ -415,9 +418,20 @@ And we're ready to execute the sample:
 
 ***Step 1 - Setup the Model***
 
-    1. Workbench -> Import Model
-    2. Select vehi cle-detection-adas-0002
-    3. Import
+    1. In the DL Web GUI:  
+        - Select Workbench -> Import Model
+    2. Select vehicle-detection-adas-0002
+    3. Select Import
+    4. Note: If there are problems downloading, try the alternate method below.
+
+Alternate Method:
+    1.  In the DLW Web GUI:
+        - Select Import Model -> Original Model
+    2. Select Choose File:
+        - ~/Desktop/Data/Models/Intel/FP16/vehicle-detection-adas-0002.xml
+    3. Select the Second Choose File Button:
+         - ~/Desktop/Data/Models/Intel/FP16/vehicle-detection-adas-0002.bin 
+    4. Select Import
 
 ***Step 2 - Import Dataset***
 
@@ -429,7 +443,10 @@ And we're ready to execute the sample:
 ***Step 3 - Select Environment***
     1. Select GPU
    
-***Step 4 - Additional Setup for Ease of Use***
+***Step 4 - Download the Model***
+Find the download icon in the top right bar of the DL Workbench (next to the trash can).  This will download the model to the default directory: ~/Downloads, as a tar.gz file.  We'll move this file in the next step for convenience.
+
+***Step 5 - Additional Setup for Ease of Use***
 
 We'll create a set of directories to store our models, and separate them by their format.  
 
@@ -440,10 +457,10 @@ INT8 is for CPU.  Some models will be very fast in the INT8 format.
 
 NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
 
-    1. `mkdir ir`
-    2. `mkdir ir/FP32`
-    3. `mkdir ir/FP16`
-    4. `mkdir ir/INT8`
+    1. `mkdir ~/ir`
+    2. `mkdir ~/ir/FP32`
+    3. `mkdir ~/ir/FP16`
+    4. `mkdir ~/ir/INT8`
 
 Now we move some files around to make running the samples a little easier.
 
