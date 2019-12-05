@@ -489,15 +489,19 @@ And we're ready to execute the sample:
 <details>
    <summary>Exercise 5 - Vehicle Detection with INT8</summary>
     
-**Exercise 5: Vehicle Detection using INT8**
+**Exercise 5: Vehicle Detection on CPU using INT8**
 
 ***Step 1 - Setup the Model***
 
+Skip this section if done in previous exercise.
+
     1. In the DL Workbench GUI, select Import Model
-    2. Select vehicle-detection-adas-0002 (FP32 or FP16)
+    2. Select vehicle-detection-adas-0002 (FP32)
     3. Select Import
 
 ***Step 2 - Import Dataset***
+
+Skip this section if done in previous exercise.
 
     1. Select Import Local Dataset
     2. Press the "Choose File" button.
@@ -505,21 +509,35 @@ And we're ready to execute the sample:
     3. Select Import
 
 ***Step 3 - Select Environment***
-    1. Select the CPU
+    1. In the upper panel, select the FP32 vehicle detection model.
+    2. In the middle panel, select the VOC 248 dataset.
+    3. In the lower left panel, select the CPU.
+    4. Press the GO button.
+    5. This will take several minutes.
+    
+***Step 5 - Convert the Model to the INT8 format.***
+    1. In the upper panel (model summary), click on the cog icon in the Accuracy column.
+    2. Select "Object Detection" and "ssd" if not set.
+    3. Press the "Run Accuracy Check" Button.  This will take several minutes.
+    4. You should have been returned to the main screen.  Press the Execute button.
+    5. Look for the Profile and Optimize tabs.  Select Optimize.
+    6. Select INT8.
+    7. Press the Optimize button.  This will take a few minutes.
+    8. Download the model.
    
-***Step 4 - Additional Setup for Ease of Use***
+***Step 6 - Additional Setup for Ease of Use***
 
 Now we move some files to make running the samples a little easier.
 
-    1. mv ~/Downloads/vehicle-detection-adas-* ~/ir/INT8
-    2. cd ~/ir/FP16
-    3. tar zxvf vehicle-detection-adas-0002.tar.gz
+    1. mv ~/Downloads/"vehicle-detection-adas-0002_- Int 8.tar.gz" ~/ir/INT8
+    2. cd ~/ir/INT8
+    3. tar zxvf vehicle-detection-adas-0002*.tar.gz
     4. rm vehicle*tar.gz
     5. cd ~/omz_demos_build/intel64/Release
 
 And we're ready to execute the sample:
 
-    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/INT8/vehicle-detection-adas-0002.xml -d CPU`
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/INT8/11_int8.xml -d CPU`
 
 </details>
 
