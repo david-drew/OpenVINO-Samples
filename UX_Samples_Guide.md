@@ -518,13 +518,15 @@ Skip this section if done in previous exercise.
     
 ***Step 5 - Convert the Model to the INT8 format.***
 
-    1. In the upper panel (model summary), click on the cog icon in the Accuracy column.
-    2. Select "Object Detection" and "ssd" if not set.
-    3. Press the "Run Accuracy Check" Button.  This will take several minutes.
-    4. You should have been returned to the main screen.  Press the Execute button.
-    5. Look for the Profile and Optimize tabs.  Select Optimize.
-    6. Select INT8.
-    7. Press the Optimize button.  This will take a few minutes.
+    1. Look for the Profile and Optimize tabs.  Select Optimize.
+    2. Select INT8.
+    3. Press the Optimize button.  This will take a few minutes.
+
+    4. In the upper panel (model summary), click on the cog icon in the Accuracy column.
+    5. Select "Object Detection" and "ssd" if not set.
+    6. Press the "Run Accuracy Check" Button.  This will take several minutes.
+    7. You should have been returned to the main screen.  Press the Execute button.
+
     8. Download the model.
    
 ***Step 6 - Additional Setup for Ease of Use***
