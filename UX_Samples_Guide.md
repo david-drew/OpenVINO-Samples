@@ -359,6 +359,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 <details>
    <summary>Exercise 3 - Vehicle Detection on CPU with FP32</summary>
     
+    
 **Exercise 3: Vehicle Detection on CPU**
 
 ***Step 1 - Setup the Model***
@@ -369,6 +370,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
     4. Note: If there are problems downloading, try the alternate method below.
 
 Alternate Method:
+
     1.  In the DLW Web GUI (web browser):
         - Select Import Model -> Original Model
     2. Select Choose File:
