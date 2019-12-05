@@ -332,21 +332,22 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
     2. When ready, find the download icon at the right, in the top squeezenet model bar.
     3. Select Download.  This will drop a tar.gz archive in your default downloads directly (~/Downloads).
     4. `cd ~/Downloads`
-    5. `tar zxvf ~/Downloads/squeezenet1.1.tar.gz`
-    6. `cd squeezenet1.1`
-    
+    5. `mkdir squeezenet`
+    6.  `mv squeeze*gz squeezenet`
+    7. `cd squeezenet`
+    8. `tar zxvf squeezenet1.1.tar.gz`
 
-6.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
+6.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text as well as classification percentages. Copy `squeezenet1.1.labels` to your optimized model location:
 
     `cp ~/openvino_models/ir/FP32/classification/squeezenet/1.1/caffe/squeezenet1.1.labels .`
 
 7.	Copy a sample image to the release directory. You will use this with your optimized model:
 
+    `cd  ~/inference_engine_samples_build/intel64/Release`
+
     `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
 
 8. Once your setup is complete, you're ready to run a sample application:
-
-    `cd  ~/inference_engine_samples_build/intel64/Release`
 
     `./classification_sample_async -i car.png -m ~/Downloads/squeezenet1.1/squeezenet1.1.xml -d CPU`
 
