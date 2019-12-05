@@ -438,6 +438,7 @@ And we're ready to execute the sample:
     4. Note: If there are problems downloading, try the alternate method below.
 
 Alternate Method:
+
     1.  In the DLW Web GUI:
         - Select Import Model -> Original Model
     2. Select Choose File:
@@ -470,6 +471,7 @@ INT8 is for CPU.  Some models will be very fast in the INT8 format.
 NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
 
 Skip this step if it was done in the previous exercise.
+
     1. `mkdir ~/ir`
     2. `mkdir ~/ir/FP32`
     3. `mkdir ~/ir/FP16`
