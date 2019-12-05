@@ -509,6 +509,7 @@ Skip this section if done in previous exercise.
     3. Select Import
 
 ***Step 3 - Select Environment***
+
     1. In the upper panel, select the FP32 vehicle detection model.
     2. In the middle panel, select the VOC 248 dataset.
     3. In the lower left panel, select the CPU.
@@ -516,6 +517,7 @@ Skip this section if done in previous exercise.
     5. This will take several minutes.
     
 ***Step 5 - Convert the Model to the INT8 format.***
+
     1. In the upper panel (model summary), click on the cog icon in the Accuracy column.
     2. Select "Object Detection" and "ssd" if not set.
     3. Press the "Run Accuracy Check" Button.  This will take several minutes.
