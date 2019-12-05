@@ -221,7 +221,7 @@ The following series of exercises guide you through using samples of increasing 
 <details>
    <summary>Exercise 1 - Run A Sample Application</summary>
     
-## <a name="run-sample-application"></a> Run A Sample Application 
+### <a name="run-sample-application"></a> Run A Sample Application 
 
 Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
 
@@ -270,7 +270,7 @@ Note: Remember to setup the environment variables when logging in, changing user
 <details>
    <summary>Exercise 2 - Using the DL Workbench</summary>
     
-## <a name="run-sample-application"></a> Run A Sample Application with the DL Workbench
+### <a name="run-sample-application"></a> Run A Sample Application with the DL Workbench
 
 Convert a model using the DL Workbench, then use a sample application to load the model and run inference.
 
@@ -361,7 +361,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
    <summary>Exercise 3 - Vehicle Detection on CPU with FP32</summary>
     
     
-**Exercise 3: Vehicle Detection on CPU**
+### Exercise 3: Vehicle Detection on CPU
 
 ***Step 1 - Setup the Model***
 
@@ -427,7 +427,7 @@ And we're ready to execute the sample:
 <details>
    <summary>Exercise 4 - Vehicle Detection on GPU using FP16 format</summary>
 
-**Exercise 4: Vehicle Detection on GPU**
+### Exercise 4: Vehicle Detection on GPU
 
 ***Step 1 - Setup the Model***
 
@@ -492,7 +492,7 @@ And we're ready to execute the sample:
 <details>
    <summary>Exercise 5 - Vehicle Detection with INT8</summary>
     
-**Exercise 5: Vehicle Detection on CPU using INT8**
+### Exercise 5: Vehicle Detection on CPU using INT8
 
 ***Step 1 - Setup the Model***
 
