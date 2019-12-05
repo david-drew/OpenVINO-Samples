@@ -285,7 +285,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
     `cd ~/squeezenet1.1_FP32`
 
 2.	Use the DL Workbench to convert the FP32 SqueezeNet Caffe model into an FP16 optimized Intermediate Representation (IR):
-
+/home/vino/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel
     1. In a web browser, launch the DL Workbench:
     `http://127.0.0.1:5665/`
     2. Select "Get Started" to show the setup interface.
@@ -295,9 +295,9 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
      4. Select the "Original Model" tab - the default tab is for downloading models from the OpenVINO Model Zoo.
      5. Select Framework -> "Caffe"
      6. Choose the prototxt file with the first "Choose File" button.
-        - /home/vino/squezenet1.1_FP32/squeezenet1.1.protoxt
+        - ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.protoxt
      7. Choose the caffemodel file with the second "Choose File" button.
-        - /home/vino/squezenet1.1_FP32/squeezenet1.1.caffemodel
+        - ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel
      8. The Model Name will be automatically populated, but change it if desired.  
         - This can be useful when tracking multiple loaded models
      9. Select "Import Model" when ready.  
