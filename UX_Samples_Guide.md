@@ -321,7 +321,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
         
 4. Run Inference with the DL Workbench
     1. Select the model from the top part of the interface.
-    2. Select the dataset from teh bottom part of the interface.
+    2. Select the dataset from the bottom part of the interface.
     3. Select the Environment (target hardware).
     4. All items in the status box next to the Environment box should now have green checks.
     5. Select 'Go'
