@@ -7,19 +7,19 @@ It consists of three primary components:
 1.	**Model Optimizer:** Optimizes models for Intel architecture, as well as converts models into a format compatible with the Inference Engine. This format is called an Intemediate Representation (IR).
 2.	**Intermediate Representation (IR):** The output of the Model Optimizer. A model converted to a format that has been optimized for Intel architecture and is usable by the Inference Engine.
 3.	**Inference Engine:** The software libraries that run inference against the Intermediate Representation (Optimized Model) and produce inference results
-4. **DL (Deep Learning) Workbench:** The DL Worbench is a new utility that provides a simple GUI to run the Model Optimizer, and a set of tools to run perform tests, analyze and tune model parameters, and compare the results of different settings.
+4. **DL (Deep Learning) Workbench:** The DL Worbench is a new utility that provides a simple GUI to run the Model Optimizer, and a set of tools to perform tests, analyze and tune model parameters, and compare the results of different settings.
 
 ## <a name="workflow-overview"></a>OpenVINO Workflow Overview
 
-The basic OpenVINO workflow is as follows:
+The OpenVINO workflow is as follows:
 1.	Run an existing trained model through the Model Optimizer (or DL Workbench). 
-2.	The Model Optimizer produces an Interemediate Representation file (IR).<br>
+2.	The Model Optimizer produces Interemediate Representation files (IR).<br>
     Note: The DL Workbench may be used instead of the Model Optmizer.
-3.	Application (an Intel sample or one you have built) uses the Inference Engine to run inference against the Intermediate Representation (Optimized Model).
-4.	Application outputs inference results. 
+3.	An application (an Intel sample or one you have built) uses the Inference Engine to run inference using the Intermediate Representation (Optimized Model).
+4.	The application outputs inference results. 
 
 ## <a name="openvino-installation"></a>OpenVINO Installation
-This guide assumes that you have completed installation of OpenVINO. <br>
+This guide assumes that you have completed the installation of OpenVINO. <br>
 The installation created 2 new directories in your home directory:
 
 `~/omz_demos_build`
@@ -36,7 +36,7 @@ This is where sample applications are installed, after they are compiled.  You w
     
 ## <a name="dldt-installation-directory-structure"></a> Installation Directory Structure
 
-By default, the installation directory is`/opt/intel/openvino`, though the location is up to the user.
+By default, the installation directory is`/opt/intel/openvino`, though the location is  the configurable by the user.
 
 
 | Directory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                                           |  
@@ -63,7 +63,7 @@ The DL Workbench is a tool to help assess model performance in OpenVINO, in term
 
 ## <a name="using-sample-application"></a> Using OpenVINO: Sample Applications
 
-Sample applications are provided to get you working in your OpenVINO environment. This section will guide you through a simplified OpenVINO workflow using those sample applications. You will convert a model using the model optimizer then use a sample application to run inference and see the results.
+Sample applications are provided to get you working in your OpenVINO environment. This section will guide you through a simplified OpenVINO workflow using those sample applications. You will convert a model using the Model Optimizer then use a sample application to run inference and see the results.
 
 Each of the included samples is a separate application, but there is a common behavior and common components needed to use each of them.
 
@@ -85,12 +85,12 @@ Following are some basic guidelines for executing the OpenVINO workflow and usin
 
     `source /opt/intel/openvino/bin/setupvars.sh` 
     
-2.	Have the directory pathways for the following:
+2.	Have the directory paths for the following:
 - Sample application:
 These are binaries located in:
-`~/omz_demos_build/intel64/Release`
+`~/omz_demos_build/intel64/Release` or `~/inference_engine_samples_build/intel64/Release`
 - Media: video or image.
-- Model: Neural Network topology converted to a Model Optimizer compatible format, an XML file. See **Models** below for more information.
+- Model: Neural Network model converted to a Model Optimizer compatible format, an XML file. See **Models** below for more information.
 
 3.	Choose the correct precision for a model:
 - FP32: Used when running the model on the CPU.
@@ -158,7 +158,7 @@ There are multiple sources for downloading video media for use with samples. Pos
 
 ## <a name="syntax-examples"></a> Typical Sample Application Syntax Examples
 
-Compiled sample applications for this tutorial are found in: `~/omz_demos_build/intel64/Release`.
+Compiled sample applications for this tutorial are found in: `~/omz_demos_build/intel64/Release` or `~/inference_engine_samples_build/intel64/Release`.
 
 Here is a template for calling a sample app:
 
@@ -369,7 +369,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
     4. Note: If there are problems downloading, try the alternate method below.
 
 Alternate Method:
-    1.  In the DLW Web GUI:
+    1.  In the DLW Web GUI (web browser):
         - Select Import Model -> Original Model
     2. Select Choose File:
         - ~/Desktop/Data/Models/Intel/FP32/vehicle-detection-adas-0002.xml
@@ -416,21 +416,21 @@ Now we move some files around to make running the samples a little easier.
 
 And we're ready to execute the sample:
 
-    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP16/vehicle-detection-adas-0002.xml -d CPU`
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP32/vehicle-detection-adas-0002.xml -d CPU`
 
 </details>
 
 
 <details>
-   <summary>Exercise 4 - Vehicle Detection with FP16 on GPU</summary>
+   <summary>Exercise 4 - Vehicle Detection GPU using FP16 format</summary>
 
 **Exercise 4: Vehicle Detection on GPU**
 
 ***Step 1 - Setup the Model***
 
-    1. In the DL Web GUI:  
-        - Select Workbench -> Import Model
-    2. Select vehicle-detection-adas-0002
+    1. In the DL Workbench Web GUI:  
+        - Select Import Model
+    2. Select vehicle-detection-adas-0002 (FP16)
     3. Select Import
     4. Note: If there are problems downloading, try the alternate method below.
 
@@ -446,9 +446,8 @@ Alternate Method:
 ***Step 2 - Import Dataset***
 
     1. Import Local Dataset -> Choose File
-    2. Select: ~/Desktop/Data/datasets/VOC7_248.tar.gz
+    2. Select: ~/Desktop/Data/datasets/VOC7_248.zip
     3. Import Dataset
-
 
 ***Step 3 - Select Environment***
     1. Select GPU
@@ -494,47 +493,33 @@ And we're ready to execute the sample:
 
 ***Step 1 - Setup the Model***
 
-    1. Workbench -> Import Model
-    2. Select vehi cle-detection-adas-0002
-    3. Import
+    1. In the DL Workbench GUI, select Import Model
+    2. Select vehicle-detection-adas-0002 (FP32 or FP16)
+    3. Select Import
 
 ***Step 2 - Import Dataset***
 
-    1. Import Local Dataset -> Choose File
+    1. Select Import Local Dataset
+    2. Press the "Choose File" button.
     2. Select: ~/Desktop/Data/datasets/VOC7_248.tar.gz
-    3. Import Dataset
-
+    3. Select Import
 
 ***Step 3 - Select Environment***
-    1. Select GPU
+    1. Select the CPU
    
 ***Step 4 - Additional Setup for Ease of Use***
 
-We'll create a set of directories to store our models, and separate them by their format.  
+Now we move some files to make running the samples a little easier.
 
-Remember:
-FP32 is for CPU (CPU can run FP16, but it will be slower).  GPU can run FP32 models but it will be sub-optimal.
-FP16 is for all hardware except CPU.
-INT8 is for CPU.  Some models will be very fast in the INT8 format.
-
-NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
-
-    1. `mkdir ir`
-    2. `mkdir ir/FP32`
-    3. `mkdir ir/FP16`
-    4. `mkdir ir/INT8`
-
-Now we move some files around to make running the samples a little easier.
-
-    1.` cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16`
-    2.` cd ~/ir/FP16`
-    3. `tar zxvf vehicle-detection-adas-0002.tar.gz`
-    4. `rm vehicle*tar.gz`
-    5. `cd ~/omz_demos_build/intel64/Release`
+    1. mv ~/Downloads/vehicle-detection-adas-* ~/ir/INT8
+    2. cd ~/ir/FP16
+    3. tar zxvf vehicle-detection-adas-0002.tar.gz
+    4. rm vehicle*tar.gz
+    5. cd ~/omz_demos_build/intel64/Release
 
 And we're ready to execute the sample:
 
-    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP16/vehicle-detection-adas-0002.xml -d GPU`
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/INT8/vehicle-detection-adas-0002.xml -d CPU`
 
 </details>
 
