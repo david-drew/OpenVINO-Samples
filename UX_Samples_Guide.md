@@ -22,8 +22,8 @@ The OpenVINO workflow is as follows:
 This guide assumes that you have completed the installation of OpenVINO. <br>
 The installation created 2 new directories in your home directory:
 
-`~/omz_demos_build`
-`~/inference_engine_demos_build`
+* `~/omz_demos_build`
+* `~/inference_engine_demos_build`
 
 We'll use omz_demos_build for vehicle detection, and inference_engine_samples_build for the first 2 (classification with squeezenet) exercises.
     
