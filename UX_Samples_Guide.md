@@ -221,7 +221,7 @@ The following series of exercises guide you through using samples of increasing 
 <details>
    <summary>Exercise 1 - Run A Sample Application</summary>
     
-### <a name="run-sample-application"></a> Run A Sample Application 
+### <a name="run-sample-application"></a> Exercise 1 - Run A Sample Application 
 
 Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
 
@@ -270,7 +270,7 @@ Note: Remember to setup the environment variables when logging in, changing user
 <details>
    <summary>Exercise 2 - Using the DL Workbench</summary>
     
-### <a name="run-sample-application"></a> Run A Sample Application with the DL Workbench
+### <a name="run-sample-application"></a> Exercise 2 - Run A Sample Application with the DL Workbench
 
 Convert a model using the DL Workbench, then use a sample application to load the model and run inference.
 
