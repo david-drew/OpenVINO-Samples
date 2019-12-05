@@ -535,6 +535,7 @@ Skip this section if done in previous exercise.
 ***Step 6 - Additional Setup for Ease of Use***
 
 Now we move some files to make running the samples a little easier.
+NOTE:  The unzipped int8 bin and xml files are dynamically generated and may not exactly match the names listed below (11_int8.xml).  Make sure to substitute the correct xml name.
 
     1. mv ~/Downloads/"vehicle-detection-adas-0002_- Int 8.tar.gz" ~/ir/INT8
     2. cd ~/ir/INT8
@@ -544,7 +545,7 @@ Now we move some files to make running the samples a little easier.
 
 And we're ready to execute the sample:
 
-    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/INT8/11_int8.xml -d CPU`
+    ./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/INT8/11_int8.xml -d CPU
 
 </details>
 
