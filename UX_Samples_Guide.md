@@ -294,13 +294,14 @@ Take a few minutes to compare the performance of the INT8 and FP32 models.  Feel
 ***Step 1 - Setup the Model***
 
 Skip this step if already completed.
+
     1. In the DL Workbench Web GUI:  
         - Select Import Model
     2. Select vehicle-detection-adas-0002 (FP16)
     3. Select Import
     4. Note: If there are problems downloading, try the alternate method below.
 
-Alternate Method:
+  Alternate Method:
 
     1.  In the DLW Web GUI:
         - Select Import Model -> Original Model
