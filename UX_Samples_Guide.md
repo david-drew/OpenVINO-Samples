@@ -5,9 +5,10 @@ For an overview and details about OpenVINO, see the [OpenVINO Overview](OpenVINO
 
 Please refer to the above guide as needed.   
 
-
 <br>
 
+NOTE: When using OpenVINO from the command line, you must setup your environment whenever you change users or launch a new terminal.
+    `source /opt/intel/openvino/bin/setupvars.sh`
 
 ## <a name="Exercises"></a> Exercises
 
