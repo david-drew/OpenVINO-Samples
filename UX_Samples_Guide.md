@@ -30,7 +30,8 @@ We'll use omz_demos_build for vehicle detection, and inference_engine_samples_bu
 This is where sample applications are installed, after they are compiled.  You will have to compile most of the samples.
 
 <br>
-### Quickstart
+
+## Quickstart
 
 If you are an advanced user with Deep Learning and OpenVINO experience, you may want to jump right to the [Exercises](#Exercises).
 
