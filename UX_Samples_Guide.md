@@ -31,6 +31,7 @@ This is where sample applications are installed, after they are compiled.  You w
 
 <br>
 ### Quickstart
+
 If you are an advanced user with Deep Learning and OpenVINO experience, you may want to jump right to the [Exercises](#Exercises).
 
 <br>
