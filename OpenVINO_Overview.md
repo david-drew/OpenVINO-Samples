@@ -33,6 +33,8 @@ This is where sample applications are installed, after they are compiled.  You w
 
 By default, the installation directory is`/opt/intel/openvino`, though the location is up to the user.
 
+<details>
+    <summary>OpenVINO Directory Structure</summary>
 
 | Directory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                                           |  
 |:----------------------------------------|:--------------------------------------------------------------------------------------|
@@ -49,6 +51,8 @@ By default, the installation directory is`/opt/intel/openvino`, though the locat
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`intel_models/` | OpenVINO pre-trained models and models documentation. See the [Overview of OpenVINO™ Toolkit Pre-Trained Models](./docs/Pre_Trained_Models.md).|
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`tools/`        | Contains the Model Downloader and Accuracy Checker tools. |
 | `tools/`                                | Contains a symbolic link to the Model Downloader folder and auxiliary tools to work with your models: Calibration tool, Benchmark and Collect Statistics tools.|
+
+</details>
 
 ## <a name="using-sample-application"></a> Using OpenVINO: Sample Applications
 
@@ -217,6 +221,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 ## Exercises
 
 [Practical Exercises with OpenVINO on the Linux Commmand Line](OpenVINO_Samples_Guide.md)
+
 [Practical Exercises with OpenVINO with the DL Workbench on Linux (some commmand line)](UX_Samples_Guide.md)
 
 
