@@ -27,7 +27,6 @@ The following series of exercises guide you through using samples of increasing 
 
 Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
 
-**NOTE:** If you are running inference only on a CPU, you already have the required FP32 model. If you want to run inference on any hardware other than the CPU, you'll need an FP16 version of the model.
 
 **Set Up a Neural Network Model**
 
