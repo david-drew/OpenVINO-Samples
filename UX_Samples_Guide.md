@@ -312,7 +312,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
      15. Select "Convert" and you will be returned to the setup interface.  Model conversion may take several minutes.
 
 3. Import a Dataset into the DL Workbench
-    1. We could autogenerate a set of simuluated imaged, but for this task we'll select a subset of the ImageNet dataset.
+    1. We could autogenerate a set of simuluated images, but for this task we'll select a subset of the ImageNet dataset.
         - Note: results will often be better using real images.
     2. Select "Import Local Dataset"
     3. Select "Choose File" and browse to "~/Desktop/Workbench/Data/Imagenet_200_224x224.zip"
