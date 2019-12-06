@@ -237,7 +237,7 @@ Skip this section if done in previous exercise.
 
     1. In the DL Workbench GUI, select Import Model
     2. Select vehicle-detection-adas-0002 (FP32)
-    3. Select Import
+    3. Press the Import button
 
 ***Step 2 - Import Dataset***
 
@@ -246,7 +246,7 @@ Skip this section if done in previous exercise.
     1. Select Import Local Dataset
     2. Press the "Choose File" button.
     2. Select: ~/Desktop/Data/datasets/VOC7_248.tar.gz
-    3. Select Import
+    3. Press the Import button
 
 ***Step 3 - Select Environment***
 
@@ -261,13 +261,9 @@ Skip this section if done in previous exercise.
     1. Look for the Profile and Optimize tabs.  Select Optimize.
     2. Select INT8.
     3. Press the Optimize button.  This will take a few minutes.
-
-    4. In the upper panel (model summary), click on the cog icon in the Accuracy column.
-    5. Select "Object Detection" and "ssd" if not set.
-    6. Press the "Run Accuracy Check" Button.  This will take several minutes.
-    7. You should have been returned to the main screen.  Press the Execute button.
-
-    8. Download the model.
+    4. After this process completes, press the Execute button in the middle panel.  This will take a few minutes.
+    5. OPTIONAL:  If accuracy isn't listed, press the "Refresh" icon in the Accuracy column of the upper panel. This will take several minutes.
+    6. Download the model.
    
 ***Step 6 - Additional Setup for Ease of Use***
 
@@ -297,6 +293,7 @@ Take a few minutes to compare the performance of the INT8 and FP32 models.  Feel
 
 ***Step 1 - Setup the Model***
 
+Skip this step if already completed.
     1. In the DL Workbench Web GUI:  
         - Select Import Model
     2. Select vehicle-detection-adas-0002 (FP16)
@@ -315,15 +312,19 @@ Alternate Method:
 
 ***Step 2 - Import Dataset***
 
+Skip this step if already completed. 
+
     1. Import Local Dataset -> Choose File
     2. Select: ~/Desktop/Data/datasets/VOC7_248.zip
     3. Import Dataset
 
-***Step 3 - Select Environment***
+***Step 3 - Select the Hardware Target Device***
+
     1. Select GPU
    
 ***Step 4 - Download the Model***
-Find the download icon in the top right bar of the DL Workbench (next to the trash can).  This will download the model to the default directory: ~/Downloads, as a tar.gz file.  We'll move this file in the next step for convenience.
+
+    1. Find the download icon in the top right bar of the DL Workbench (next to the trash can).  This will download the model to the default directory: ~/Downloads, as a tar.gz file.  We'll move this file in the next step for convenience.
 
 ***Step 5 - Additional Setup for Ease of Use***
 
