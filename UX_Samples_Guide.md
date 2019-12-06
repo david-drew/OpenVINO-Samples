@@ -340,18 +340,18 @@ NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usuall
 
 Skip this step if it was done in the previous exercise.
 
-    1. `mkdir ~/ir`
-    2. `mkdir ~/ir/FP32`
-    3. `mkdir ~/ir/FP16`
-    4. `mkdir ~/ir/INT8`
+    1. mkdir ~/ir
+    2. mkdir ~/ir/FP32
+    3. mkdir ~/ir/FP16
+    4. mkdir ~/ir/INT8
 
 Now we move some files around to make running the samples a little easier.
 
-    1.` cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16`
-    2.` cd ~/ir/FP16`
-    3. `tar zxvf vehicle-detection-adas-0002.tar.gz`
-    4. `rm vehicle*tar.gz`
-    5. `cd ~/omz_demos_build/intel64/Release`
+    1. cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16
+    2. cd ~/ir/FP16
+    3. tar zxvf vehicle-detection-adas-0002.tar.gz
+    4. rm vehicle*tar.gz
+    5. cd ~/omz_demos_build/intel64/Release
 
 And we're ready to execute the sample:
 
