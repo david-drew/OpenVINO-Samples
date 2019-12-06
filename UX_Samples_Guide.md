@@ -488,6 +488,10 @@ And we're ready to execute the sample:
 
     ./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/INT8/11_int8.xml -d CPU
 
+***Step 7 - Compare and Evaluate Performance
+
+Take a few minutes to compare the performance of the INT8 and FP32 models.  Feel free to explore options in the DL Workbench, and experiment with changes if desired.  
+
 </details>
 
 <details>
