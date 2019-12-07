@@ -28,9 +28,6 @@ The following series of exercises guide you through using samples of increasing 
 
 Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
 
-
-**Set Up a Neural Network Model**
-
 In this section, you will convert an FP32 model suitable for running on a CPU.
 
 Note: Remember to setup the environment variables when logging in, changing users, or launching a new terminal.
@@ -48,7 +45,7 @@ Note: Remember to setup the environment variables when logging in, changing user
 
     `python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel --data_type FP32 --output_dir .`    
 
-4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
+4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text in additino to confidence percentages. Copy `squeezenet1.1.labels` to your optimized model location:
 
     `cp ~/openvino_models/ir/public/squeezenet1.1/FP16/squeezenet1.1.labels .`
 
@@ -180,13 +177,14 @@ Alternate Method:
         - ~/Desktop/Data/Models/Intel/FP32/vehicle-detection-adas-0002.xml
     3. Select the Second Choose File Button:
          - ~/Desktop/Data/Models/Intel/FP32/vehicle-detection-adas-0002.bin 
-    4. Select Import
+    4. Press the Import button
 
 ***Step 2 - Import Dataset***
 
-    1. Select Import Local Dataset -> Choose File
-    2. Select: ~/Desktop/Data/datasets/VOC7_248.zip
-    3. Select Import Dataset
+    1. Select Import Local Dataset
+    2. Select Choose File
+    3. Select: ~/Desktop/Data/datasets/VOC7_248.zip
+    4. Select Import Dataset
 
 ***Step 3 - Select Environment***
     1. Select CPU
@@ -259,7 +257,7 @@ Skip this section if done in previous exercise.
 ***Step 5 - Convert the Model to the INT8 format.***
 
     1. Look for the Profile and Optimize tabs.  Select Optimize.
-    2. Select INT8.
+    2. Select the INT8 radio button.
     3. Press the Optimize button.  This will take a few minutes.
     4. After this process completes, press the Execute button in the middle panel.  This will take a few minutes.
     5. OPTIONAL:  If accuracy isn't listed, press the "Refresh" icon in the Accuracy column of the upper panel. This will take several minutes.
@@ -268,13 +266,16 @@ Skip this section if done in previous exercise.
 ***Step 6 - Additional Setup for Ease of Use***
 
 Now we move some files to make running the samples a little easier.
+
 NOTE:  The unzipped int8 bin and xml files are dynamically generated and may not exactly match the names listed below (11_int8.xml).  Make sure to substitute the correct xml name.
 
-    1. mv ~/Downloads/"vehicle-detection-adas-0002_- Int 8.tar.gz" ~/ir/INT8
-    2. cd ~/ir/INT8
-    3. tar zxvf vehicle-detection-adas-0002*.tar.gz
-    4. rm vehicle*tar.gz
-    5. cd ~/omz_demos_build/intel64/Release
+    ```
+    mv ~/Downloads/"vehicle-detection-adas-0002_- Int 8.tar.gz" ~/ir/INT8
+    cd ~/ir/INT8
+    tar zxvf vehicle-detection-adas-0002*.tar.gz
+    rm vehicle*tar.gz
+    cd ~/omz_demos_build/intel64/Release
+    ```
 
 And we're ready to execute the sample:
 
@@ -296,15 +297,15 @@ Take a few minutes to compare the performance of the INT8 and FP32 models.  Feel
 Skip this step if already completed.
 
     1. In the DL Workbench Web GUI:  
-        - Select Import Model
+        - Select "Import Model"
     2. Select vehicle-detection-adas-0002 (FP16)
     3. Select Import
     4. Note: If there are problems downloading, try the alternate method below.
 
   Alternate Method:
 
-    1.  In the DLW Web GUI:
-        - Select Import Model -> Original Model
+    1. In the DLW Web GUI:
+        - Select Import Model, then select the "Original Model" tab.
     2. Select Choose File:
         - ~/Desktop/Data/Models/Intel/FP16/vehicle-detection-adas-0002.xml
     3. Select the Second Choose File Button:
@@ -340,18 +341,22 @@ NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usuall
 
 Skip this step if it was done in the previous exercise.
 
-    1. mkdir ~/ir
-    2. mkdir ~/ir/FP32
-    3. mkdir ~/ir/FP16
-    4. mkdir ~/ir/INT8
+    ```
+    mkdir ~/ir
+    mkdir ~/ir/FP32
+    mkdir ~/ir/FP16
+    mkdir ~/ir/INT8
+    ```
 
 Now we move some files around to make running the samples a little easier.
 
-    1. cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16
-    2. cd ~/ir/FP16
-    3. tar zxvf vehicle-detection-adas-0002.tar.gz
-    4. rm vehicle*tar.gz
-    5. cd ~/omz_demos_build/intel64/Release
+    ```
+    cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16
+    cd ~/ir/FP16
+    tar zxvf vehicle-detection-adas-0002.tar.gz
+    rm vehicle*tar.gz
+    cd ~/omz_demos_build/intel64/Release
+    ```
 
 And we're ready to execute the sample:
 
