@@ -203,19 +203,19 @@ INT8 is for CPU.  Some models will be very fast in the INT8 format.
 
 NOTE:  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
 
-    1. mkdir ~/ir
-    2. mkdir ~/ir/FP32
-    3. mkdir ~/ir/FP16
-    4. mkdir ~/ir/INT8
+    mkdir ~/ir
+    mkdir ~/ir/FP32
+    mkdir ~/ir/FP16
+    mkdir ~/ir/INT8
 
 Now we move some files around to make running the samples a little easier.
 
-    1. cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP32
-    2. cd ~/ir/FP32
-    3. mv ~/Downloads/vehicle-detection-adas-*tar.gz .
-    4. tar zxvf vehicle-detection-adas-0002.tar.gz
-    5. rm vehicle*tar.gz
-    6. cd ~/omz_demos_build/intel64/Release
+    cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP32
+    cd ~/ir/FP32
+    mv ~/Downloads/vehicle-detection-adas-*tar.gz .
+    tar zxvf vehicle-detection-adas-0002.tar.gz
+    rm vehicle*tar.gz
+    cd ~/omz_demos_build/intel64/Release
 
 And we're ready to execute the sample:
 
@@ -269,13 +269,11 @@ Now we move some files to make running the samples a little easier.
 
 NOTE:  The unzipped int8 bin and xml files are dynamically generated and may not exactly match the names listed below (11_int8.xml).  Make sure to substitute the correct xml name.
 
-    ```
     mv ~/Downloads/"vehicle-detection-adas-0002_- Int 8.tar.gz" ~/ir/INT8
     cd ~/ir/INT8
     tar zxvf vehicle-detection-adas-0002*.tar.gz
     rm vehicle*tar.gz
     cd ~/omz_demos_build/intel64/Release
-    ```
 
 And we're ready to execute the sample:
 
