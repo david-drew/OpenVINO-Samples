@@ -75,35 +75,46 @@ Convert a model using the DL Workbench, then use a sample application to load th
 
 **NOTE:** If you are running inference only on a CPU, you already have the required FP32 model. If you want to run inference on any hardware other than the CPU, you'll need an FP16 version of the model.
 
-**Set Up a Neural Network Model**
-
-In this section, you will convert an FP32 model suitable for running on a CPU.
+In this section, you will (again) convert an FP32 model for running on a CPU.
 
 1.	Return to the previously indicated FP32 SqueezeNet directory:
 
     `cd ~/squeezenet1.1_FP32`
 
 2.	Use the DL Workbench to convert the FP32 SqueezeNet Caffe model into an FP16 optimized Intermediate Representation (IR):
-/home/vino/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel
+
+    `/home/vino/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel`
+    
     1. In a web browser, launch the DL Workbench:
-    `http://127.0.0.1:5665/`
+        `http://127.0.0.1:5665/`
+    
     2. Select "Get Started" to show the setup interface.
+    
     3. The setup interface is divided into two sections.
         - The top section is for loading models.
         - The bottom section is for loading data sets (for example, images that will be used by the model during inference).
+        
      4. Select the "Original Model" tab - the default tab is for downloading models from the OpenVINO Model Zoo.
+     
      5. Select Framework -> "Caffe"
+     
      6. Choose the prototxt file with the first "Choose File" button.
         - ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.protoxt
+        
      7. Choose the caffemodel file with the second "Choose File" button.
         - ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel
+        
      8. The Model Name will be automatically populated, but change it if desired.  
         - This can be useful when tracking multiple loaded models
+        
      9. Select "Import Model" when ready.  
         - This will create and FP16 model by default, though configuration settings may be edited later.
+        
     10. In some cases this will work and you will be returned to the setup interface.  If the DL Workbench is unable to determine required information, it will display a configuration screen and specify information that is required.
         - If you built the model, you will know all of the details of the model, but you may have to do some searching if the model was downloaded from a third party.
+        
      11. The "Import Model" screen is being displayed, because some additional information must be provided by the user.
+     
      12. The requirements are specified in the grey box on the right.
      13. In this, the only missing information is the colorspace.  Click on the box next to "Original Color Space" and select "BGR".
          - BGR is often used (as opposed to RGB and other color formats) when training models.
