@@ -33,21 +33,21 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 Note: Remember to setup the environment variables when logging in, changing users, or launching a new terminal.
     `source /opt/intel/openvino/bin/setupvars.sh` 
 
-1.	Make a directory for the FP32 SqueezeNet Model:
+1.	Make a destination directory for the FP32 SqueezeNet Model:
 
     `mkdir ~/squeezenet1.1_FP32`
-
-2.	Go to ~/squeezenet1.1_FP32:
-
+    
     `cd ~/squeezenet1.1_FP32`
 
 3.	Use the Model Optimizer to convert an FP32 SqueezeNet Caffe model into an optimized Intermediate Representation (IR):
 
     `python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel --data_type FP32 --output_dir .`    
 
-4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text in additino to confidence percentages. Copy `squeezenet1.1.labels` to your optimized model location:
+4.	Copy the labels file to the same location as the IR model.
 
     `cp ~/openvino_models/ir/public/squeezenet1.1/FP16/squeezenet1.1.labels .`
+    
+    - Tip: The labels file contains the classes used this squeezenet model. If this file is in the same directory as the model, the inference results will show text in addition to confidence percentages.
 
 5.	Copy a sample image to the release directory. You will use this with your optimized model:
 
