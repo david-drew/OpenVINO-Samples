@@ -17,11 +17,12 @@ The following series of exercises guide you through using samples of increasing 
 
 In these exercises, you will:
 
-	1. Convert and optimize a neural network models to work on Intel hardware.
+1. Convert and optimize a neural network models to work on Intel hardware.
 	
-	2. Run computer vision applications using optimized models and appropriate media.
-        - During optimization with the DL Workbench, a subset of ImageNet and VOC images are used.
-        - When running samples, we'll use either an image or video file located on this system.
+2. Run computer vision applications using optimized models and appropriate media.
+
+    - During optimization with the DL Workbench, a subset of ImageNet and VOC images are used.
+    - When running samples, we'll use either an image or video file located on this system.
 
 **NOTE:** Before starting these sample exercises, change directories into the samples directory:
 
