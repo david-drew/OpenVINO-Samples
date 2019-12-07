@@ -14,12 +14,18 @@ NOTE: When using OpenVINO from the command line, you must setup your environment
 
 The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use OpenVINO in more sophisticated use cases. 
 
+In these exercises, you will:
+
+	1. Convert and optimize a neural network models to work on Intel hardware.
+	2. Run computer vision applications using optimized models and appropriate media.
+        - During optimization with the DL Workbench, a subset of ImageNet and VOC images are used.
+        - When running samples, we'll use either an image or video file located on this system.
+
 **NOTE:** Before starting these sample exercises, change directories into the samples directory:
 
 `cd ~/omz_demos_build/intel64/Release`
 
 **NOTE:** During this exercise you will be asked to move to multiple different directories, and occasionally to copy files (so that you don't have to specify full paths in commands).  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
-
 
 <details>
    <summary>Exercise 1 - Run A Sample Application</summary>
@@ -30,36 +36,47 @@ Convert a model using the Model Optmizer then use a sample application to load t
 
 In this section, you will convert an FP32 model suitable for running on a CPU.
 
-Note: Remember to setup the environment variables when logging in, changing users, or launching a new terminal.
-    `source /opt/intel/openvino/bin/setupvars.sh` 
+**Prepare the Software Environment**
 
-1.	Make a destination directory for the FP32 SqueezeNet Model:
+1. Setup the environment variables when logging in, changing users, or launching a new terminal.
+    `source /opt1intel/openvino/bin/setupvars.sh` 
+
+2.	Make a destination directory for the FP32 SqueezeNet Model:
 
     `mkdir ~/squeezenet1.1_FP32`
     
     `cd ~/squeezenet1.1_FP32`
+    
+**Convert and Optimize a Neural Network Model (from Caffe)**
 
-3.	Use the Model Optimizer to convert an FP32 SqueezeNet Caffe model into an optimized Intermediate Representation (IR):
+Use the Model Optimizer to convert an FP32 SqueezeNet Caffe model into an optimized Intermediate Representation (IR):
 
     `python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel --data_type FP32 --output_dir .`    
 
-4.	Copy the labels file to the same location as the IR model.
+**Prepare the Data (Media) or Dataset**
+
+NOTE: In this case, it's just a single image.
+
+1.	Copy the labels file to the same location as the IR model.
 
     `cp ~/openvino_models/ir/public/squeezenet1.1/FP16/squeezenet1.1.labels .`
     
-    - Tip: The labels file contains the classes used this squeezenet model. If this file is in the same directory as the model, the inference results will show text in addition to confidence percentages.
+    - Tip: The labels file contains the classes used this SqueezeNet model. 
+    - If it's is in the same directory as the model, the inference results will show text in addition to confidence percentages.
 
-5.	Copy a sample image to the release directory. You will use this with your optimized model:
+2.	Copy a sample image to the release directory. You will use this with your optimized model:
 
     `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
 
-6. Once your setup is complete, you're ready to run a sample application:
+**Run the Sample Application**
+
+1. Once your setup is complete, you're ready to run a sample application:
 
     `cd  ~/inference_engine_samples_build/intel64/Release`
 
     `./classification_sample_async -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
 
-7. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
+2. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
 
     `./classification_sample -h`
 
@@ -81,12 +98,10 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
 
     `cd ~/squeezenet1.1_FP32`
 
-2.	Use the DL Workbench to convert the FP32 SqueezeNet Caffe model into an FP16 optimized Intermediate Representation (IR):
+2.	Use the DL Workbench to convert the FP32 SqueezeNet Caffe model into an FP16 optimized Intermediate Representation (IR).
 
-    `/home/vino/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel`
-    
     1. In a web browser, launch the DL Workbench:
-        `http://127.0.0.1:5665/`
+        - http://127.0.0.1:5665/
     
     2. Select "Get Started" to show the setup interface.
     
@@ -116,9 +131,12 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
      11. The "Import Model" screen is being displayed, because some additional information must be provided by the user.
      
      12. The requirements are specified in the grey box on the right.
+     
      13. In this, the only missing information is the colorspace.  Click on the box next to "Original Color Space" and select "BGR".
          - BGR is often used (as opposed to RGB and other color formats) when training models.
+         
      14. Note that the grey box no longer contains any red warning text.
+     
      15. Select "Convert" and you will be returned to the setup interface.  Model conversion may take several minutes.
 
 3. Import a Dataset into the DL Workbench
