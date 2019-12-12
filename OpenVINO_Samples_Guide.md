@@ -1,14 +1,19 @@
 
 # Get Started with OpenVINO™ Samples for Linux*
 
-## <a name="openvino-components"></a>OpenVINO Components
-The OpenVINO toolkit optimizes and runs Deep Learning Neural Network models on Intel hardware.
-It consists of three primary components:
-1.	**Model Optimizer:** Optimizes models for Intel architecture, as well as converts models into a format compatible with the Inference Engine. This format is called an Intemediate Representation (IR).
-2.	**Intermediate Representation (IR):** The output of the Model Optimizer. A model converted to a format that has been optimized for Intel architecture and is usable by the Inference Engine.
-3.	**Inference Engine:** The software libraries that run inference against the Intermediate Representation (Optimized Model) and produce inference results
+For an overview and details about OpenVINO, see the [OpenVINO Overview](OpenVINO_Overview.md)
 
+Please refer to the above guide as needed.   
 
+<br>
+
+NOTE: When using OpenVINO from the command line, you must setup your environment whenever you change users or launch a new terminal.
+
+    source /opt/intel/openvino/bin/setupvars.sh
+
+<details>
+    <summary>Run a Sample Application</summary>
+    
 ## <a name="run-sample-application"></a> Run A Sample Application 
 
 Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
@@ -49,6 +54,8 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
     `./classification_sample -h`
 
+</details>
+
 ## <a name="Exercises"></a> Exercises
 
 The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use OpenVINO in more sophisticated use cases. 
@@ -58,6 +65,10 @@ The following series of exercises guide you through using samples of increasing 
 `cd ~/omz_demos_build/intel64/Release`
 
 **NOTE:** During this exercise you will be asked to move to multiple different directories, and occasionally to copy files (so that you don't have to specify full paths in commands).  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
+
+
+<details>
+    <summary>Exercise 1: Human Pose Estimation</summary>
 
 **Exercise 1: Human Pose Estimation**
 
@@ -111,6 +122,10 @@ https://www.pexels.com/video/couple-dancing-on-sunset-background-2035509/
 
     `./human_pose_estimation_demo -i ~/Videos/humpose.mp4 -m ~/ir/human-pose-estimation-0001.xml -d CPU`
 
+</details>
+
+<details>
+    <summary>Exercise 2: Interactive Face Detection</summary>
 
 **Exercise 2: Interactive Face Detection**
 
@@ -137,6 +152,10 @@ Steps to complete:
 4.	OPTIONAL: Run the demo using additional models (age-gender, emotion recognition, head pose, etc.).
     - Note that when you use multiple models, there is always a primary model that is used, and then a number of optional models that use the output from the initial model.
 
+</details>
+
+<details>
+    <summary>Exercise 3: Object Detection</summary>
 
 **Exercise 3: Object Detection (Vehicles with multiple models)**
 
@@ -151,6 +170,10 @@ Steps to complete:
 4. Choose at least one additional model (such as attribute recognition), and run the application, now using the initial model plus the new one.
 5. OPTIONAL: Run the demo with vehicle detection (primary), plus attribute recognition and license plate recognition.
 
+</details>
+
+<details>
+    <summary>Exercise 4: Object Detection (YOLO v3)</summary>
 
 **Exercise 4: Object Detection (YOLO v3)**
 
