@@ -1,33 +1,31 @@
 
 # OpenVINO™ Overview 
 
-## <a name="openvino-components"></a>OpenVINO Components
-The OpenVINO toolkit optimizes and runs Deep Learning Neural Network models on Intel hardware.
+## <a name="openvino-components"></a>OpenVINO™ Components
+The Intel® Distribution of OpenVINO™ toolkit optimizes and runs Deep Learning Neural Network models on Intel® hardware.
 It consists of three primary components:
-1.	**Model Optimizer:** Optimizes models for Intel architecture, as well as converts models into a format compatible with the Inference Engine. This format is called an Intemediate Representation (IR).
-2.	**Intermediate Representation (IR):** The output of the Model Optimizer. A model converted to a format that has been optimized for Intel architecture and is usable by the Inference Engine.
-3.	**Inference Engine:** The software libraries that run inference against the Intermediate Representation (Optimized Model) and produce inference results
+1.	**Model Optimizer:** Optimizes models for Intel® architecture, converting models into a format compatible with the Inference Engine. This format is called an Intemediate Representation (IR).
+2.	**Intermediate Representation (IR):** Is the output of the Model Optimizer. A model converted to a format that has been optimized for Intel architecture and is usable by the Inference Engine.
+3.	**Inference Engine:** The software libraries that run inference against the Intermediate Representation (Optimized Model) to produce inference results.
 
-## <a name="workflow-overview"></a>OpenVINO Workflow Overview
+## <a name="workflow-overview"></a>OpenVINO™ Workflow Overview
 
-The basic OpenVINO workflow is as follows:
+The OpenVINO™ workflow is as follows:
 1.	Run an existing trained model through the Model Optimizer. 
 2.	The Model Optimizer produces an Interemediate Representation file (IR).
-3.	Application (an Intel sample or one you have built) uses the Inference Engine to run inference against the Intermediate Representation (Optimized Model).
-4.	Application outputs inference results. 
+3.	The application (an Intel® sample or one you have built) uses the Inference Engine to run inference against the Intermediate Representation (Optimized Model) and output inference results.
 
 ## <a name="openvino-installation"></a>OpenVINO Installation
-This guide assumes that you have completed installation of OpenVINO. <br>
+This guide assumes that you have completed installation of The Intel® Distribution of OpenVINO™ toolkit. <br>
 The installation created a new directory in your home directory:
 
 `~/omz_demos_build`
 
-Note: There are 2 similar directories that contain samples, but we won't be using them for this tutorial.  For completeness, they are:
-    `~/inference_engine_samples_build`
-    `~/inference_engine_demos_build`
-
 This is where sample applications are installed, after they are compiled.  You will have to compile most of the samples.
 
+**Note:** There are 2 similar directories containing samples that we will not be using for this tutorial.  They are:
+    `~/inference_engine_samples_build`
+    `~/inference_engine_demos_build`
 
 ## <a name="dldt-installation-directory-structure"></a> Installation Directory Structure
 
@@ -56,20 +54,21 @@ By default, the installation directory is`/opt/intel/openvino`, though the locat
 
 ## <a name="using-sample-application"></a> Using OpenVINO: Sample Applications
 
-Sample applications are provided to get you working in your OpenVINO environment. This section will guide you through a simplified OpenVINO workflow using those sample applications. You will convert a model using the model optimizer then use a sample application to run inference and see the results.
+Sample applications are provided to get you working in your OpenVINO environment. This section will guide you through a simplified workflow for the Intel® Distribution of OpenVINO™ toolkit using those sample applications. You will convert a model using the model optimizer, then use a sample application to run inference and see the results.
 
 Each of the included samples is a separate application, but there is a common behavior and common components needed to use each of them.
 
 Inputs you'll need to specify:
-- **A sample application** from Intel that runs inferencing against a model that has been optimized by the Model Optimizer into an Intermediate Representation (IR), using the other inputs you provide.
-- **A model** must be provided for the application. Each model is trained for a specific task (pedestrian detection, face detection, vehicle detection, license plate recognition, head pose, etc.).  Different models will be used for different applications. Models can be chained together to provide multiple features (vehicle + make/model + license plate recognition).
-- **A media file** to run through the application. For these samples, the media is typically a video file but can be a still photo for some.
+- **A sample application** from Intel® that runs inferencing against a model that has been optimized by the Model Optimizer into an Intermediate Representation (IR), using the other inputs you provide.
+- **A model** must be provided for the application. Each model is trained for a specific task.  Examples include pedestrian detection, face detection, vehicle detection, license plate recognition, head pose, and others.  Different models are used for different applications. Models can be chained together to provide multiple features; for example vehicle + make/model + license plate recognition.
+- **A media file** to run through the application. For these samples, the media is typically a video file, but can be a still photo.
 - **The processor type** to run on, which can be the CPU, GPU, FPGA, or VPU accelerator (e.g., Movidius board). 
 
 ## <a name="basic-guidelines-sample-application"></a> Basic Guidelines for Using Sample Applications
 
-Following are some basic guidelines for executing the OpenVINO workflow and using the sample applications:
-1.	Before using OpenVINO, always setup the environment: 
+Following are some basic guidelines for executing the OpenVINO™ workflow using the sample applications:
+
+1.	Before using OpenVINO™, always setup the environment: 
 
     `source /opt/intel/openvino/bin/setupvars.sh` 
     
@@ -81,39 +80,40 @@ These are binaries located in:
 - Model: Neural Network topology converted to a Model Optimizer compatible format, an XML file. See **Models** below for more information.
 
 3.	Choose the correct precision for a model:
-- FP32: Used when running the model on the CPU.
-- Int8: Experimental, but runs on the CPU.
-- FP16: Use when running on any hardware other than the CPU (except for some special cases, e.g., GPU can run FP32 but more slowly).
+- **FP32:** Used when running the model on the CPU.
+- **Int8:** Experimental, but runs on the CPU.
+- **FP16:** Use when running on any hardware other than the CPU (except for some special cases, e.g., GPU can run FP32 but more slowly).
 
 ## <a name="models"></a> Models
 
-Models in an Intel compatible format (compatible with the Model Optimizer) always include an `.xml` and `.bin` file, and may also require other files, like `.json`, `.mapping`, etc.  Verify that you have all of the needed files.  They should be in the same directory for the Inference Engine to find them.
+Models in an Intel® compatible format compatible with the Model Optimizer always include an `.xml` and `.bin` file, and may also require other files, like `.json`, `.mapping`, etc.  Verify that you have all of the needed files.  They should be in the same directory for the Inference Engine to find them.
 - `model_name.xml`
 - `model_name.bin`
-- OPTIONAL: `model_name.json`, `model_name.mapping`, etc.
+- **OPTIONAL:** `model_name.json`, `model_name.mapping`, etc.
 
-Models May Be:
+Models may be:
 - Classification (AlexNet, GoogleNet, SqueezeNet, etc.)
     - These detect one type of element in a frame.
 - Object Detection (SSD, yolo)
     - These draw bounding boxes around multiple types of objects.
 - Custom (Often based on SSD)
 
-Descriptions of Intel’s pre-trained models (links to download are not included): 
+Descriptions of Intel® pre-trained models: 
 
 https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models
 
 ## <a name="downloading-models"></a> Downloading Models
-There are several ways to find models suitable for use with OpenVINO:
-- Download from Intel’s Open Model Zoo: 
+There are several ways to find models suitable for use with the Intel® Distribution of OpenVINO™:
+
+- Download from the Intel® Open Model Zoo: 
     - https://github.com/opencv/open_model_zoo
 
-- Download from GitHub, Caffe Zoo, TensorFlow Zoo, etc.
-- Train your own model
-- Intel’s Model Downloader tool:
+- Download from GitHub*, Caffe* Zoo, TensorFlow* Zoo, etc.
+- Train your own model.
+- Intel® Model Downloader tool:
     - https://software.intel.com/en-us/articles/model-downloader-essentials)
     
-    1.	To list the FP32 models available in the downloader enter the following command: 
+    1.	To list the FP32 models available in the downloader, enter the following command: 
     
         `cd /opt/intel/openvino/deployment_tools/tools/model_downloader/`
         
@@ -135,11 +135,11 @@ There are multiple sources for downloading video media for use with samples. Pos
 
 Compiled sample applications for this tutorial are found in: `~/omz_demos_build/intel64/Release`.
 
-Here is a template for calling a sample app:
+Here is a template for calling a sample application:
 
 `path_to_app -i path_to_media -m path_to_model -d processor_type`
 
-With sample information filled in, the command could look like this:
+With sample information filled in, the command might look like this:
 
 `./object_detection_demo_ssd_async -i ~/Videos/catshow.mp4 \
 -m ~/ir/fp32/mobilenet-ssd.xml -d CPU`
