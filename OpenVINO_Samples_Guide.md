@@ -1,13 +1,13 @@
 
 # Get Started with OpenVINO™ Samples for Linux*
 
-For an overview and details about OpenVINO, see the [OpenVINO Overview](OpenVINO_Overview.md)
+For an overview and details about the Intel® Distribution of OpenVINO™ toolkit, see the [OpenVINO™ Overview](OpenVINO_Overview.md)
 
-Please refer to the above guide as needed.   
+We recommend you read the above OpenVINO™ Overview before starting this tutorial.   
 
 <br>
 
-NOTE: When using OpenVINO from the command line, you must setup your environment whenever you change users or launch a new terminal.
+NOTE: When using OpenVINO™ from the command line, you must setup your environment whenever you change users or launch a new terminal.
 
     source /opt/intel/openvino/bin/setupvars.sh
 
@@ -18,13 +18,13 @@ NOTE: When using OpenVINO from the command line, you must setup your environment
 
 Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
 
-**NOTE:** If you are running inference only on a CPU, you already have the required FP32 model. If you want to run inference on any hardware other than the CPU, you'll need an FP16 version of the model.
+**NOTE:** If you are running inference only on a CPU, you already have the required FP32 model. To run inference on any other hardware, you'll need an FP16 version of the model.
 
 **Set Up a Neural Network Model**
 
-In this section, you will convert an FP32 model suitable for running on a CPU.
+Convert an FP32 model suitable for running on a CPU.
 
-1.	Make a directory for the FP32 SqueezeNet Model:
+1.	Make a directory for the FP32 SqueezeNet* Model:
 
     `mkdir ~/squeezenet1.1_FP32`
 
@@ -32,11 +32,11 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
     `cd ~/squeezenet1.1_FP32`
 
-3.	Use the Model Optimizer to convert an FP32 SqueezeNet Caffe model into an optimized Intermediate Representation (IR):
+3.	Use the Model Optimizer to convert an FP32 SqueezeNet* Caffe* model into an optimized Intermediate Representation (IR):
 
     `python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model ~/openvino_models/models/FP32/classification/squeezenet/1.1/caffe/squeezenet1.1.caffemodel --data_type FP32 --output_dir .`
 
-4.	The `squeezenet1.1.labels` file contains the classes that ImageNet uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
+4.	The `squeezenet1.1.labels` file contains the classes that ImageNet* uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
 
     `cp ~/openvino_models/ir/FP32/classification/squeezenet/1.1/caffe/squeezenet1.1.labels .`
 
@@ -50,7 +50,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
     `./classification_sample -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
 
-7. Note: you can usually see an applications help information (parameters, etc.) by using `-h`.
+7. **Note:** You can usually see an application's help information (parameters, etc.) by using `-h`.
 
     `./classification_sample -h`
 
@@ -58,13 +58,13 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 ## <a name="Exercises"></a> Exercises
 
-The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use OpenVINO in more sophisticated use cases. 
+The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use the Intel® Distribution of OpenVINO™ toolkit in more sophisticated use cases. 
 
 **NOTE:** Before starting these sample exercises, change directories into the samples directory:
 
 `cd ~/omz_demos_build/intel64/Release`
 
-**NOTE:** During this exercise you will be asked to move to multiple different directories, and occasionally to copy files (so that you don't have to specify full paths in commands).  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
+**Note:** During this exercise you will move to multiple directories and occasionally copy files so that you won't have to specify full paths in commands.  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
 
 
 <details>
@@ -72,7 +72,8 @@ The following series of exercises guide you through using samples of increasing 
 
 **Exercise 1: Human Pose Estimation**
 
-This demo detects people and draws a stick figure inside them to show limb positions. This model has already been converted for use with OpenVINO. 
+This demo detects people and draws a stick figure to show limb positions. This model has already been converted for use with the Intel® Distribution of OpenVINO™ toolkit.
+
 - Requires downloading the human-pose-estimation-0001 (ICV) Model.
 - Requires video or camera input.
 
@@ -95,7 +96,7 @@ path/to/model/human-pose-estimation-0001.xml -d CPU`
 
     `grep human-pose list_topologies.yml |grep -vi int8|grep -vi fp16`
 
-**NOTE:** `list_topologies.yml` is a text (YAML) file with a list and details about every model available in the Intel Model Zoo.  Models can also be manually downloaded at the github page.
+**Note:** `list_topologies.yml` is a text (YAML) file with a list and details about every model available in the Intel® Model Zoo.  Models can also be manually downloaded from the github page.
 
 4. Download the model:
 
@@ -129,7 +130,7 @@ https://www.pexels.com/video/couple-dancing-on-sunset-background-2035509/
 
 **Exercise 2: Interactive Face Detection**
 
-The face detection demo draws bounding boxes around faces, and optionally feeds the output of the primary model to additional models. This model has already been converted for use with OpenVINO.
+The face detection demo draws bounding boxes around faces, and optionally feeds the output of the primary model to additional models. This model has already been converted for use with OpenVINO™.
 
 The Face Detection Demo supports face detection, plus optional functions:
 
@@ -142,15 +143,15 @@ Syntax:
 
 `./interactive_face_detection -i path/to/video -m path/to/face/model -d CPU`
 
-Steps to complete:
+Steps:
 
-1.	Find and download an appropriate face detection model (there are several already available in the Intel Model Zoo).
-    - You can use the [Pretrained Models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models) page from the online OpenVINO documentation to review model options.
-    - You may need to try out different models to find one that works, or that works best.
+1.	Find and download an appropriate face detection model.  There are several available in the Intel® Model Zoo.
+    - You can access the [Pretrained Models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models) page from the OpenVINO™ documentation to review model options.
+    - You may need to try out different models to find one that works, or that works best for your scenario.
 2.	Find and download a video that features faces.
 3.	Run the demo with just the face detection model.
-4.	OPTIONAL: Run the demo using additional models (age-gender, emotion recognition, head pose, etc.).
-    - Note that when you use multiple models, there is always a primary model that is used, and then a number of optional models that use the output from the initial model.
+4.	**OPTIONAL:** Run the demo using additional models (age-gender, emotion recognition, head pose, etc.).
+    Note that when you use multiple models, there is always a primary model that is used followed by a number of optional models that use the output from the initial model.
 
 </details>
 
@@ -159,29 +160,29 @@ Steps to complete:
 
 **Exercise 3: Object Detection (Vehicles with multiple models)**
 
-As mentioned in the previous exercise, it's possible to chain models together and use the output of an initial object detection model as input of additional models.
+As mentioned in the previous exercise, it's possible to chain models together and use the output of an initial object detection model as input for additional models.
 
-The following exercise expects the use of the `security_barrier_camera_demo`.
+The following exercise uses the `security_barrier_camera_demo`.
 
-Steps to complete:
+Steps:
 1. Find and download a model that supports vehicle detection.
 2. Find and download a video that contains cars to be detected.
 3. Run the `security_barrier_camera_demo` and check that vehicles are detected.
 4. Choose at least one additional model (such as attribute recognition), and run the application, now using the initial model plus the new one.
-5. OPTIONAL: Run the demo with vehicle detection (primary), plus attribute recognition and license plate recognition.
+5. **OPTIONAL:** Run the demo with vehicle detection as the primary, plus attribute recognition and license plate recognition.
 
 </details>
 
 <details>
     <summary>Exercise 4: Object Detection (YOLO v3)</summary>
 
-**Exercise 4: Object Detection (YOLO v3)**
+**Exercise 4: Object Detection (YOLO* v3)**
 
 This demo draws bounding boxes around detected objects. The class of objects detected depends on the model, but it’s often 1000 categories. 
 
-The YOLO topology is a very popular one because it offers both accuracy and performance. Intel does not provide any YOLO models in IR format, so you'll need to find a suitable model to download, convert it with the Model Optimizer, and then run it through the Inference Engine.
+The YOLO* topology is very popular because it offers both accuracy and performance. Intel® does not provide any YOLO* models in IR format, so you'll need to find a suitable model to download, convert it with the Model Optimizer, then run it through the Inference Engine.
 
-Different sample applications are used for SSD and YOLO models because the output format of YOLO is different than the output format for SSD. The same application could support both, but in these samples they’re kept separate for simplicity. Different versions of YOLO have slightly different output. This sample only supports the most recent version, YOLO V3.
+Different sample applications are used for SSD* and YOLO* models because they have different output formats. The same application could support both, but in these samples they’re kept separate for simplicity. Different versions of YOLO* have slightly different output. This sample only supports the most recent version, YOLO* V3.
 
 
 ## Additional Resources
