@@ -20,10 +20,15 @@ This step will take about 15 - 20 minutes to complete.
 `cd /opt/intel/openvino/deployment_tools/tools/workbench`
 
 Example Use:<br>
-./run_dl_workbench -PACKAGE_PATH <openvino archive path>
+run_workbench -PACKAGE_PATH <openvino archive path>
 
 Use:<br>
-`./run_dl_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz`
+`./run_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz`
+
+After setup is complete, use a web browser to use the workbench:<br>
+https://127.0.0.1:blah
+
+After the first time setup, future execution will bypass setup and immediately launch the DL workbench.
 
 
 ## <a name="Exercises"></a> Exercises
