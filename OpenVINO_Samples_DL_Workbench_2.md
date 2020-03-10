@@ -149,56 +149,58 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
         - The top section is for loading models.
         - The bottom section is for loading data sets (for example, images that will be used by the model during inference).
         
+     4. Click the **Import Model** button. 
+     
      4. Select the **Original Model** tab. The default tab is for downloading models from the OpenVINO™ Model Zoo.
      
      5. Select **Framework** -> **Caffe**
      
-     6. Choose the prototxt file with the first **Choose File** button.
-        - ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.protoxt
+     6. Select the prototxt file with the first **Choose File** button.
+        - ~/openvino_models/models/public/squeezenet1.1/squeezenet1.1.protoxt
         
-     7. Choose the caffemodel file with the second **Choose File** button.
-        - ~/Desktop/Data/models/Caffe/squeezenet1.1/squeezenet1.1.caffemodel
+     7. Select the caffemodel file with the second **Choose File** button.
+        - ~/openvino_models/models/public/squeezenet1.1/squeezenet1.1.caffemodel
         
      8. The **Model Name** will be automatically populated, but change it if desired.  
         - This can be useful when tracking multiple loaded models
         
-     9. Select **Import Model**.  
-        - This will create and FP16 model by default, though configuration settings may be edited later.
+     9. Click **Import Model**.  
+        - This will create an FP16 model by default, though configuration settings may be edited later.
         
-    10. In some cases this will work and you will return to the setup interface.  If the DL Workbench™ is unable to determine required information, it will display a configuration screen and specify the information required.
+    10. In some cases this will work and you will return to the setup interface.  If DL Workbench is unable to determine required information, it will display a configuration screen and specify the information required.
         - If you built the model, you will know all of its details, but if you downloaded the model from a third party, you may have to do some searching for the required information.
         
      11. The **Import Model** screen is being displayed, because additional information must be provided by the user.
      
-     12. The requirements are specified in the grey box on the right.
+     12. The requirements are specified in the gray box on the right.
      
-     13. In this example, the only missing information is the colorspace.  Click on the box next to **Original Color Space** and select **BGR**.
+     13. In this example, the only missing information is the colorspace. Click the box next to **Original Color Space** and select **BGR**.
          - BGR is often used when training models, rather than RGB and other color formats.
          
-     14. Note that the grey box no longer contains any red warning text.
+     14. Note that the gray box no longer contains any red warning text.
      
-     15. Select **Convert** and you will return to the setup interface.  Model conversion may take several minutes.
+     15. Click **Convert** and you will return to the setup interface. Model conversion may take several minutes.
 
-3. Import a Dataset into the DL Workbench™:
+3. Import a Dataset into DL Workbench:
     1. We could autogenerate a set of simulated images, but for this task we'll select a subset of the ImageNet* dataset.
         - **Note:** results will often be better using real images.
-    2. Select **Import Local Dataset**
-    3. Select **Choose File** and browse to "~/Desktop/Workbench/Data/Imagenet_200_224x224.zip"
-    4. Select **Import Dataset**
+    2. Click **Import Local Dataset**
+    3. Click **Choose File** and browse to "~/Downloads/VOCtest_06-Nov-2007.tar"
+    4. Click **Import Dataset**
         - **Note:** The height and width of images in the dataset must satisfy the requirements of the target model.
         
 4. Run Inference with the DL Workbench:
     1. Select the **model** from the top of the interface.
     2. Select the **dataset** from the bottom of the interface.
     3. Select the **Environment** (target hardware).
-    4. All items in the status box next to the **Environment** box should now have green checks.
-    5. Select **Go**.
+    4. All items in the status box next to the **Environment** box should now have green checkmarks.
+    5. Click **Go**.
         - This will take a few minutes
 
-5. Normally, we would encourage analysis and optimization of the model, but for this exercise, we'll just export the model from the DL Workbench to our system.  
+5. Normally, we would encourage analysis and optimization of the model, but for this exercise, we'll just export the model from DL Workbench to our system.  
     1. Take a few minutes to look at the output if desired.
-    2. Find the **download** icon at the right, in the top squeezenet model bar.
-    3. Select **Download**.  This will drop a `tar.gz` archive in your default downloads directly (`~/Downloads`).
+    2. Find the **Download** icon at the right, in the top squeezenet model bar.
+    3. Click the **Download** icon. This will drop a `tar.gz` archive in your default downloads directory (`~/Downloads`).
     4. `cd ~/Downloads`
     5. `mkdir squeezenet`
     6. `mv squeeze*gz squeezenet`
@@ -213,11 +215,11 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
 
     `cd  ~/inference_engine_samples_build/intel64/Release`
 
-    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
+    `cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
 
 8. Once your setup is complete, you're ready to run a sample application:
 
-    `./classification_sample_async -i car.png -m ~/Downloads/squeezenet1.1/squeezenet1.1.xml -d CPU`
+    `./classification_sample_async -i car.png -m ~/Downloads/squeezenet/squeezenet1.1.xml -d CPU`
 
 9. **Note:** You can usually see an application's help information (parameters, etc.) by using `-h`.
 
@@ -226,9 +228,9 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
 </details>
 
 
-## Additional Samples for Linux* using Model Optimizer Command-Line
+## Additional Samples for Linux* using Model Optimizer Command Line
 
-NOTE: When using OpenVINO™ from the command line, you must setup your environment whenever you change users or launch a new terminal.
+NOTE: When using OpenVINO™ from the command line, you must set up your environment whenever you change users or launch a new terminal.
 
     source /opt/intel/openvino/bin/setupvars.sh
 
@@ -259,9 +261,9 @@ path/to/model/human-pose-estimation-0001.xml -d CPU`
 
 3. Find a suitable model:
 
-    `grep human-pose list_topologies.yml |grep -vi int8|grep -vi fp16`
+    `python3 info_dumper.py --print_all |grep pose`
 
-**Note:** `list_topologies.yml` is a text (YAML) file with a list and details about every model available in the Intel® Model Zoo.  Models can also be manually downloaded from the github page.
+**Note:** `info_dumper.py` is a script that can list details about every model available in the Intel® Model Zoo. Models can also be manually downloaded from the Open Model Zoo GitHub page.
 
 4. Download the model:
 
@@ -271,7 +273,7 @@ path/to/model/human-pose-estimation-0001.xml -d CPU`
 
     `mkdir ~/ir`
 
-    `cp /opt/intel/openvino/deployment_tools/tools/model_downloader/Transportation/human_pose_estimation/mobilenet-v1/dldt/FP32/human-pose-estimation-0001* ~/ir/`
+    `cp /opt/intel/openvino/deployment_tools/tools/model_downloader/intel/human-pose-estimation-0001/FP32/human-pose-estimation-0001* ~/ir/`
 
 6. Download an appropriate video:
 
