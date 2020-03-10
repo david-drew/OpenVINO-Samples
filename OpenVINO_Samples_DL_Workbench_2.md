@@ -16,13 +16,13 @@ For using the Model Optimizer from the command line, only OpenVINO is required. 
 
 ### Setup the DL Workbench
 This step will take about 15 - 20 minutes to complete.
+<br>
+`cd /opt/intel/openvino/deployment_tools/tools/workbench`
 
-cd /opt/intel/openvino/deployment_tools/tools/workbench
-
-Example Use:
+Example Use:<br>
 ./run_dl_workbench -PACKAGE_PATH <openvino archive path>
 
-Use:
+Use:<br>
 `./run_dl_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz`
 
 
