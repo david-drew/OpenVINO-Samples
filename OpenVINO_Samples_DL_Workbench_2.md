@@ -14,6 +14,23 @@ NOTE: When using OpenVINO™ from the command line, you must setup your environm
 ## <a name="Setup"></a> Setup
 For using the Model Optimizer from the command line, only OpenVINO is required.  For using the Deep Learning Workbench, there is an additional requirement for docker and an initial configuration step for the Workbench.
 
+
+### Build Samples
+If samples have been manually build, skip this section.  This step will take about 5 - 10 minutes, depending on your system.
+
+Build OpenVINO Demos
+
+```
+cd /opt/intel/openvino/inference_engine/demos
+./build_demos.sh
+```
+Build OpenVINO Samples
+```
+cd /opt/intel/openvino/inference_engine/demos
+./build_samples.sh
+```
+
+
 ### Setup the DL Workbench
 This step will take about 15 - 20 minutes to complete.<br><br>
 
