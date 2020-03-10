@@ -195,7 +195,7 @@ NOTE: When using OpenVINO™ from the command line, you must setup your environm
     source /opt/intel/openvino/bin/setupvars.sh
 
 <details>
-    <summary>Exercise 1: Human Pose Estimation</summary>
+    <summary>Exercise 3: Human Pose Estimation</summary>
 
 **Exercise 3: Human Pose Estimation**
 
@@ -253,7 +253,7 @@ https://www.pexels.com/video/couple-dancing-on-sunset-background-2035509/
 </details>
 
 <details>
-    <summary>Exercise 2: Interactive Face Detection</summary>
+    <summary>Exercise 4: Interactive Face Detection</summary>
 
 **Exercise 4: Interactive Face Detection**
 
@@ -283,9 +283,9 @@ Steps:
 </details>
 
 <details>
-    <summary>Exercise 3: Object Detection</summary>
+    <summary>Exercise 5: Object Detection</summary>
 
-**Exercise 3: Object Detection (Vehicles with multiple models)**
+**Exercise 5: Object Detection (Vehicles with multiple models)**
 
 As mentioned in the previous exercise, it's possible to chain models together and use the output of an initial object detection model as input for additional models.
 
