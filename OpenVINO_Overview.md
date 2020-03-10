@@ -173,13 +173,6 @@ For head pose:
 You can see all the sample application’s parameters by adding the `-h` or `--help` option at the command line.
 
 
-## Exercises
-
-[Practical Exercises with OpenVINO on the Linux Commmand Line](OpenVINO_Samples_Guide.md)
-
-[Practical Exercises with OpenVINO with the DL Workbench on Linux (some commmand line)](UX_Samples_Guide.md)
-
-
 ## Additional Resources
 
 Use these resources to learn more about the OpenVINO™ toolkit:
