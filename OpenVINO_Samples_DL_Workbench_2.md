@@ -15,8 +15,8 @@ NOTE: When using OpenVINO™ from the command line, you must setup your environm
 For using the Model Optimizer from the command line, only OpenVINO is required.  For using the Deep Learning Workbench, there is an additional requirement for docker and an initial configuration step for the Workbench.
 
 ### Setup the DL Workbench
-This step will take about 15 - 20 minutes to complete.
-<br>
+This step will take about 15 - 20 minutes to complete.<br><br>
+
 Move to the workbench directory.<br>
 `cd /opt/intel/openvino/deployment_tools/tools/workbench`
 
