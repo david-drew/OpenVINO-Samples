@@ -202,7 +202,7 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
 </details>
 
 
-# Additional Samples for Linux* using Model Optimizer Command-Line
+## Additional Samples for Linux* using Model Optimizer Command-Line
 
 NOTE: When using OpenVINO™ from the command line, you must setup your environment whenever you change users or launch a new terminal.
 
