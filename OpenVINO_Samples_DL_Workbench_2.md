@@ -11,6 +11,20 @@ NOTE: When using OpenVINO™ from the command line, you must setup your environm
 
     source /opt/intel/openvino/bin/setupvars.sh
 
+## <a name="Setup"></a> Setup
+For using the Model Optimizer from the command line, only OpenVINO is required.  For using the Deep Learning Workbench, there is an additional requirement for docker and an initial configuration step for the Workbench.
+
+### Setup the DL Workbench
+This step will take about 15 - 20 minutes to complete.
+
+cd /opt/intel/openvino/deployment_tools/tools/workbench
+
+Example Use:
+./run_dl_workbench -PACKAGE_PATH <openvino archive path>
+Use:
+./run_dl_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz
+
+
 ## <a name="Exercises"></a> Exercises
 
 The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use OpenVINO™ in more sophisticated use cases. 
