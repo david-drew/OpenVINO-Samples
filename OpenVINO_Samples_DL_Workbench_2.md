@@ -114,9 +114,7 @@ NOTE: In this case, it's a single image.
 
 1. Once your setup is complete, you're ready to run a sample application:
 
-    `cd  ~/inference_engine_samples_build/intel64/Release`
-
-    `./classification_sample_async -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
+     `~/inference_engine_samples_build/intel64/Release/classification_sample_async -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
 
 2. **Note:** You can usually see an application's help information (parameters, etc.) by using `-h`.
 
