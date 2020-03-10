@@ -373,6 +373,7 @@ The YOLO* topology is very popular because it offers both accuracy and performan
 
 Different sample applications are used for SSD* and YOLO* models because they have different output formats. The same application could support both, but in these samples they’re kept separate for simplicity. Different versions of YOLO* have slightly different output. This sample only supports the most recent version, YOLO* V3.
 
+</details>
 
 ## Additional Resources
 
