@@ -187,17 +187,220 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
 
 </details>
 
+<details>
+   <summary>Exercise 3 - Vehicle Detection on CPU with FP32</summary>
+    
+    
+### Exercise 3: Vehicle Detection on CPU
 
-# Get Started with OpenVINO™ Samples for Linux*
+**Step 1 - Setup the Model**
 
-For an overview and details about the Intel® Distribution of OpenVINO™ toolkit, see the [OpenVINO™ Overview](OpenVINO_Overview.md)
+    1. In the DL Workbench™ GUI, select **Import Model**.
+    2. Select `vehicle-detection-adas-0002 (FP32)`
+    3. Select **Import**.
+    4. **Note:** If there are problems downloading, try the alternate method below.
 
-We recommend you read the above OpenVINO™ Overview before starting this tutorial.   
+Alternate Method:
 
-<br>
+    1.  In the DL Workbench™ Web GUI (web browser):
+        - Select **Import Model** -> **Original Model**
+    2. Select **Choose File**:
+        - `~/Desktop/Data/Models/Intel/FP32/vehicle-detection-adas-0002.xml`
+    3. Select the second **Choose File Button**:
+         - `~/Desktop/Data/Models/Intel/FP32/vehicle-detection-adas-0002.bin` 
+    4. Click **Import**.
 
-NOTE: When using OpenVINO™ from the command line, you must setup your environment whenever you change users or launch a new terminal.
+**Step 2 - Import Dataset**
 
-    source /opt/intel/openvino/bin/setupvars.sh
+    1. Select **Import Local Dataset**.
+    2. Select **Choose File**.
+    3. Select: `~/Desktop/Data/datasets/VOC7_248.zip`
+    4. Select **Import Dataset**.
+
+**Step 3 - Select Environment**
+    1. Select **CPU**
+   
+**Step 4 - Download the Model**
+Find the **download** icon in the top right bar of the DL Workbench next to the trash can icon.  This will download the model to the default directory: `~/Downloads` as a `tar.gz` file.  We'll move this file in the next step for convenience.
+   
+**Step 5 - Additional Setup for Ease of Use**
+
+We'll create a set of directories to store our models, and separate them by their format.  
+
+**Remember:**
+FP32 is for CPU (CPU can run FP16, but it will be slower).  GPU can run FP32 models but it will be sub-optimal.
+FP16 is for all hardware except CPU.
+INT8 is for CPU.  Some models will be very fast in the INT8 format.
+
+**Note:**  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models:
+
+    `mkdir ~/ir
+    mkdir ~/ir/FP32
+    mkdir ~/ir/FP16
+    mkdir ~/ir/INT8`
+
+Now we move some files around to make running the samples a little easier:
+
+    `cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP32
+    cd ~/ir/FP32
+    mv ~/Downloads/vehicle-detection-adas-*tar.gz .
+    tar zxvf vehicle-detection-adas-0002.tar.gz
+    rm vehicle*tar.gz
+    cd ~/omz_demos_build/intel64/Release`
+
+And we're ready to execute the sample:
+
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP32/vehicle-detection-adas-0002.xml -d CPU`
+
+</details>
 
 
+<details>
+   <summary>Exercise 4 - Vehicle Detection with INT8</summary>
+    
+### Exercise 4: Vehicle Detection on CPU using INT8
+
+**Step 1 - Setup the Model**
+
+Skip this section if done in previous exercise.
+
+    1. In the DL Workbench™ GUI, select **Import Model**.
+    2. Select `vehicle-detection-adas-0002 (FP32)`
+    3. Click **Import**.
+
+**Step 2 - Import Dataset**
+
+Skip this section if done in previous exercise.
+
+    1. Select **Import Local Dataset**.
+    2. Click **Choose File**.
+    2. Select: `~/Desktop/Data/datasets/VOC7_248.tar.gz`
+    3. Click **Import**.
+
+**Step 3 - Select Environment**
+
+    1. In the upper panel, select the **FP32 vehicle detection model**.
+    2. In the middle panel, select the **VOC 248** dataset.
+    3. In the lower left panel, select the **CPU**.
+    4. Click **GO**.
+    5. This will take several minutes.
+    
+**Step 5 - Convert the Model to the INT8 format.**
+
+    1. Select the **Optimize** tab.
+    2. Select the **INT8** radio button.
+    3. Click **Optimize**.  This will take a few minutes.
+    4. After this process completes, click **Execute** in the middle panel.  This will take a few minutes.
+    5. **OPTIONAL:**  If accuracy isn't listed, **Refresh** in the **Accuracy** column of the upper panel. This will take several minutes.
+    6. Download the model.
+   
+**Step 6 - Additional Setup for Ease of Use**
+
+Now we'll move some files to make running the samples a little easier.
+
+**Note:**  The unzipped int8 `.bin` and `.xml` files are dynamically generated and may not exactly match the names listed below (`11_int8.xml` ).  Make sure to substitute the correct `.xml` name.
+
+    `mv ~/Downloads/"vehicle-detection-adas-0002_- Int 8.tar.gz" ~/ir/INT8
+    cd ~/ir/INT8
+    tar zxvf vehicle-detection-adas-0002*.tar.gz
+    rm vehicle*tar.gz
+    cd ~/omz_demos_build/intel64/Release`
+
+And we're ready to execute the sample:
+
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/INT8/11_int8.xml -d CPU`
+
+**Step 7 - Compare and Evaluate Performance**
+
+Take a few minutes to compare the performance of the INT8 and FP32 models.  Feel free to explore options in the DL Workbench™, and experiment with changes if desired.  
+
+</details>
+
+<details>
+   <summary>Exercise 5 - Vehicle Detection on GPU using FP16 format</summary>
+
+### Exercise 5: Vehicle Detection on GPU
+
+**Step 1 - Setup the Model**
+
+Skip this step if already completed.
+
+    1. In the DL Workbench™ Web GUI, select **Import Model**.
+    2. Select `vehicle-detection-adas-0002 (FP16)`
+    3. Select **Import**.
+    4. **Note:** If there are problems downloading, try the alternate method below.
+
+**Alternate Method:**
+
+    1. In the DL Workbench` Web GUI, select **Import Model** then select the **Original Model** tab.
+    2. Select **Choose File**:
+        - `~/Desktop/Data/Models/Intel/FP16/vehicle-detection-adas-0002.xml`
+    3. Select the second **Choose File** button:
+         - `~/Desktop/Data/Models/Intel/FP16/vehicle-detection-adas-0002.bin` 
+    4. Select **Import**.
+
+**Step 2 - Import Dataset**
+
+Skip this step if already completed. 
+
+    1. Select **Import Local Dataset** -> **Choose File**.
+    2. Select: `~/Desktop/Data/datasets/VOC7_248.zip`
+    3. Click **Import Dataset**.
+
+**Step 3 - Select the Hardware Target Device**
+
+    1. Select **GPU**.
+   
+**Step 4 - Download the Model**
+
+    1. Find the download icon in the top right bar of the DL Workbench™, next to the trash can icon.  This will download the model to the default directory: `~/Downloads` as a `tar.gz` file.
+
+**Step 5 - Additional Setup for Ease of Use**
+
+We'll create a set of directories to store our models, and separate them by their format.  
+
+**Remember:**
+FP32 is for CPU (CPU can run FP16, but it will be slower).  GPU can run FP32 models but it will be sub-optimal.
+FP16 is for all hardware except CPU.
+INT8 is for CPU.  Some models will be very fast in the INT8 format.
+
+**Note:**  FPGA may support FP11 in some cases through bitstreams.  This will usually be the fastest option for FPGA, and conversion is automatically handled with FP16 models.
+
+Skip this step if it was done in the previous exercise.
+
+    ```
+    mkdir ~/ir
+    mkdir ~/ir/FP32
+    mkdir ~/ir/FP16
+    mkdir ~/ir/INT8
+    ```
+
+Now we move some files around to make running the samples a little easier.
+
+    ```
+    cp ~/Downloads/vehicle-detection-adas-* ~/ir/FP16
+    cd ~/ir/FP16
+    tar zxvf vehicle-detection-adas-0002.tar.gz
+    rm vehicle*tar.gz
+    cd ~/omz_demos_build/intel64/Release
+    ```
+
+And we're ready to execute the sample:
+
+    `./security_barrier_camera_demo -i ~/Videos/cars_hwy.mp4 -m ~/ir/FP16/vehicle-detection-adas-0002.xml -d GPU`
+
+</details>
+
+
+
+## Additional Resources
+
+Use these resources to learn more about the Intel® Distribution of OpenVINO™ toolkit:
+
+* [OpenVINO™ Release Notes](https://software.intel.com/en-us/articles/OpenVINO-RelNotes)
+* [Introduction to Intel® Deep Learning Deployment Toolkit](./docs/IE_DG/Introduction.md)
+* [Inference Engine Developer Guide](./docs/IE_DG/Deep_Learning_Inference_Engine_DevGuide.md)
+* [Model Optimizer Developer Guide](./docs/MO_DG/Deep_Learning_Model_Optimizer_DevGuide.md)
+* [Inference Engine Samples Overview](./docs/IE_DG/Samples_Overview.md)
+* [Overview of OpenVINO™ Toolkit Pre-Trained Models](./docs/Pre_Trained_Models.md)
+* [OpenVINO™ Hello World Face Detection Exercise](https://github.com/intel-iot-devkit/inference-tutorials-generic)
