@@ -12,7 +12,7 @@ It consists of three primary components:
 
 The OpenVINO™ workflow is as follows:
 1.	Run an existing trained model through the Model Optimizer. 
-2.	The Model Optimizer produces an Interemediate Representation file (IR).
+2.	The Model Optimizer produces an Intermediate Representation file (IR).
 3.	The application (an Intel® sample or one you have built) uses the Inference Engine to run inference against the Intermediate Representation (Optimized Model) and output inference results.
 
 ## <a name="openvino-installation"></a>OpenVINO Installation
