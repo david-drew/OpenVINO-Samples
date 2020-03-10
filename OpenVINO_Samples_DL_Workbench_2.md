@@ -17,6 +17,7 @@ For using the Model Optimizer from the command line, only OpenVINO is required. 
 ### Setup the DL Workbench
 This step will take about 15 - 20 minutes to complete.
 <br>
+Move to the workbench directory.<br>
 `cd /opt/intel/openvino/deployment_tools/tools/workbench`
 
 Example Use:<br>
