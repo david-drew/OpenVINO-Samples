@@ -26,7 +26,7 @@ run_workbench -PACKAGE_PATH \<openvino archive path\>
 Use:<br>
 `./run_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz`
 
-After setup is complete, use a web browser to use the workbench:<br>
+After setup is complete, use a web browser to access the workbench:<br>
 https://127.0.0.1:blah
 
 After the first time setup, future execution will bypass setup and immediately launch the DL workbench.
