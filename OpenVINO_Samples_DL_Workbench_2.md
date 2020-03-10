@@ -16,7 +16,7 @@ For using the Model Optimizer from the command line, only OpenVINO is required. 
 
 
 ### Build Samples
-If samples have been manually build, skip this section.  This step will take about 5 - 10 minutes, depending on your system.
+If samples have been manually build, skip this section.  This step will take about 5-10 minutes, depending on your system.
 
 Build OpenVINO Demos
 
@@ -41,7 +41,7 @@ Example Use:<br>
 run_workbench -PACKAGE_PATH \<openvino archive path\>
 
 Use:<br>
-`./run_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz`
+`./run_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.1.023.tgz`
 
 After setup is complete, use a web browser to access the workbench:<br>
 https://127.0.0.1:5665
