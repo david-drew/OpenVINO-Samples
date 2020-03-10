@@ -21,8 +21,9 @@ cd /opt/intel/openvino/deployment_tools/tools/workbench
 
 Example Use:
 ./run_dl_workbench -PACKAGE_PATH <openvino archive path>
+
 Use:
-./run_dl_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz
+`./run_dl_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz`
 
 
 ## <a name="Exercises"></a> Exercises
