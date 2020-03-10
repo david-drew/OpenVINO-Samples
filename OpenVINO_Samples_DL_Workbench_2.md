@@ -32,7 +32,7 @@ cd /opt/intel/openvino/inference_engine/demos
 
 
 ### Setup the DL Workbench
-This step will take about 15 - 20 minutes to complete.<br><br>
+This step will take about 15-20 minutes to complete.<br><br>
 
 Move to the workbench directory.<br>
 `cd /opt/intel/openvino/deployment_tools/tools/workbench`
@@ -44,7 +44,7 @@ Use:<br>
 `./run_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_2020.tar.gz`
 
 After setup is complete, use a web browser to access the workbench:<br>
-https://127.0.0.1:blah
+https://127.0.0.1:5665
 
 After the first time setup, future execution will bypass setup and immediately launch the DL workbench.
 
@@ -73,7 +73,7 @@ In these exercises, you will:
     
 ### <a name="run-sample-application"></a> Exercise 1 - Run A Sample Application 
 
-Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
+Convert a model using the Model Optimizer then use a sample application to load the model and run inference.
 
 In this section, you will convert an FP32 model suitable for running on a CPU.
 
@@ -138,7 +138,7 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
 
     `cd ~/squeezenet1.1_FP32`
 
-2.  Use the DL Workbench™ to convert the FP32 SqueezeNet* Caffe* model into an FP16 optimized Intermediate Representation (IR).
+2.  Use the DL Workbench to convert the FP32 SqueezeNet* Caffe* model into an FP16 optimized Intermediate Representation (IR).
 
     1. In a web browser, launch the DL Workbench™:
         - http://127.0.0.1:5665/
@@ -180,14 +180,14 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
      15. Select **Convert** and you will return to the setup interface.  Model conversion may take several minutes.
 
 3. Import a Dataset into the DL Workbench™:
-    1. We could autogenerate a set of simuluated images, but for this task we'll select a subset of the ImageNet* dataset.
+    1. We could autogenerate a set of simulated images, but for this task we'll select a subset of the ImageNet* dataset.
         - **Note:** results will often be better using real images.
     2. Select **Import Local Dataset**
     3. Select **Choose File** and browse to "~/Desktop/Workbench/Data/Imagenet_200_224x224.zip"
     4. Select **Import Dataset**
         - **Note:** The height and width of images in the dataset must satisfy the requirements of the target model.
         
-4. Run Inference with the DL Workbench™:
+4. Run Inference with the DL Workbench:
     1. Select the **model** from the top of the interface.
     2. Select the **dataset** from the bottom of the interface.
     3. Select the **Environment** (target hardware).
@@ -195,7 +195,7 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
     5. Select **Go**.
         - This will take a few minutes
 
-5. Normally, we would encourage analysis and optimization of the model, but for this exercise, we'll just export the model from the DL Workbench™ to our system.  
+5. Normally, we would encourage analysis and optimization of the model, but for this exercise, we'll just export the model from the DL Workbench to our system.  
     1. Take a few minutes to look at the output if desired.
     2. Find the **download** icon at the right, in the top squeezenet model bar.
     3. Select **Download**.  This will drop a `tar.gz` archive in your default downloads directly (`~/Downloads`).
