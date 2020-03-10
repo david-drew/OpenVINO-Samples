@@ -118,7 +118,7 @@ NOTE: In this case, it's a single image.
 
 2. **Note:** You can usually see an application's help information (parameters, etc.) by using `-h`.
 
-    `./classification_sample -h`
+    `~/inference_engine_samples_build/intel64/Release/classification_sample -h`
 
 </details>
 
