@@ -41,7 +41,7 @@ Example Use:<br>
 run_workbench -PACKAGE_PATH \<openvino archive path\>
 
 Use:<br>
-`./run_workbench -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.1.023.tgz`
+`./run_openvino_workbench.sh -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.1.023.tgz`
 
 After setup is complete, use a web browser to access the workbench:<br>
 https://127.0.0.1:5665
