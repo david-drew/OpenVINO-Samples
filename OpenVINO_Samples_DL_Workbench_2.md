@@ -188,78 +188,16 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
 </details>
 
 
-# Get Started with OpenVINO™ Samples for Linux*
-
-For an overview and details about the Intel® Distribution of OpenVINO™ toolkit, see the [OpenVINO™ Overview](OpenVINO_Overview.md)
-
-We recommend you read the above OpenVINO™ Overview before starting this tutorial.   
-
-<br>
+# Additional Samples for Linux* using Model Optimizer Command-Line
 
 NOTE: When using OpenVINO™ from the command line, you must setup your environment whenever you change users or launch a new terminal.
 
     source /opt/intel/openvino/bin/setupvars.sh
 
 <details>
-    <summary>Run a Sample Application</summary>
-    
-## <a name="run-sample-application"></a> Run A Sample Application 
-
-Convert a model using the Model Optmizer then use a sample application to load the model and run inference.
-
-**NOTE:** If you are running inference only on a CPU, you already have the required FP32 model. To run inference on any other hardware, you'll need an FP16 version of the model.
-
-**Set Up a Neural Network Model**
-
-Convert an FP32 model suitable for running on a CPU.
-
-1.	Make a directory for the FP32 SqueezeNet* Model:
-
-    `mkdir ~/squeezenet1.1_FP32`
-
-2.	Go to ~/squeezenet1.1_FP32:
-
-    `cd ~/squeezenet1.1_FP32`
-
-3.	Use the Model Optimizer to convert an FP32 SqueezeNet* Caffe* model into an optimized Intermediate Representation (IR):
-
-    `python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model ~/openvino_models/models/FP32/classification/squeezenet/1.1/caffe/squeezenet1.1.caffemodel --data_type FP32 --output_dir .`
-
-4.	The `squeezenet1.1.labels` file contains the classes that ImageNet* uses. This file is included so that the inference results show text instead of classification numbers. Copy `squeezenet1.1.labels` to your optimized model location:
-
-    `cp ~/openvino_models/ir/FP32/classification/squeezenet/1.1/caffe/squeezenet1.1.labels .`
-
-5.	Copy a sample image to the release directory. You will use this with your optimized model:
-
-    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  ~/omz_demos_build/intel64/Release`
-
-6. Once your setup is complete, you're ready to run a sample application:
-
-    `cd ~/omz_demos_build/intel64/Release`
-
-    `./classification_sample -i car.png -m ~/squeezenet1.1_FP32/squeezenet1.1.xml -d CPU`
-
-7. **Note:** You can usually see an application's help information (parameters, etc.) by using `-h`.
-
-    `./classification_sample -h`
-
-</details>
-
-## <a name="Exercises"></a> Exercises
-
-The following series of exercises guide you through using samples of increasing complexity. As you move through each exercise you will get a sense of how to use the Intel® Distribution of OpenVINO™ toolkit in more sophisticated use cases. 
-
-**NOTE:** Before starting these sample exercises, change directories into the samples directory:
-
-`cd ~/omz_demos_build/intel64/Release`
-
-**Note:** During this exercise you will move to multiple directories and occasionally copy files so that you won't have to specify full paths in commands.  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
-
-
-<details>
     <summary>Exercise 1: Human Pose Estimation</summary>
 
-**Exercise 1: Human Pose Estimation**
+**Exercise 3: Human Pose Estimation**
 
 This demo detects people and draws a stick figure to show limb positions. This model has already been converted for use with the Intel® Distribution of OpenVINO™ toolkit.
 
@@ -317,7 +255,7 @@ https://www.pexels.com/video/couple-dancing-on-sunset-background-2035509/
 <details>
     <summary>Exercise 2: Interactive Face Detection</summary>
 
-**Exercise 2: Interactive Face Detection**
+**Exercise 4: Interactive Face Detection**
 
 The face detection demo draws bounding boxes around faces, and optionally feeds the output of the primary model to additional models. This model has already been converted for use with OpenVINO™.
 
@@ -361,20 +299,6 @@ Steps:
 5. **OPTIONAL:** Run the demo with vehicle detection as the primary, plus attribute recognition and license plate recognition.
 
 </details>
-
-<details>
-    <summary>Exercise 4: Object Detection (YOLO v3)</summary>
-
-**Exercise 4: Object Detection (YOLO* v3)**
-
-This demo draws bounding boxes around detected objects. The class of objects detected depends on the model, but it’s often 1000 categories. 
-
-The YOLO* topology is very popular because it offers both accuracy and performance. Intel® does not provide any YOLO* models in IR format, so you'll need to find a suitable model to download, convert it with the Model Optimizer, then run it through the Inference Engine.
-
-Different sample applications are used for SSD* and YOLO* models because they have different output formats. The same application could support both, but in these samples they’re kept separate for simplicity. Different versions of YOLO* have slightly different output. This sample only supports the most recent version, YOLO* V3.
-
-</details>
-
 
 ## Additional Resources
 
