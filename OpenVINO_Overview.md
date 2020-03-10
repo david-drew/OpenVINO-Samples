@@ -117,7 +117,7 @@ There are several ways to find models suitable for use with the Intel® Distribu
     
         `cd /opt/intel/openvino/deployment_tools/tools/model_downloader/`
         
-        `grep name list_topologies.yml |grep -vi fp16|grep -vi int8|grep xml|sort`
+        `python3 info_dumper.py --print_all`
 
     2.	Optional add (at the end): 
 
