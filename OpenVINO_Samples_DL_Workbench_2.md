@@ -31,7 +31,7 @@ cd /opt/intel/openvino/inference_engine/samples/cpp
 ```
 
 
-### Setup the DL Workbench
+### Set up the DL Workbench
 This step will take about 15-20 minutes to complete.<br><br>
 
 Move to the workbench directory.<br>
@@ -79,7 +79,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 
 **Prepare the Software Environment**
 
-1. Setup the environment variables when logging in, changing users, or launching a new terminal. (Detail above.)
+1. Set up the environment variables when logging in, changing users, or launching a new terminal. (Detail above.)
 
 2. Make a destination directory for the FP32 SqueezeNet* Model:
 
@@ -108,7 +108,7 @@ NOTE: In this case, it's a single image.
 
 2.  Copy a sample image to the release directory. You will use this with your optimized model:
 
-    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
+    `cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
 
 **Run the Sample Application**
 
@@ -138,12 +138,12 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
 
     `cd ~/squeezenet1.1_FP32`
 
-2.  Use the DL Workbench to convert the FP32 SqueezeNet* Caffe* model into an FP16 optimized Intermediate Representation (IR).
+2.  Use the DL Workbench to convert the FP32 SqueezeNet* Caffe* model into an FP16-optimized Intermediate Representation (IR).
 
     1. In a web browser, launch the DL Workbench™:
         - http://127.0.0.1:5665/
     
-    2. Select **Get Started** to show the setup interface.
+    2. Click the **Get Started** button to show the setup interface.
     
     3. The setup interface is divided into two sections.
         - The top section is for loading models.
@@ -195,7 +195,7 @@ In this section, you will (again) convert an FP32 model for running on a CPU.
     3. Select the **Environment** (target hardware).
     4. All items in the status box next to the **Environment** box should now have green checkmarks.
     5. Click **Go**.
-        - This will take a few minutes
+        - This will take a few minutes.
 
 5. Normally, we would encourage analysis and optimization of the model, but for this exercise, we'll just export the model from DL Workbench to our system.  
     1. Take a few minutes to look at the output if desired.
@@ -251,7 +251,7 @@ path/to/model/human-pose-estimation-0001.xml -d CPU`
 
 **Steps to Run the Human Pose Demo:**
 
-1. Setup the environment variables:
+1. Set up the environment variables:
 
     `source /opt/intel/openvino/bin/setupvars.sh`
 
