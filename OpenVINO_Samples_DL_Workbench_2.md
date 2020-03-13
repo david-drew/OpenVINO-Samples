@@ -26,7 +26,7 @@ cd /opt/intel/openvino/inference_engine/demos
 ```
 Build OpenVINO Samples
 ```
-cd /opt/intel/openvino/inference_engine/demos
+cd /opt/intel/openvino/inference_engine/samples
 ./build_samples.sh
 ```
 
