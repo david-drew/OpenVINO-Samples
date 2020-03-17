@@ -140,12 +140,3 @@ Here are the parameters used in the above command to run the application:
 ```
 You will see the **total time** it took to run the inference.
 
-#### 2. GPU
-Since you installed the OpenCL™ drivers to use the GPU, you can run the inference on GPU and compare the difference.
-
-Set target hardware as GPU with **-d GPU**
-```
-./tutorial1 -i $SV/safety-gear-example/Safety_Full_Hat_and_Vest_2.mp4 -m $SV/safety-gear-example/mobilenet-ssd/FP32/worker_safety_mobilenet.xml -d GPU
-```
-
-The **total time** between CPU and GPU will vary depending on your system.
