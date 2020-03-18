@@ -20,7 +20,6 @@ This reference implementation applies the U-Net architecture to segment brain tu
 * [Ubuntu\* 16.04 LTS](http://releases.ubuntu.com/16.04/)<br>
 * [Ubuntu\* 18.04 LTS](http://releases.ubuntu.com/18.04/)<br>
   
-* OpenCL™ Runtime Package
 * Intel® Distribution of OpenVINO™ toolkit 2019 R3 or newer
 * Matplotlib
 
