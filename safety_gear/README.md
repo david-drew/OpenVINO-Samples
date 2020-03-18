@@ -102,7 +102,7 @@ The below command runs the application
 > **Note:** If you get an error related to "undefined reference to 'google::FlagRegisterer...", try uninstalling libgflags-dev: sudo apt-get remove libgflags-dev
 
 #### 7. Display output
-For simplicity of the code and in order to put more focus on the performance number, video rendering with rectangle boxes for detected objects has been separated from main.cpp.
+For simplicity of the code and in order to put more focus on the performance numbers, video rendering with rectangle boxes for detected objects has been separated from main.cpp.
 
 	 make -f Makefile_ROIviewer
 	./ROIviewer -i $SV/safety-gear-example/Safety_Full_Hat_and_Vest_2.mp4 -l $SV/safety-gear-example/pascal_voc_classes.txt
