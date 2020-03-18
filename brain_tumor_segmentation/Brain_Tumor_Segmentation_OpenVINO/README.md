@@ -101,6 +101,7 @@ Several images have been created in the results directory.  Look at them to see 
     cd <path_to_the_Brain_Tumor_Segmentation_OpenVINO_directory>/results
     eog pred0.png
     eog pred1.png
-    Look through other images as desired.   
+    
+Examine other images as desired.   
 
 
