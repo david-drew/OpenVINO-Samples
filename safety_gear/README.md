@@ -122,21 +122,3 @@ Here are the parameters used in the above command to run the application:
 		-fr #           Maximum frames to process
 
 
-## Part 3: Run the example on different hardware
-
-**IT'S BEST TO OPEN A NEW TERMINAL WINDOW SO THAT YOU CAN COMPARE THE RESULTS**
-
- Make sure that you have sourced the environmental variables for each newly opened terminal window.
-
-	source /opt/intel/openvino/bin/setupvars.sh
-
-	export SV=/opt/intel/workshop/smart-video-workshop/
-
-	cd $SV/object-detection
-
-#### 1. CPU
-```
-./tutorial1 -i $SV/safety-gear-example/Safety_Full_Hat_and_Vest_2.mp4 -m $SV/safety-gear-example/mobilenet-ssd/FP32/worker_safety_mobilenet.xml -d CPU
-```
-You will see the **total time** it took to run the inference.
-
