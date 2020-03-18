@@ -81,7 +81,7 @@ __Note__: This command needs to be executed only once in the terminal where the 
     
 ## Run the Application
 
-    cd <path_to_the_Brain_Tumor_Segmentaion_OpenVINO_directory>/application
+    cd <path_to_the_Brain_Tumor_Segmentation_OpenVINO_directory>/application
 
 To see a list of the various options:
 
@@ -94,4 +94,13 @@ Although the application runs on the CPU by default, this can also be explicitly
 ```
 ./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP32/saved_model.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx2.so -d CPU --data_file ../resources/Task01_BrainTumour.h5
 ```
+
+### Check Results
+Several images have been created in the results directory.  Look at them to see the output of the application.
+
+    cd <path_to_the_Brain_Tumor_Segmentation_OpenVINO_directory>/results
+    eog pred0.png
+    eog pred1.png
+    Look through other images as desired.   
+
 
