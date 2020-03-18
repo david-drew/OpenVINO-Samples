@@ -81,7 +81,7 @@ The application uses MRI scans from __Task01_BrainTumour.h5__, that is provided 
 ## Setup the environment
 You must configure the environment to use the Intel® Distribution of OpenVINO™ toolkit one time per session by running the following command:
 
-    source /opt/intel/openvino/bin/setupvars.sh -pyver 3.5
+    source /opt/intel/openvino/bin/setupvars.sh
     
 __Note__: This command needs to be executed only once in the terminal where the application will be executed. If the terminal is closed, the command needs to be executed again.
     
@@ -101,8 +101,3 @@ Although the application runs on the CPU by default, this can also be explicitly
 ./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP32/saved_model.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx2.so -d CPU --data_file ../resources/Task01_BrainTumour.h5
 ```
 
-```
-**NOTE**: It is recommended to create your own script for your system to aid in setting up these environment variables. It will be run each time you need a new terminal or restart your system. 
-
-
-```
