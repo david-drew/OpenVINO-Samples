@@ -2,8 +2,8 @@
 
 | Details           |              |
 |-----------------------|---------------|
-| Target OS:            |  Ubuntu\* 16.04 LTS   |
-| Programming Language: |  Python* 3.5 |
+| Target OS:            |  Ubuntu\* 16.04 or 18.04 LTS   |
+| Programming Language: |  Python* 3.5 or later |
 | Time to Complete:    |  30-40min     |
 
 ![brain-tumor-segmentation-OpenVINO](docs/images/brain-tumour-segmentation.png)
@@ -14,16 +14,14 @@ This reference implementation applies the U-Net architecture to segment brain tu
 
 ## Requirements
 ### Hardware
-* 6th to 8th Generation Intel® Core™ processor with Iris® Pro graphics or Intel® HD Graphics
+* 6th to 8th Generation Intel® Core™ processor
 
 ### Software
 * [Ubuntu\* 16.04 LTS](http://releases.ubuntu.com/16.04/)<br>
-   *Note*: We recommend using a 4.14+ Linux* kernel with this software. Run the following command to determine your kernel version:
-
-      uname -a
+* [Ubuntu\* 18.04 LTS](http://releases.ubuntu.com/18.04/)<br>
   
 * OpenCL™ Runtime Package
-* Intel® Distribution of OpenVINO™ toolkit 2019 R3
+* Intel® Distribution of OpenVINO™ toolkit 2019 R3 or newer
 * Matplotlib
 
 ## How It works
@@ -59,9 +57,6 @@ Refer to [Install Intel® Distribution of OpenVINO™ toolkit for Linux*](https:
 You will need the OpenCL™ Runtime Package if you plan to run inference on the GPU. It is not mandatory for CPU inference.
 
 ### Other dependencies
-
-#### NumPy
-NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
 
 #### Matplotlib
 Matplotlib is a plotting library for the Python programming language and its numerical mathematics extension NumPy. It provides an object-oriented API for embedding plots into applications.
