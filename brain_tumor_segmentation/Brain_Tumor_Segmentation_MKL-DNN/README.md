@@ -2,7 +2,7 @@
 
 | Details           |              |
 |-----------------------|---------------|
-| Target OS:            |  Ubuntu\* 16.04 LTS   |
+| Target OS:            |  Ubuntu\* 16.04 or 18.04 LTS   |
 | Programming Language: |  Python* 3.5 |
 | Time to Complete:    |  30-40min     |
 
@@ -14,17 +14,14 @@ This reference implementation applies the U-Net architecture to segment brain tu
 
 ## Requirements
 ### Hardware
-* 6th to 8th Generation Intel® Core™ processor with Iris® Pro graphics or Intel® HD Graphics
+* 6th to 8th Generation Intel® Core™ processor
 
 ### Software
 * [Ubuntu\* 16.04 LTS](http://releases.ubuntu.com/16.04/)<br>
-   *Note*: We recommend using a 4.14+ Linux* kernel with this software. Run the following command to determine your kernel version:
+* [Ubuntu\* 18.04 LTS](http://releases.ubuntu.com/18.04/)<br>
 
-      uname -a
-* TensorFlow*
 * Keras*
 * Matplotlib
-* Miniconda
 
 
 ## How It works
@@ -56,25 +53,8 @@ git clone https://github.com/intel-iot-devkit/brain-tumor-segmentations.git
 
 ### Dependencies
 
-#### Miniconda
-Miniconda is essentially an installer for an empty conda environment, containing only Conda, its dependencies, and Python. Once Conda is installed, you can then install whatever package you need from scratch along with any desired version of Python.<br>
-Install the Miniconda using the below commands:
-```
-wget -O Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-chmod +x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh
-source ~/.bashrc
-```
-**Note:** Restart the terminal for the changes to take effect.
-
-#### NumPy
-NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
-
 #### Matplotlib
 Matplotlib is a plotting library for the Python programming language and its numerical mathematics extension NumPy. It provides an object-oriented API for embedding plots into applications.
-
-#### TensorFlow
-TensorFlow is a free and open-source software library for dataflow and differentiable programming across a range of tasks. It is a symbolic math library, and is also used for machine learning applications such as neural networks.
 
 #### Keras
 Keras is an open-source neural-network library written in Python. It is capable of running on top of TensorFlow or Theano*. It offers a higher-level, more intuitive set of abstractions that make it easy to develop deep learning models regardless of the computational backend used.
@@ -92,10 +72,11 @@ To install the dependencies of the RI and to optimize the pre-trained model, run
 The application uses the MRI scans from __Task01_BrainTumour.h5__ that is provided in __/resources__ directory.
 
 ## Setup the environment
-Activate the virtual environment of MKL using the below command:
+Activate the environment using the below command:
 ```
-conda activate mkltf
+source /opt/intel/openvino/bin/setupvars.sh
 ``` 
+Though we are activating OpenVINO environment variables, this is just for the convenience of setting up Python requirements.  OpenVINO libraries are not used in this example.
 
 ## Run the Application
 Change the current directory to the git-cloned application code location on your system:
@@ -114,12 +95,8 @@ python3 brain_tumor_segmentation.py --data_file ../resources/Task01_BrainTumour.
 ```
 
 **Note:**<br>
-1. To deactivate the conda environment, use the ```conda deactivate``` command:
-2. To run the application on tensorflow environment, follow the below steps:
-    * Activate the tensorflow virtual environment using the following command:
-        ```
-        conda activate stocktf
-        ```
+To run the application on tensorflow environment, follow the below steps:
+
     * To run the application, use the below command:
         ```
         python3 brain_tumor_segmentation.py --data_file ../resources/Task01_BrainTumour.h5 --inference_filename ../resources/unet_model_for_decathlon.hdf5 -r ../results
