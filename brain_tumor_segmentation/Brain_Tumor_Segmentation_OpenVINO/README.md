@@ -100,72 +100,9 @@ Although the application runs on the CPU by default, this can also be explicitly
 ```
 ./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP32/saved_model.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx2.so -d CPU --data_file ../resources/Task01_BrainTumour.h5
 ```
-### Running on the integrated GPU
-* To run on the integrated Intel® GPU with floating point precision 32 (FP32), use the `-d GPU` command-line argument:
 
-  ```
-  ./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP32/saved_model.xml -d GPU --data_file ../resources/Task01_BrainTumour.h5
-  ```
-  **FP32**: FP32 is single-precision floating-point arithmetic uses 32 bits to represent numbers. 8 bits for the magnitude and 23 [click here](https:ing-point_format)<br>
-
-* To run on the integrated Intel® GPU with floating point precision 16 (FP16), use the following command:
-
-  ```
-  ./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP16/saved_model.xml -d GPU --data_file ../resources/Task01_BrainTumour.h5
-  ```
-  **FP16**: FP16 is half-precision floating-point arithmetic uses 16 bits. 5 bits for the magnitude and 10 bits for the precision. For more information, [click here](https://en.wikipedia.org/wiki/Half-precision_floating-point_format)
-
-### Running on the Intel® Neural Compute Stick 2
-To run on the Intel® Neural Compute Stick 2, use the `-d MYRIAD` command-line argument.
-
-```
-./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP16/saved_model.xml -d MYRIAD --data_file ../resources/Task01_BrainTumour.h5
-```
-
-**Note:** The Intel® Neural Compute Stick 2 can only run FP16 models. The model that is passed to the application, through the `-m <path_to_model>` command-line argument, must be of data type FP16.
-
-### Run on the Intel® Movidius™ Vision Processing Unit (VPU)
-To run on the Intel® Movidius™ Vision Processing Unit (VPU), use the `-d HDDL` command-line argument:
-
-```
-./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP16/saved_model.xml -d HDDL --data_file ../resources/Task01_BrainTumour.h5
-```
-
-**Note:** The Intel® Movidius™ VPU can only run FP16 models. The model that is passed to the application, through the `-m <path_to_model>` command-line argument, must be of data type FP16.
-
-### Run on the Intel® Arria® 10 FPGA
-
-Before running the application on the FPGA, set the environment variables and  program the AOCX (bitstream) file.<br>
-
-Set the Board Environment Variable to the proper directory:
-
-```
-export AOCL_BOARD_PACKAGE_ROOT=/opt/intel/openvino/bitstreams/a10_vision_design_sg<#>_bitstreams/BSP/a10_1150_sg<#>
-```
-**NOTE**: If you do not know which version of the board you have, please refer to the product label on the fan cover side or by the product SKU: Mustang-F100-A10-R10 => SG1; Mustang-F100-A10E-R10 => SG2 <br>
-
-Set the Board Environment Variable to the proper directory: 
-```
-export QUARTUS_ROOTDIR=/home/<user>/intelFPGA/18.1/qprogrammer
-```
-Set the remaining environment variables:
-```
-export PATH=$PATH:/opt/altera/aocl-pro-rte/aclrte-linux64/bin:/opt/altera/aocl-pro-rte/aclrte-linux64/host/linux64/bin:/home/<user>/intelFPGA/18.1/qprogrammer/bin
-export INTELFPGAOCLSDKROOT=/opt/altera/aocl-pro-rte/aclrte-linux64
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$AOCL_BOARD_PACKAGE_ROOT/linux64/lib
-export CL_CONTEXT_COMPILER_MODE_INTELFPGA=3
-source /opt/altera/aocl-pro-rte/aclrte-linux64/init_opencl.sh
 ```
 **NOTE**: It is recommended to create your own script for your system to aid in setting up these environment variables. It will be run each time you need a new terminal or restart your system. 
 
-The bitstreams for HDDL-F can be found under the `/opt/intel/openvino/bitstreams/a10_vision_design_sg<#>_bitstreams/` directory.<br><br>To program the bitstream use the below command:<br>
-```
-aocl program acl0 /opt/intel/openvino/bitstreams/a10_vision_design_sg<#>_bitstreams/2019R3_PV_PL1_FP16_RMNet.aocx
-```
 
-For more information on programming the bitstreams, please refer to [OpenVINO-Install-Linux-FPGA](https://software.intel.com/en-us/articles/OpenVINO-Install-Linux-FPGA#inpage-nav-11)
-
-To run the application on the FPGA with floating point precision 16 (FP16), use the `-d HETERO:FPGA,CPU` command-line argument:<br>
-```
-./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP16/saved_model.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx2.so -d HETERO:FPGA,CPU --data_file ../resources/Task01_BrainTumour.h5
 ```
