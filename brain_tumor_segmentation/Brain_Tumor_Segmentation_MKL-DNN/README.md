@@ -94,9 +94,4 @@ To run the application, use the below command:
 python3 brain_tumor_segmentation.py --data_file ../resources/Task01_BrainTumour.h5 --inference_filename ../resources/unet_model_for_decathlon.hdf5 -r ../results
 ```
 
-**Note:**<br>
-To run the application on tensorflow environment, follow the below steps:
 
-        ```
-        python3 brain_tumor_segmentation.py --data_file ../resources/Task01_BrainTumour.h5 --inference_filename ../resources/unet_model_for_decathlon.hdf5 -r ../results
-        ```
