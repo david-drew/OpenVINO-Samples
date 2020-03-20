@@ -16,7 +16,7 @@ For using the Model Optimizer from the command line, only OpenVINO is required. 
 
 
 ### Build Samples
-If samples have been manually build, skip this section.  This step will take about 5-10 minutes, depending on your system.
+If samples have been manually built, skip this section.  This step will take about 5-10 minutes, depending on your system.
 
 Build OpenVINO Demos
 
