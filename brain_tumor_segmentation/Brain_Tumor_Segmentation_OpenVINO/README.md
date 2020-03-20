@@ -92,7 +92,7 @@ A user can specify what target device to run on by using the device command-line
 ### Running on the CPU
 Although the application runs on the CPU by default, this can also be explicitly specified through the `-d CPU` command-line argument:
 ```
-./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP32/saved_model.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx2.so -d CPU --data_file ../resources/Task01_BrainTumour.h5
+./brain_tumor_segmentation.py -r ../results/ -m ../resources/output/IR_models/FP32/saved_model.xml -d CPU --data_file ../resources/Task01_BrainTumour.h5
 ```
 
 ### Check Results
