@@ -64,8 +64,9 @@ This application uses a pre-trained model (unet_model_for_decathlon.hdf5), that 
 
 To install the dependencies of the RI and to optimize the pre-trained model, run the following command:
 
-    cd <path_to_the_brain_tumor_segmentation_MKL-DNN_directory>
-    ./setup.sh
+    pip3 install scipy keras kiwisolver
+
+NOTE: if you experience problems with the install or accessing the libraries, you may re-run this command with 'sudo'.
 
 ### What Input to use
 
