@@ -23,9 +23,9 @@ The installation created a new directory in your home directory:
 
 This is where sample applications are installed, after they are compiled.  You will have to compile most of the samples.
 
-**Note:** There are 2 similar directories containing samples that we will not be using for this tutorial.  They are:
+**Note:** There are 2 similar directories containing samples or demos.  They are:
     `~/inference_engine_samples_build`
-    `~/inference_engine_demos_build`
+    `~/omz_demos_build`
 
 ## <a name="dldt-installation-directory-structure"></a> Installation Directory Structure
 
