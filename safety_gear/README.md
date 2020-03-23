@@ -66,15 +66,16 @@ You should see the following two files listed in this directory: **worker_safety
 
 #### 1. Open the sample app (main.cpp) in the editor of your choice to view the lines that call the Inference Engine.
 
-	cd $SV/object-detection/
+	cd /opt/intel/openvino/inference_engine/demos/object_detection_demo_ssd_async
 	gedit main.cpp
 
-* Line 130 &#8212; loads the Inference Engine plugin for use within the application
-* Line 144 &#8212; initializes the network object
-* Line 210 &#8212; loads model to the plugin
-* Line 228 &#8212; allocate input blobs
-* Line 238 &#8212; allocate output blobs
-* Line 289 &#8212; runs inference using the optimized model
+Look through the file, taking note of the following sections:
+* Loading the Inference Engine plugin for use within the application
+* Initializing the network object
+* Loading models to the plugin
+* Allocating input blobs
+* Allocating output blobs
+* Running inference using the optimized model
 
 
 #### 2. Close the source file
@@ -83,42 +84,18 @@ You should see the following two files listed in this directory: **worker_safety
 
 	source /opt/intel/openvino/bin/setupvars.sh
 
-#### 4. Build the sample application with make file
-
- 	cd $SV/object-detection/
-	make
-
-#### 5. Check the test video file from the safety-gear-example folder.
-
+#### 4. Check the test video file from the safety-gear-example folder.
 
 Open the Safety_Full_Hat_and_Vest_2.mp4 file from the $SV/safety-gear-example folder.
 We will use that as the test file.
 
-#### 6. Run the sample application to use the Inference Engine on the test video
+#### 5. Run the sample application to use the Inference Engine on the test video
 The below command runs the application
 
-	./tutorial1 -i $SV/safety-gear-example/Safety_Full_Hat_and_Vest_2.mp4 -m $SV/safety-gear-example/mobilenet-ssd/FP32/worker_safety_mobilenet.xml
+	cd ~/omz_demos_build
+	./object_detection_demo_ssd_async -i $SV/safety-gear-example/Safety_Full_Hat_and_Vest_2.mp4 -m $SV/safety-gear-example/mobilenet-ssd/FP32/worker_safety_mobilenet.xml
+	
+If you'd like to see the help message, use:
 
-> **Note:** If you get an error related to "undefined reference to 'google::FlagRegisterer...", try uninstalling libgflags-dev: sudo apt-get remove libgflags-dev
-
-#### 7. Display output
-For simplicity of the code and in order to put more focus on the performance numbers, video rendering with rectangle boxes for detected objects has been separated from main.cpp.
-
-	 make -f Makefile_ROIviewer
-	./ROIviewer -i $SV/safety-gear-example/Safety_Full_Hat_and_Vest_2.mp4 -l $SV/safety-gear-example/pascal_voc_classes.txt
-
-You should see a video play with people wearing safety gear and bounding boxes around them.
-
-Here are the parameters used in the above command to run the application:
-
-	./tutorial1 -h
-
-		-h              Print a usage message
-		-i <path>       Required. Path to input video file
-		-model <path>   Required. Path to model file.
-		-b #            Batch size.
-		-thresh #       Threshold (0-1: .5=50%)
-		-d <device>     Infer target device (CPU or GPU or MYRIAD)
-		-fr #           Maximum frames to process
-
+	./object_detection_demo_ssd_async -h
 
