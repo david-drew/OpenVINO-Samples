@@ -38,7 +38,7 @@ Move to the workbench directory.<br>
 `cd /opt/intel/openvino/deployment_tools/tools/workbench`
 
 Example Use:<br>
-run_workbench -PACKAGE_PATH \<openvino archive path\>
+run_openvino_workbench.sh -PACKAGE_PATH \<openvino archive path\>
 
 Use:<br>
 ` sudo ./run_openvino_workbench.sh -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.1.023.tgz`
