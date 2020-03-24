@@ -308,7 +308,7 @@ The Face Detection Demo supports face detection, plus optional functions:
 
 Syntax:
 
-`./interactive_face_detection -i path/to/video -m path/to/face/model -d CPU`
+`./interactive_face_detection_demo -i path/to/video -m path/to/face/model -d CPU`
 
 Steps:
 
