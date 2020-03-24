@@ -62,7 +62,7 @@ Keras is an open-source neural-network library written in Python. It is capable 
 ### Which model to use
 This application uses a pre-trained model (unet_model_for_decathlon.hdf5), that is provided in the `/resources` directory. This model is trained using the __Task01_BrainTumour.tar__ dataset from the [Medical Segmentation Decathlon](http://medicaldecathlon.com/), made available under the [(CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license. Instructions on how to train your model can be found here [https://github.com/IntelAI/unet/tree/master/2D](https://github.com/IntelAI/unet/tree/master/2D)
 
-To install the dependencies of the RI and to optimize the pre-trained model, run the following command:
+To install dependencies and optimize the pre-trained model, run the following command:
 
     pip3 install scipy keras kiwisolver
 
