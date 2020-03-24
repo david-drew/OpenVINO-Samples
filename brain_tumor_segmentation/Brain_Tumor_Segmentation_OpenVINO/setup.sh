@@ -26,6 +26,7 @@ sudo apt-get install python3-pip
 sudo pip3 install numpy jupyter h5py
 sudo apt-get install python3-matplotlib
 sudo apt-get install python3-tk
+sudo pip3 install keras kiwisolver
 
 BASE_DIR=`pwd`
 
