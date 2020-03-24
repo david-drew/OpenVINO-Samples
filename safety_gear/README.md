@@ -92,7 +92,7 @@ We will use that as the test file.
 #### 5. Run the sample application to use the Inference Engine on the test video
 The below command runs the application
 
-	cd ~/omz_demos_build
+	cd ~/omz_demos_build/intel64/Release
 	./object_detection_demo_ssd_async -i $SV/safety-gear-example/Safety_Full_Hat_and_Vest_2.mp4 -m $SV/safety-gear-example/mobilenet-ssd/FP32/worker_safety_mobilenet.xml
 	
 If you'd like to see the help message, use:
