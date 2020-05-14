@@ -411,27 +411,6 @@ To run the **Security Barrier Camera Demo Application** with an input image on t
 
 </details>
 
-3. Run the sample executable 
-
-   **For CPU:**
-   ```sh
-   ./classification_sample -i <DLDT_DIR>/inference-engine/samples/sample_data/car.png -m <ir_dir>/squeezenet1.1.xml -d CPU
-   ```
-
-   **For GPU:**
-   ```sh
-   ./classification_sample -i <DLDT_DIR>/inference-engine/samples/sample_data/car.png -m <ir_dir>/squeezenet1.1.xml -d GPU
-   ```
-   
-   **For MYRIAD:** 
-
-   >**NOTE**: Running inference on VPU devices (Intel® Movidius™ Neural Compute 
-   Stick or Intel® Neural Compute Stick 2) with the MYRIAD plugin requires 
-   performing [additional hardware configuration steps](inference-engine/README.md#optional-additional-installation-steps-for-the-intel-movidius-neural-compute-stick-and-neural-compute-stick-2).
-   ```sh   
-   ./classification_sample -i <DLDT_DIR>/inference-engine/samples/sample_data/car.png -m <ir_dir>/squeezenet1.1.xml -d MYRIAD
-   ``` 
-
 ## <a name="basic-guidelines-sample-application"></a>Basic Guidelines for Using Code Samples and Demo Applications
 
 Following are some basic guidelines for executing the OpenVINO™ workflow using the code samples and demo applications:
