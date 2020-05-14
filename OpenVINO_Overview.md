@@ -44,9 +44,9 @@ By default, the installation directory is `/opt/intel/openvino`, though the loca
 ## <a name="workflow-overview"></a>OpenVINO™ Workflow Overview
 
 The simplified OpenVINO™ workflow is as follows:
-1. Get a trained model for your inference task, for example, pedestrian detection, face detection, vehicle detection, license plate recognition, head pose etc.
-2. Run the trained model through the Model Optimizer to convert it to an Intermediate Representation - pair of `.xml` and `.bin` files used as the input for Inference Engine.
-3. The application (an OpenVINO™ sample, demo or one you have built) uses the Inference Engine to run inference against the Intermediate Representation (Optimized Model) and outputs inference results.
+1. **Get a trained model** for your inference task, for example, pedestrian detection, face detection, vehicle detection, license plate recognition, head pose etc.
+2. **Run the trained model through the Model Optimizer** to convert it to an Intermediate Representation - pair of `.xml` and `.bin` files used as the input for Inference Engine.
+3. **Use the Inference Engine API in the application** (an OpenVINO™ sample, demo or one you have built) to run inference against the Intermediate Representation (Optimized Model) and output inference results.
 
 ## Learn the Workflow Using Demo Scripts
 
