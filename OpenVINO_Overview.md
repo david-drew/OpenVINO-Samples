@@ -1,5 +1,5 @@
 
-# Get Started with OpenVINO™ 
+# Get Started with OpenVINO™ on Linux
 
 This guide provides you with the information that will help you to get started with OpenVINO toolkit on Linux*. With this guide, you will:
 * Learn the OpenVINO™ inference workflow.
@@ -80,7 +80,32 @@ For example, to run the script performing inference on CPU, use the following co
 ```
 When the verification script completes, you will have the label and confidence for the top-10 categories:
 
-![](image_classification_script_output_lnx.png)
+```sh
+Top 10 results:
+
+Image /home/user/dldt/inference-engine/samples/sample_data/car.png
+
+classid probability label
+------- ----------- -----
+817     0.8363345   sports car, sport car
+511     0.0946488   convertible
+479     0.0419131   car wheel
+751     0.0091071   racer, race car, racing car
+436     0.0068161   beach wagon, station wagon, wagon, estate car, beach waggon, station waggon, waggon
+656     0.0037564   minivan
+586     0.0025741   half track
+717     0.0016069   pickup, pickup truck
+864     0.0012027   tow truck, tow car, wrecker
+581     0.0005882   grille, radiator grille
+
+
+total inference time: 2.6642941
+Average running time of one iteration: 2.6642941 ms
+
+Throughput: 375.3339402 FPS
+
+[ INFO ] Execution successful
+```
 </details>
 
 ### Inference Pipeline Demo Script
@@ -99,7 +124,7 @@ For example, to run the script performing inference on Intel® Processor Graphic
 
 When the verification script completes, you will see an image that displays the resulting frame with detections rendered as bounding boxes, and text:
 
-![](inference_pipeline_script_lnx.png)
+![](https://docs.openvinotoolkit.org/latest/inference_pipeline_script_lnx.png)
 </details>
 
 ### Benchmark Demo Script
@@ -145,7 +170,7 @@ Inputs you'll need to specify:
 
 In this guide, to perform sample inference, you will run the Image Classification code sample and Security Barrier Camera Demo application that were automatically compiled when you ran the Image Classification and Inference Pipeline demo scripts. The binary files are located in the `~/inference_engine_cpp_samples_build/intel64/Release` and `~/inference_engine_demos_build/intel64/Release` directories respectively.
 
-If you want to run another sample, you need to build them from the source files delivered with the installation. To learn how to build the sample applications by yourself, see the [Inference Engine Samples Overview](https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Samples_Overview.html#build_samples_linux) section.
+If you want to run another sample code or demo application, you need to build them from the source files delivered with the installation. To learn how to build the by yourself, see the [Inference Engine Code Samples Overview](https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Samples_Overview.html#build_samples_linux) and [Demo Applications Overview](https://docs.openvinotoolkit.org/latest/_demos_README.html#build_the_demo_applications) section.
 
 ### <a name="download-models"></a> Download Models
 
