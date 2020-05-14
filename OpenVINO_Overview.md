@@ -63,7 +63,7 @@ The scripts can run inference on any of [supported target devices](https://softw
 
 The following paragraphs provides description for each demo script.
 
-### Image Classification Demo Script
+### Use Image Classification Demo Script
 `demo_squeezenet_download_convert_run` script illustrates the image classification pipeline and does the following: 
 1. Downloads a SqueezeNet model. 
 2. Runs the Model Optimizer to convert the model to the IR.
@@ -108,7 +108,7 @@ Throughput: 375.3339402 FPS
 ```
 </details>
 
-### Inference Pipeline Demo Script
+### Use Inference Pipeline Demo Script
 `demo_security_barrier_camera` script automatically downloads three pre-trained model IRs, builds the Security Barrier Camera Demo application, and runs it with the downloaded models and the `car_1.bmp` image from the `demo` directory to show an inference pipeline. The script uses vehicle recognition in which vehicle attributes build on each other to narrow in on a specific attribute.
 
 First, an object is identified as a vehicle. This identification is used as input to the next model, which identifies specific vehicle attributes, including the license plate. Finally, the attributes identified as the license plate are used as input to the third model, which recognizes specific characters in the license plate.
@@ -127,7 +127,7 @@ When the verification script completes, you will see an image that displays the 
 ![](https://docs.openvinotoolkit.org/latest/inference_pipeline_script_lnx.png)
 </details>
 
-### Benchmark Demo Script
+### Use Benchmark Demo Script
 `demo_benchmark_app` script illustrates how to use the Benchmark Application to estimate deep learning inference performance on supported devices. The script does the following: 
 1. Downloads a SqueezeNet model.
 2. Runs the Model Optimizer to convert the model to the IR.
