@@ -5,6 +5,8 @@ For an overview and details about the Intel® Distribution of OpenVINO™ toolki
 
 We recommend you read the above OpenVINO™ Overview before starting this tutorial.   
 
+You should complete the [OpenVINO™ Get Started Guide](https://docs.openvinotoolkit.org/latest/_docs_get_started_get_started_linux.html) before proceeding with this document.
+
 <br>
 
 NOTE: When using OpenVINO™ from the command line, you must setup your environment whenever you change users or launch a new terminal.
