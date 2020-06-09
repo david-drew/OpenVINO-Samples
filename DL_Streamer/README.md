@@ -9,5 +9,7 @@ To familiarize yourself with DL Streamer, read through the following files:
 - [Model_Preparation](Model_Preparation.md)
 - [Glossary](Glossary.md)
 
-Exercise:
+
+### Tutorial:
+
 [GStreamer_Video_Analytics_Tutorial](GStreamer_Video_Analytics_Tutorial.md)
