@@ -1,4 +1,4 @@
-## DL Streamer Reading Index
+## DL Streamer Documentation Guide
 
 ### GStreamer Documentation
 To familiarize yourself with DL Streamer, read through the following files:
