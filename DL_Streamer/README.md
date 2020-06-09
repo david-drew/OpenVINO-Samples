@@ -1,4 +1,4 @@
-DL Streamer Reading Index
+## DL Streamer Reading Index
 
 To familiarize yourself with DL Streamer, read through the following files:
 
