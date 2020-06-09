@@ -342,6 +342,16 @@ Steps:
 
 </details>
 
+<details>
+	<summary>Exercise 5: DL Streamer</summary>
+	
+The DL Streamer is a command-line tool and API for integrating OpenVINO into a media analytics pipeline.  It supports OpenVINO, GStreamer, Mosquitto, Kafka, and a variety of other technologies.
+
+For a detailed explanation, look at the [DL Streamer Guide](DL_Streamer/README.md).
+	
+[DL Streamer Tutorial](https://github.com/opencv/gst-video-analytics/wiki/DL%20Streamer%20Tutorial)
+</details>
+
 ## Additional Resources
 
 Use these resources to learn more about the OpenVINO™ toolkit:
