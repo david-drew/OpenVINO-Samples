@@ -4,8 +4,8 @@
 
 You have two ways to use samples:
 
-	- [In a Docker container](Acquire-docker-image-and-run-docker-container). To learn about Docker containers, click [here](https://www.docker.com/resources/what-container).
-	- [Directly on your host system](Build-on-host-machine).
+- [In a Docker container](Acquire-docker-image-and-run-docker-container). To learn about Docker containers, click [here](https://www.docker.com/resources/what-container).
+- [Directly on your host system](Build-on-host-machine).
 
 
 ### Step 2: Run the Samples
