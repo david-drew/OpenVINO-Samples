@@ -14,4 +14,4 @@ To familiarize yourself with DL Streamer, read through the following files:
 ### Tutorial
 Follow the exercises in the tutorial below.
 
-[GStreamer_Video_Analytics_Tutorial](GStreamer_Video_Analytics_Tutorial.md)
+[GStreamer Video Analytics Tutorial](GStreamer_Video_Analytics_Tutorial.md)
