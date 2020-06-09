@@ -200,11 +200,6 @@ If you need help during or after the installation, [click here](https://github.c
 		./install_metapublish_dependencies.sh
 		```
 		
-		You are done installing the DL Streamer. Continue to [Get Models and Videos to use with the Samples](#acquire-data-and-sources)
+		You are done installing the DL Streamer. Continue to [Get Models and Videos to use with the Samples](Install_Guide.md#acquire-data-and-sources)
 		
 	</details>
-	
-	
-	
-
-
