@@ -1,5 +1,6 @@
 ## DL Streamer Reading Index
 
+### GStreamer Documentation
 To familiarize yourself with DL Streamer, read through the following files:
 
 - [Install_Guide](Install_Guide.md)
@@ -10,6 +11,7 @@ To familiarize yourself with DL Streamer, read through the following files:
 - [Glossary](Glossary.md)
 
 
-### Tutorial:
+### Tutorial
+Follow the exercises in the tutorial below.
 
 [GStreamer_Video_Analytics_Tutorial](GStreamer_Video_Analytics_Tutorial.md)
