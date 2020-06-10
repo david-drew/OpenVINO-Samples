@@ -1,10 +1,11 @@
 # GStreamer Video Analytics Tutorial
 
-This tutorial uses four exercises with the models and videos you downloaded in LINK TO GET MODELS AND VIDEOS to help you:
-	- Build a video analytics pipeline with the GStreamer* gst-launch tool and GStreamer Video Analytics (GVA) plug-in. 
-	- Add classifications to the pipeline.
-	- Publish the inference results to a `.json` file.
-	- Convert a deep learning model to the Intermediate Representation format that is required for the Inference Engine.
+This tutorial uses four exercises to help you:
+
+- Build a video analytics pipeline with the GStreamer* gst-launch tool and GStreamer Video Analytics (GVA) plug-in. 
+- Add classifications to the pipeline.
+- Publish the inference results to a `.json` file.
+- Convert a deep learning model to the Intermediate Representation format that is required for the Inference Engine.
 
 The first three exercises build on each other in increasing complexity. If you are new to using the DL Streamer, complete these in order. 
 
