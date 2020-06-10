@@ -238,15 +238,15 @@ To use this optional replacement command, create and run the pipeline as follows
 		gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
 	```
 
-	In this pipeline:
+In this pipeline:
 
-	1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc **on every 10th frame, due to `inference-interval=10`**.
-	**2. `gvatrack` tracks each object detected by `gvadetect`**.
-	2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
-	3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc, **but skips classification for already classified objects for 10 frames, using tracking information from `gvatrack` to determine whether to classify an object**:
-		* `object-class` tells `gvalcassify` which ROIs to classify. 
-		* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
-	4. `gvawatermark` displays the ROIs and their attributes. 
+1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc **on every 10th frame, due to `inference-interval=10`**.
+	*`gvatrack` tracks each object detected by `gvadetect`
+2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
+3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc, **but skips classification for already classified objects for 10 frames, using tracking information from `gvatrack` to determine whether to classify an object**:
+	* `object-class` tells `gvalcassify` which ROIs to classify. 
+	* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
+4. `gvawatermark` displays the ROIs and their attributes. 
 
 You're done building and running this pipeline. The next exercise shows you how to publish your results to a .`.json`.
 	
