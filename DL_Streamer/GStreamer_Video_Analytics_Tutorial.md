@@ -33,11 +33,12 @@ The steps below use a quick way to get everything you need to use the sample app
 	```
 
 3. The samples require video files that:
-	- Are in h264 or mp4 format.
-	- Include cars, pedestrians, and people with their faces showing.
-	- Keep your videos to less than 2 minutes for faster processing.
+
+- Are in h264 or mp4 format.
+- Include cars, pedestrians, and people with their faces showing.
+- Keep your videos to less than 2 minutes for faster processing.
 	
-	You can download freely licensed videos from the websites like [Pexels](https://www.pexels.com/videos).
+You can download freely licensed videos from the websites like [Pexels](https://www.pexels.com/videos).
 
 4. Put your video files in `~/gva/video`.
 
@@ -50,6 +51,7 @@ The diagram below shows the data flow of a typical video analytics pipeline.
 This is what you're seeing in the data flow:
 
 1. Read File with `filesrc` - The `filesrc` element reads data from a file or camera.
+
 2. Decode with `decodebin` -  The `decodebin` element selects the decoder according to the input format. Hardware decoding plug-ins have priority over CPU decoders. Use `decodebin` to insert video processing elements for color conversion or for video-to-system memory copying. <br>
 The pipeline moves the uncompressed video from `decodebin` forward in 'video/x-raw' or 'video/x-raw(memory:VASurface)' data type. 'video/x-raw' is a system memory frame and 'video/x-raw(memory:VASurface)' is a video memory handle.
 
@@ -65,20 +67,20 @@ You can chain the `gvadetect`, `gvatrack`, `gvaclassify`, and `gvainference` inf
 See [GVA elements](Elements) for more information about the GVA plug-in elements.
 
 The following video shows the result of running a pipeline with:
-	```sh
-	gst-launch-1.0 filesrc location=cut.mp4 ! decodebin ! gvadetect model=face-detection-adas-0001.xml ! gvaclassify model=emotions-recognition-retail-0003.xml model-proc=emotions-recognition-retail-0003.json ! gvawatermark ! xvimagesink sync=false
-	```
+
+```sh
+gst-launch-1.0 filesrc location=cut.mp4 ! decodebin ! gvadetect model=face-detection-adas-0001.xml ! gvaclassify model=emotions-recognition-retail-0003.xml model-proc=emotions-recognition-retail-0003.json ! gvawatermark ! xvimagesink sync=false
+```
 
 <div align="center"><img src="intro.gif" width=900/></div>
 
-
 The elements in this pipeline are:
-	* `filesrc` loads a video file named `cut.mp4`.
-	* `decodebin` decodes the video. 
-	* `gvadetect` runs inference on the video. The `model` named `face-detection-adas-0001` is used for inference to detect faces. 
-	* `gvaclassify` uses the result of `gvadetect` on a `model` named `emotions-recognition-retail-0003`, resulting in emotion classifications. 
-	* `gvawatermark` overlays the detection and classification results on each frame.
-	* `xvimagesink` renders the video frames.
+* `filesrc` loads a video file named `cut.mp4`.
+* `decodebin` decodes the video. 
+* `gvadetect` runs inference on the video. The `model` named `face-detection-adas-0001` is used for inference to detect faces. 
+* `gvaclassify` uses the result of `gvadetect` on a `model` named `emotions-recognition-retail-0003`, resulting in emotion classifications. 
+* `gvawatermark` overlays the detection and classification results on each frame.
+* `xvimagesink` renders the video frames.
 
 You are ready to try creating your own pipeline. Continue with the next section to use the first exercise.
 
@@ -87,50 +89,54 @@ You are ready to try creating your own pipeline. Continue with the next section 
 This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  
 
 This exercise introduces you to using the following GVA elements:
-	- `filesrc`
-	- `gvadetect` 
-	- `gvawatermark`
+
+- `filesrc`
+- `gvadetect` 
+- `gvawatermark`
 	
 1. Set the environment variables:
-	```sh
-	source /opt/intel/openvino/bin/setupvars.sh
-	```
 
-	<b>Note</b>: You must set the environment variables each time you open a new shell unless you added the variables to the `.bashrc` file. See [Set the environment variables](https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#set-the-environment-variables)
+```sh
+source /opt/intel/openvino/bin/setupvars.sh
+```
+
+<b>Note</b>: You must set the environment variables each time you open a new shell unless you added the variables to the `.bashrc` file. See [Set the environment variables](https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#set-the-environment-variables)
 
 3. Export the `model` and `model_proc` files:
-	```sh
-	export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-	export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
-	```
+
+```sh
+export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
+export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
+```
 
 4. Export the video file path:
-	```sh
-	# This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-	export VIDEO_EXAMPLE=~/gva/video/FILENAME
-	```
+
+```sh
+# This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
+export VIDEO_EXAMPLE=~/gva/video/FILENAME
+```
 
 5. Create and run the pipeline. As an option, add the `model-proc` parameter to create a `model-proc` JSON file. `model-proc` files describe the model input and output layer format. The `model-proc` file in this exercise describes the output layer name and labels (person, vehicle, and bike) on objects it detects. 
 
-	See [model-proc](https://github.com/opencv/gst-video-analytics/blob/master/samples/model_proc/person-vehicle-bike-detection-crossroad-0078.json) for more information.
+See [model-proc](https://github.com/opencv/gst-video-analytics/blob/master/samples/model_proc/person-vehicle-bike-detection-crossroad-0078.json) for more information.
 
-	```sh
-	gst-launch-1.0 \
-		filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-		gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-		gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-	```
+```sh
+gst-launch-1.0 \
+	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
+	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
+	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
+```
 	
 6. Review the output. Persons, vehicles, and bikes are bound by colored boxes, and detection results are displayed as video overlays. The average frame rate of the pipeline are shown as overlays at the bottom of the video.
 
-	`gvadetect`:
-		* Used the XML model file to find the BIN file for inference.
-		* Performed detection on each video frame.
-		* Output ROIs with labels according to `model-proc` specifications. 
+`gvadetect`:
+	* Used the XML model file to find the BIN file for inference.
+	* Performed detection on each video frame.
+	* Output ROIs with labels according to `model-proc` specifications. 
 
-	`gvawatermark` used the output ROIs to visually display the detected objects and their attributes.
-		* [`fpsdisplaysink`](https://gstreamer.freedesktop.org/documentation/debugutilsbad/fpsdisplaysink.html?gi-language=c) displayed the average FPS of the pipeline.
-		* [`xvimagesink`](https://gstreamer.freedesktop.org/documentation/xvimagesink/index.html?gi-language=c#xvimagesink-page) rendered the video frames.
+`gvawatermark` used the output ROIs to visually display the detected objects and their attributes.
+	* [`fpsdisplaysink`](https://gstreamer.freedesktop.org/documentation/debugutilsbad/fpsdisplaysink.html?gi-language=c) displayed the average FPS of the pipeline.
+	* [`xvimagesink`](https://gstreamer.freedesktop.org/documentation/xvimagesink/index.html?gi-language=c#xvimagesink-page) rendered the video frames.
 
 You're done building and running this pipeline. To expand on this exercise, use one or both add-ons to this exercise to select different video sources. If the add-ons don't suit you, jump ahead to start [Exercise 2](#classification-pipeline)
 
@@ -142,14 +148,14 @@ Before repeating Exercise 1 with a Web camera video stream, verify the Web camer
 
 To use a Web camera:
 
-	```sh
-	gst-launch-1.0 \
-		v4l2src device=<path-to-device> ! decodebin ! video/x-raw ! videoconvert ! \
-		gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-		gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-	```
+```sh
+gst-launch-1.0 \
+	v4l2src device=<path-to-device> ! decodebin ! video/x-raw ! videoconvert ! \
+	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
+	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
+```
 
-	This command uses [`v4l2src`](https://gstreamer.freedesktop.org/documentation/video4linux2/v4l2src.html?gi-language=c) instead of `filesrc` to capture video from web camera.
+This command uses [`v4l2src`](https://gstreamer.freedesktop.org/documentation/video4linux2/v4l2src.html?gi-language=c) instead of `filesrc` to capture video from web camera.
 
 #### Simple Pipeline with an RTSP Device (Second optional add-on to Exercise 1)
 
@@ -157,16 +163,16 @@ GStreamer supports RTSP devices that specify an RTSP URI, which means you can po
 
 Before repeating Exercise 1 with an RSTP URI, verify the RSTP URL. 
 
-	**To repeat Exercise 1 with a RTSP URI**, verify the path to the RTSP URI, and run the pipeline with the RTSP URI: 
+**To repeat Exercise 1 with a RTSP URI**, verify the path to the RTSP URI, and run the pipeline with the RTSP URI: 
 
-	```sh
-	gst-launch-1.0 \
-		urisourcebin uri=<RTSP_uri> ! decodebin ! video/x-raw ! videoconvert ! \
-		gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-		gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-	```
+```sh
+gst-launch-1.0 \
+	urisourcebin uri=<RTSP_uri> ! decodebin ! video/x-raw ! videoconvert ! \
+	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
+	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
+```
 
-	This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentation/playback/urisourcebin.html?gi-language=c) to access URIs. In this pipeline, the URI access is to the RTSP URI and the video stream from the link for inference.
+This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentation/playback/urisourcebin.html?gi-language=c) to access URIs. In this pipeline, the URI access is to the RTSP URI and the video stream from the link for inference.
 
 
 ## Exercise 2: Build a Classification Pipeline <a name="classification-pipeline"></a>
@@ -174,69 +180,73 @@ Before repeating Exercise 1 with an RSTP URI, verify the RSTP URL.
 This exercise uses the scenario, video, and IR files from Exercise 1 to help you create a pipeline with classification applied to the ROIs. In Exercise 2, detected objects use `gvadetect` as inputs for `gvaclassify` for inference to identify additional attributes.
 
 This exercises uses the following additional GVA element:
-	- `gvaclassify`
+- `gvaclassify`
 	
 1. Set the environment variables:
-	```sh
-	source /opt/intel/openvino/bin/setupvars.sh
-	```
+
+```sh
+source /opt/intel/openvino/bin/setupvars.sh
+```
 
 2. Export the model and model_proc files:
-	```sh
-	export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-	export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
-	export VEHICLE_CLASSIFICATION_MODEL=~/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
-	export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
-	```
+
+```sh
+export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
+export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
+export VEHICLE_CLASSIFICATION_MODEL=~/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
+export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
+```
 
 3. Export the video file path:
-	```sh
-	# This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-	export VIDEO_EXAMPLE=~/gva/video/FILENAME
-	```
+
+```sh
+# This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
+export VIDEO_EXAMPLE=~/gva/video/FILENAME
+```
 
 4. Create and run the pipeline:
+
+```sh
+gst-launch-1.0 \
+	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
+	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
+	gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle ! queue ! \
+	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
+```
+
+In this pipeline:
+
+	1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc. 
+	2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
+	3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc:
+		* `object-class` tells `gvalcassify` which ROIs to classify. 
+		* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
+	4 `gvawatermark` displays the ROIs and their attributes. 
+
+See [model-proc](https://github.com/opencv/gst-video-analytics/tree/master/samples/model_proc) for the model-procs and its input and output specifications.
+
+**Optional replacement command to create and run the pipeline**: Include `gvatrack` to increase the pipeline performance. With this, object tracking performance increases by running inference on object detection and classification models at a defined frequently.
+
+To use this optional replacement command, create and run the pipeline as follows:
+
 	```sh
 	gst-launch-1.0 \
 		filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-		gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-		gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle ! queue ! \
+		gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU inference-interval=10 ! queue ! \
+		gvatrack tracking-type=short-term ! queue ! \
+		gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle reclassify-interval=10 ! queue ! \
 		gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
 	```
 
 	In this pipeline:
 
-		1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc. 
-		2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
-		3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc:
-			* `object-class` tells `gvalcassify` which ROIs to classify. 
-			* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
-		4 `gvawatermark` displays the ROIs and their attributes. 
-
-	See [model-proc](https://github.com/opencv/gst-video-analytics/tree/master/samples/model_proc) for the model-procs and its input and output specifications.
-
-	**Optional replacement command to create and run the pipeline**: Include `gvatrack` to increase the pipeline performance. With this, object tracking performance increases by running inference on object detection and classification models at a defined frequently.
-
-	To use this optional replacement command, create and run the pipeline as follows:
-
-		```sh
-		gst-launch-1.0 \
-			filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-			gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU inference-interval=10 ! queue ! \
-			gvatrack tracking-type=short-term ! queue ! \
-			gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle reclassify-interval=10 ! queue ! \
-			gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-		```
-
-	In this pipeline:
-
-		1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc **on every 10th frame, due to `inference-interval=10`**.
-		**2. `gvatrack` tracks each object detected by `gvadetect`**.
-		2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
-		3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc, **but skips classification for already classified objects for 10 frames, using tracking information from `gvatrack` to determine whether to classify an object**:
-			* `object-class` tells `gvalcassify` which ROIs to classify. 
-			* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
-		4. `gvawatermark` displays the ROIs and their attributes. 
+	1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc **on every 10th frame, due to `inference-interval=10`**.
+	**2. `gvatrack` tracks each object detected by `gvadetect`**.
+	2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
+	3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc, **but skips classification for already classified objects for 10 frames, using tracking information from `gvatrack` to determine whether to classify an object**:
+		* `object-class` tells `gvalcassify` which ROIs to classify. 
+		* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
+	4. `gvawatermark` displays the ROIs and their attributes. 
 
 You're done building and running this pipeline. The next exercise shows you how to publish your results to a .`.json`.
 	
@@ -245,55 +255,60 @@ You're done building and running this pipeline. The next exercise shows you how 
 This exercise extends the pipeline to publish your detection and classification results to a `.json` file from a GStreamer pipeline.
 
 This exercises uses the following additional GVA elements:
-	- `gvametaconvert`
-	- `gvametapublish` 
+
+- `gvametaconvert`
+- `gvametapublish` 
 
 The script for this exercise is in the [`metapublish`](https://github.com/opencv/gst-video-analytics/blob/master/samples/gst_launch/metapublish/) directory where the GVA plug-ins sample scripts are located. The `metapublish` directory also contains scripts to publish results to Kafka and MQTT.
 
 1. Set the OpenVINO environment:
-	```sh
-	source /opt/intel/openvino/bin/setupvars.sh
-	source ~/gva/gst-video-analytics/scripts/setup_env.sh
-	```
+
+```sh
+source /opt/intel/openvino/bin/setupvars.sh
+source ~/gva/gst-video-analytics/scripts/setup_env.sh
+```
 	
-	<b>Note</b>: You must set the environment variables each time you open a new shell unless you added the variables to the `.bashrc` file. See [Set the environment variables](https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#set-the-environment-variables)
+<b>Note</b>: You must set the environment variables each time you open a new shell unless you added the variables to the `.bashrc` file. See [Set the environment variables](https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#set-the-environment-variables)
 
 2. Export the `model` and `model_proc` files:
-	```sh
-	export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-	export DETECTION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
-	export VEHICLE_CLASSIFICATION_MODEL=~/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
-	export VEHICLE_CLASSIFICATION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
-	```
+```sh
+export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
+export DETECTION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
+export VEHICLE_CLASSIFICATION_MODEL=~/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
+export VEHICLE_CLASSIFICATION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
+```
 
 3. Export the video file path:
-	```sh
-	# # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-	export VIDEO_EXAMPLE=~/gva/video/FILENAME
-	```
+
+```sh
+# # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
+export VIDEO_EXAMPLE=~/gva/video/FILENAME
+```
 
 4. Export the output file path:
-	```sh
-	# This example uses ~/gva/video as the video path and FILENAME as the placeholder for an output file name. Change this information to fit your setup. 
-	export OUTFILE=<path-to-FILENAME>
-	```
+
+```sh
+# This example uses ~/gva/video as the video path and FILENAME as the placeholder for an output file name. Change this information to fit your setup. 
+export OUTFILE=<path-to-FILENAME>
+```
 
 5. Create and run the pipeline:
-	```sh
-	gst-launch-1.0 \
-		filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-		gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-		gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle ! queue ! \
-		gvametaconvert converter=json method=all ! \
-		gvametapublish method=file filepath=${OUTFILE} outputformat=stream  ! \
-		fakesink
-	```
 
-	In this step:
-	- `gvametaconvert` uses the optional parameter `converter=json` to convert inferenced data to `GstGVAJSONMeta`. 
-	- `GstGVAJSONMeta` is a custom data structure that represents JSON metadata. 
-	- `gvametapublish` uses the optional parameter `method=file` to publish inference results to a file.
-	- `filepath=${OUTFILE}` is a JSON file to which the inference results are published.
+```sh
+gst-launch-1.0 \
+	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
+	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
+	gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle ! queue ! \
+	gvametaconvert converter=json method=all ! \
+	gvametapublish method=file filepath=${OUTFILE} outputformat=stream  ! \
+	fakesink
+```
+
+In this step:
+- `gvametaconvert` uses the optional parameter `converter=json` to convert inferenced data to `GstGVAJSONMeta`. 
+- `GstGVAJSONMeta` is a custom data structure that represents JSON metadata. 
+- `gvametapublish` uses the optional parameter `method=file` to publish inference results to a file.
+- `filepath=${OUTFILE}` is a JSON file to which the inference results are published.
 	
 5. Run the pipeline. After the pipeline completes, a JSON file of the inference results is available. 
 
@@ -305,86 +320,86 @@ You have completed this exercise. Continue to Exercise 4, where you will learn t
 
 This exercise changes course to show you how to:
 
-	- Download a CNN model
-	- Use the Model Optimizer to convert the model to the IR format
-	- Use the GVA plug-in
+- Download a CNN model
+- Use the Model Optimizer to convert the model to the IR format
+- Use the GVA plug-in
 
 This example provides examples of converting Caffe and Tensorflow models to the IR format. see the [Model Optimizer documentation](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_Converting_Model.html) for information about converting other models, such as MXNet, ONNX, and Kaldi.
 
 1. Git clone the [Model Optimizer](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html):
 
-	```sh
-	git clone https://github.com/opencv/dldt.git ~/gva/dldt  # contains folder model-optimizer
-	```
+```sh
+git clone https://github.com/opencv/dldt.git ~/gva/dldt  # contains folder model-optimizer
+```
 
 2. Use the [Installation instructions](https://github.com/opencv/dldt/blob/2020/model-optimizer/README.md) to set up the environment.
 
 3. Install Tensorflow version 1.12.0 if you don't have it installed already:
 
-	```sh
-	pip install tensorflow==1.12.0 --upgrade
-	```
+```sh
+pip install tensorflow==1.12.0 --upgrade
+```
 
 ### Convert a Caffe model <a name="convert-caffe-models"></a>
 
 <b>Example of converting a ssd300 model</b>
 
-	```sh
-	mkdir -p ~/gva/data/models/non_ir/ssd300  # to hold downloads
-	cd ~/gva/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
-	python3 downloader.py --name ssd300 -o ~/gva/data/models/non_ir/ssd300  # download ssd300
+```sh
+mkdir -p ~/gva/data/models/non_ir/ssd300  # to hold downloads
+cd ~/gva/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
+python3 downloader.py --name ssd300 -o ~/gva/data/models/non_ir/ssd300  # download ssd300
 
-	# convert model
-	cd ~/gva/dldt/model-optimizer  # was cloned on step 5.1 of current instruction
-	python3 mo.py --framework caffe --input_model ~/gva/data/models/non_ir/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.caffemodel --input_proto ~/gva/data/models/non_ir/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/deploy.prototxt --data_type FP32 --mean_values data[104.0,117.0,123.0] --output_dir ~/gva/data/models/common/ssd300-fp32/
+# convert model
+cd ~/gva/dldt/model-optimizer  # was cloned on step 5.1 of current instruction
+python3 mo.py --framework caffe --input_model ~/gva/data/models/non_ir/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.caffemodel --input_proto ~/gva/data/models/non_ir/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/deploy.prototxt --data_type FP32 --mean_values data[104.0,117.0,123.0] --output_dir ~/gva/data/models/common/ssd300-fp32/
 
-	# give handy names
-	mv ~/gva/data/models/common/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.xml ~/gva/data/models/common/ssd300-fp32/ssd300.xml
-	mv ~/gva/data/models/common/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.bin ~/gva/data/models/common/ssd300-fp32/ssd300.bin
+# give handy names
+mv ~/gva/data/models/common/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.xml ~/gva/data/models/common/ssd300-fp32/ssd300.xml
+mv ~/gva/data/models/common/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.bin ~/gva/data/models/common/ssd300-fp32/ssd300.bin
 
-	rm -rf ~/gva/data/models/non_ir/ssd300  # delete ssd300 in Caffe format
+rm -rf ~/gva/data/models/non_ir/ssd300  # delete ssd300 in Caffe format
 
-	# done
-	```
+# done
+```
 
 <b>Example of converting a mobilenet-ssd model</b>
 
-	```sh
-	mkdir -p ~/gva/data/models/non_ir/mobilenet-ssd  # to hold downloads
-	cd ~/gva/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
-	python3 downloader.py --name mobilenet-ssd -o ~/gva/data/models/non_ir/mobilenet-ssd  # download mobilenet-ssd
+```sh
+mkdir -p ~/gva/data/models/non_ir/mobilenet-ssd  # to hold downloads
+cd ~/gva/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
+python3 downloader.py --name mobilenet-ssd -o ~/gva/data/models/non_ir/mobilenet-ssd  # download mobilenet-ssd
 
-	# convert model
-	cd ~/gva/dldt/model-optimizer  # was cloned on step 5.1 of current instruction
-	python3 mo.py --framework caffe --input_model ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.caffemodel --input_proto ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.prototxt --data_type FP32 --mean_values data[127.5,127.5,127.5] --scale_values data[127.50223128904757] --output_dir ~/gva/data/models/common/mobilenet-ssd-fp32/
+# convert model
+cd ~/gva/dldt/model-optimizer  # was cloned on step 5.1 of current instruction
+python3 mo.py --framework caffe --input_model ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.caffemodel --input_proto ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.prototxt --data_type FP32 --mean_values data[127.5,127.5,127.5] --scale_values data[127.50223128904757] --output_dir ~/gva/data/models/common/mobilenet-ssd-fp32/
 
-	rm -rf ~/gva/data/models/non_ir/mobilenet-ssd  # delete mobilenet-ssd in Caffe format
+rm -rf ~/gva/data/models/non_ir/mobilenet-ssd  # delete mobilenet-ssd in Caffe format
 
-	# done
-	```
+# done
+```
 
 ### Convert a TensorFlow model <a name="use-tensorflow-models"></a>
 
 <b>Example of converting a Yolov3 model</b>
 
-	```sh
-	git clone https://github.com/mystic123/tensorflow-yolo-v3.git ~/gva/data/models/non_ir/yolov3  # download yolov3
-	cd ~/gva/data/models/non_ir/yolov3
-	git checkout ed60b90  # choose particular commit
-	wget https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names  # download coco labels
-	wget https://pjreddie.com/media/files/yolov3.weights  # download weights
+```sh
+git clone https://github.com/mystic123/tensorflow-yolo-v3.git ~/gva/data/models/non_ir/yolov3  # download yolov3
+cd ~/gva/data/models/non_ir/yolov3
+git checkout ed60b90  # choose particular commit
+wget https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names  # download coco labels
+wget https://pjreddie.com/media/files/yolov3.weights  # download weights
 
-	# convert weights
-	python3 convert_weights_pb.py --class_names coco.names --data_format NHWC --weights_file yolov3.weights --size 416
+# convert weights
+python3 convert_weights_pb.py --class_names coco.names --data_format NHWC --weights_file yolov3.weights --size 416
 
-	# convert model
-	cd ~/gva/dldt/model-optimizer  # was cloned on step 5 of current instruction
-	python3 mo.py --framework tf --input_model ~/gva/data/models/non_ir/yolov3/frozen_darknet_yolov3_model.pb --tensorflow_use_custom_operations_config ~/gva/gst-video-analytics/samples/model_optimizer_configs/yolo_v3.json --input_shape [1,416,416,3] --data_type=FP32 -o ~/gva/data/models/common/yolov3-fp32
+# convert model
+cd ~/gva/dldt/model-optimizer  # was cloned on step 5 of current instruction
+python3 mo.py --framework tf --input_model ~/gva/data/models/non_ir/yolov3/frozen_darknet_yolov3_model.pb --tensorflow_use_custom_operations_config ~/gva/gst-video-analytics/samples/model_optimizer_configs/yolo_v3.json --input_shape [1,416,416,3] --data_type=FP32 -o ~/gva/data/models/common/yolov3-fp32
 
-	rm -rf ~/gva/data/models/non_ir/yolov3  # delete yolov3 in TensorFlow format
+rm -rf ~/gva/data/models/non_ir/yolov3  # delete yolov3 in TensorFlow format
 
-	# done
-	```
+# done
+```
 
 For detailed instructions to convert models, [look here](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow.html)
 
