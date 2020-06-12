@@ -88,7 +88,7 @@ __Note__: This command needs to be executed only once in the terminal where the 
     
 ## Run the Application
 
-    cd <path_to_the_Brain_Tumor_Segmentation_OpenVINO_directory>/application
+    cd application
 
 To see a list of the various options:
 
