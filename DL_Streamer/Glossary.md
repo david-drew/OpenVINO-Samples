@@ -1,4 +1,4 @@
-# Glossary
+# DL Streamer Command Reference
 
 | Term | Type | Description |
 
