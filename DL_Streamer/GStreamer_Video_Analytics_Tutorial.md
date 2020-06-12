@@ -234,14 +234,14 @@ See [model-proc](https://github.com/opencv/gst-video-analytics/tree/master/sampl
 
 To use this optional replacement command, create and run the pipeline as follows:
 
-	```sh
-	gst-launch-1.0 \
-		filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-		gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU inference-interval=10 ! queue ! \
-		gvatrack tracking-type=short-term ! queue ! \
-		gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle reclassify-interval=10 ! queue ! \
-		gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-	```
+```sh
+gst-launch-1.0 \
+	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
+	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU inference-interval=10 ! queue ! \
+	gvatrack tracking-type=short-term ! queue ! \
+	gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle reclassify-interval=10 ! queue ! \
+	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
+```
 
 In this pipeline:
 
