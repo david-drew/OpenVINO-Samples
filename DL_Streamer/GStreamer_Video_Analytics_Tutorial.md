@@ -16,6 +16,10 @@ Before beginning the exercises, you must [download the models and videos](#acqui
 <details>
 	<summary>Prepare the System</summary>
 
+
+NOTE: The recommended way to install DL Streamer is through OpenVINO.  DL Streamer is included with OpenVINO 2020.r2 and newer.  If you have not installed OpenVINO, refer to the [DL Streamer Install Guide](Install_Guide.md).
+
+
 ### Install Requirements
 ```sh
 sudo apt update && sudo apt install -y --no-install-recommends \
