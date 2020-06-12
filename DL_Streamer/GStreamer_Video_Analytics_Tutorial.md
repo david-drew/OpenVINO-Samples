@@ -162,8 +162,12 @@ You're done building and running this pipeline. To expand on this exercise, use 
 
 </details>
 
-</details>
+
 #### Simple Pipeline with a Web Camera Video Stream (First optional add-on to Exercise 1)
+
+<details>
+	<summary>Simple Pipeline with a Web Camera Video Stream</summary>
+
 
 GStreamer supports connected video devices, like Web cameras, which means you use a web camera to perform real-time inference.
 
