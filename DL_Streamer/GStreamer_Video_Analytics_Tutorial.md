@@ -11,10 +11,18 @@ The first three exercises build on each other in increasing complexity. If you a
 
 Before beginning the exercises, you must [download the models and videos](#acquire-data-and-sources) that the tutorials use. You should also read the information about [the elements used in a GVA pipeline](#gva-pipeline) to help you understand the elements and options the exercises use.
 
-## Get the Models and Videos for the Examples<a name="acquire-data-and-sources"></a>
+### Prepare the System (Download Media, Install Requirements)
 
 <details>
-	<summary>Get the Models and Videos for the Examples</summary>
+	<summary>Prepare the System</summary>
+
+### Install Requirements
+```sh
+sudo apt update && sudo apt install -y --no-install-recommends \
+	wget cpio cmake lsb-release mesa-utils gdb mc ocl-icd-libopencl1 clinfo vainfo
+```
+
+### Get the Models and Videos for the Examples<a name="acquire-data-and-sources"></a>
 
 The DL Streamer plug-in uses the OpenVINO Deep Learning [Inference Engine](https://software.intel.com/en-us/articles/OpenVINO-InferEngine) to perform inference. As input, the Inference Engine accepts CNN models that are converted to the Intermediate Representation (IR) format through the OpenVINO toolkit [Model Optimizer](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html). 
 
@@ -52,7 +60,7 @@ The steps below use a quick way to get everything you need to use the sample app
 
 </details>
 
-## Learn about the Video Analytics Pipeline and the GVA Elements <a name="gva-pipeline"></a> 
+### Learn about the Video Analytics Pipeline and the GVA Elements <a name="gva-pipeline"></a> 
 
 <details>
 	<summary>Learn about the Video Analytics Pipeline and the GVA Elements</summary>
@@ -100,7 +108,7 @@ You are ready to try creating your own pipeline. Continue with the next section 
 </details>
 
 
-## Exercise 1: Build a Simple Pipeline <a name="simple-pipeline"></a>
+### Exercise 1: Build a Simple Pipeline <a name="simple-pipeline"></a>
 
 <details>
 	<summary>Build a Simple Pipeline</summary>
@@ -204,7 +212,7 @@ This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentati
 </details>
 
 
-## Exercise 2: Build a Classification Pipeline <a name="classification-pipeline"></a>
+### Exercise 2: Build a Classification Pipeline <a name="classification-pipeline"></a>
 
 <details>
 	<summary>Build a Classification Pipeline</summary>
@@ -359,7 +367,7 @@ You have completed this exercise. Continue to Exercise 4, where you will learn t
 </details>
 
 
-## Exercise 4: Convert Convolutional Neural Network (CNN) Models to the Intermediate Representation (IR) Format <a name="convert-CNN"></a>
+### Exercise 4: Convert Convolutional Neural Network (CNN) Models to the Intermediate Representation (IR) Format <a name="convert-CNN"></a>
 
 <details>
 	<summary>Convert a CNN to IR Format</summary>
@@ -387,7 +395,7 @@ git clone https://github.com/opencv/dldt.git ~/gva/dldt  # contains folder model
 pip install tensorflow==1.12.0 --upgrade
 ```
 
-### Convert a Caffe model <a name="convert-caffe-models"></a>
+#### Convert a Caffe model <a name="convert-caffe-models"></a>
 
 <b>Example of converting a ssd300 model</b>
 
@@ -425,7 +433,7 @@ rm -rf ~/gva/data/models/non_ir/mobilenet-ssd  # delete mobilenet-ssd in Caffe f
 # done
 ```
 
-### Convert a TensorFlow model <a name="use-tensorflow-models"></a>
+#### Convert a TensorFlow model <a name="use-tensorflow-models"></a>
 
 <b>Example of converting a Yolov3 model</b>
 
