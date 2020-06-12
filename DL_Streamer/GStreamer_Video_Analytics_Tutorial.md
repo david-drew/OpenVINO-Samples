@@ -13,6 +13,9 @@ Before beginning the exercises, you must [download the models and videos](#acqui
 
 ## Get the Models and Videos for the Examples<a name="acquire-data-and-sources"></a>
 
+<details>
+	<summary>Get the Models and Videos for the Examples</summary>
+
 The DL Streamer plug-in uses the OpenVINO Deep Learning [Inference Engine](https://software.intel.com/en-us/articles/OpenVINO-InferEngine) to perform inference. As input, the Inference Engine accepts CNN models that are converted to the Intermediate Representation (IR) format through the OpenVINO toolkit [Model Optimizer](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html). 
 
 You can either train your own CNN models and convert them to the IR format or use free models from the [OpenVINO Model Zoo](https://github.com/opencv/open_model_zoo) that are already in the IR format. A tool named [Model Downloader](https://docs.openvinotoolkit.org/2020.1/_tools_downloader_README.html) gives you a way to easily download models from the Model Zoo. 
@@ -47,7 +50,12 @@ The steps below use a quick way to get everything you need to use the sample app
 - You can download freely licensed videos from the websites like [Pexels](https://www.pexels.com/videos).
 - Put your video files in `~/gva/video`.
 
+</details>
+
 ## Learn about the Video Analytics Pipeline and the GVA Elements <a name="gva-pipeline"></a> 
+
+<details>
+	<summary>Learn about the Video Analytics Pipeline and the GVA Elements</summary>
 
 The diagram below shows the data flow of a typical video analytics pipeline.
 
@@ -89,7 +97,14 @@ The elements in this pipeline are:
 
 You are ready to try creating your own pipeline. Continue with the next section to use the first exercise.
 
+</details>
+
+
 ## Exercise 1: Build a Simple Pipeline <a name="simple-pipeline"></a>
+
+<details>
+	<summary>uild a Simple Pipeline</summary>
+
 
 This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  
 
@@ -145,6 +160,9 @@ gst-launch-1.0 \
 
 You're done building and running this pipeline. To expand on this exercise, use one or both add-ons to this exercise to select different video sources. If the add-ons don't suit you, jump ahead to start [Exercise 2](#classification-pipeline)
 
+</details>
+
+</details>
 #### Simple Pipeline with a Web Camera Video Stream (First optional add-on to Exercise 1)
 
 GStreamer supports connected video devices, like Web cameras, which means you use a web camera to perform real-time inference.
@@ -179,9 +197,14 @@ gst-launch-1.0 \
 
 This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentation/playback/urisourcebin.html?gi-language=c) to access URIs. In this pipeline, the URI access is to the RTSP URI and the video stream from the link for inference.
 
+</details>
+
 
 ## Exercise 2: Build a Classification Pipeline <a name="classification-pipeline"></a>
 
+<details>
+	<summary>Build a Classification Pipeline</summary>
+	
 This exercise uses the scenario, video, and IR files from Exercise 1 to help you create a pipeline with classification applied to the ROIs. In Exercise 2, detected objects use `gvadetect` as inputs for `gvaclassify` for inference to identify additional attributes.
 
 This exercises uses the following additional GVA element:
@@ -258,7 +281,12 @@ In this pipeline:
 
 You're done building and running this pipeline. The next exercise shows you how to publish your results to a .`.json`.
 	
+</details>
+
 ## Exercise 3: Publish Inference Results
+<details>
+	<summary>Publish Inference Results</summary>
+
 
 This exercise extends the pipeline to publish your detection and classification results to a `.json` file from a GStreamer pipeline.
 
@@ -324,7 +352,14 @@ In this step:
 
 You have completed this exercise. Continue to Exercise 4, where you will learn to convert Cafe and Tensorflow CNN models.
 
-## Exercise 4: Convert Convolutional Neural Network (CNN) Models to the Intermediate Representation (IR) format <a name="convert-CNN"></a>
+</details>
+
+
+## Exercise 4: Convert Convolutional Neural Network (CNN) Models to the Intermediate Representation (IR) Format <a name="convert-CNN"></a>
+
+<details>
+	<summary>Convert a CNN to IR Format</summary>
+
 
 This exercise changes course to show you how to:
 
@@ -411,4 +446,5 @@ rm -rf ~/gva/data/models/non_ir/yolov3  # delete yolov3 in TensorFlow format
 
 For detailed instructions to convert models, [look here](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow.html)
 
+</details>
 
