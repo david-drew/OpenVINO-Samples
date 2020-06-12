@@ -39,11 +39,11 @@ This step will take about 15-20 minutes to complete.<br><br>
 Move to the workbench directory.<br>
 `cd /opt/intel/openvino/deployment_tools/tools/workbench`
 
-Example Use:<br>
-run_openvino_workbench.sh -PACKAGE_PATH \<openvino archive path\>
+Example Use:<br> 
+start_openvino_workbench.sh -PACKAGE_PATH \<openvino archive path\> -IMAGE_NAME \<name\>
 
 Use:<br>
-` sudo ./start_workbench.sh -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.3.194.tgz`
+` sudo ./start_workbench.sh -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.3.194.tgz` -IMAGE_NAME workbench
 
 After setup is complete, use a web browser to access the workbench:<br>
 http://127.0.0.1:5665
