@@ -295,7 +295,7 @@ You're done building and running this pipeline. The next exercise shows you how 
 	
 </details>
 
-## Exercise 3: Publish Inference Results
+### Exercise 3: Publish Inference Results
 <details>
 	<summary>Publish Inference Results</summary>
 
