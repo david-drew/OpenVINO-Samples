@@ -108,7 +108,7 @@ Although the application runs on the CPU by default, this can also be explicitly
 ### Check Results
 Several images have been created in the results directory.  Look at them to see the output of the application.
 
-    cd <path_to_the_Brain_Tumor_Segmentation_OpenVINO_directory>/results
+    cd results
     eog pred0.png
     eog pred1.png
     
