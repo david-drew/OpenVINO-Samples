@@ -21,18 +21,20 @@ The steps below use a quick way to get everything you need to use the sample app
 
 1. Create directories for the models and videos. The following is an example. If you use a different structure, remember to change the path in the instructions to match your location:
    ```sh
-   mkdir -p ~/gva
    mkdir -p ~/gva/models
    mkdir -p ~/gva/video
    ```
 
-2.	Download the models:
+2.	Set the path to store the models we download.
+	`export MODELS_PATH=~/gva/models`
+
+3.	Download the models:
 	```
 	cd ~/gva/models
 	/opt/intel/openvino/data_processing/dl_streamer/samples/download_models.sh
 	```
 
-3. The samples require video files that:
+4. The samples require video files that:
 
 - Are in h264 or mp4 format.
 - Include cars, pedestrians, and people with their faces showing.
@@ -40,7 +42,7 @@ The steps below use a quick way to get everything you need to use the sample app
 	
 You can download freely licensed videos from the websites like [Pexels](https://www.pexels.com/videos).
 
-4. Put your video files in `~/gva/video`.
+5. Put your video files in `~/gva/video`.
 
 ## Learn about the Video Analytics Pipeline and the GVA Elements <a name="gva-pipeline"></a> 
 
