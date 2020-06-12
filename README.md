@@ -148,9 +148,7 @@ NOTE: When using OpenVINO™ from the command line, you must set up your environ
     source /opt/intel/openvino/bin/setupvars.sh
 
 <details>
-    <summary>Exercise 3: Human Pose Estimation</summary>
-
-**Exercise 3: Human Pose Estimation**
+    <summary>Exercise 2: Human Pose Estimation</summary>
 
 This demo detects people and draws a stick figure to show limb positions. This model has already been converted for use with the Intel® Distribution of OpenVINO™ toolkit.
 
@@ -205,9 +203,7 @@ https://www.pexels.com/video/couple-dancing-on-sunset-background-2035509/
 </details>
 
 <details>
-    <summary>Exercise 4: Interactive Face Detection</summary>
-
-**Exercise 4: Interactive Face Detection**
+    <summary>Exercise 3: Interactive Face Detection</summary>
 
 The face detection demo draws bounding boxes around faces, and optionally feeds the output of the primary model to additional models. This model has already been converted for use with OpenVINO™.
 
@@ -234,7 +230,7 @@ Steps:
 </details>
 
 <details>
-    <summary>Exercise 5: Brain Tumor Segmentation</summary>
+    <summary>Exercise 4: Brain Tumor Segmentation</summary>
 
 For this next exercise, we'll redirect you to another page.  Please return here after completion.
 
@@ -243,7 +239,7 @@ For this next exercise, we'll redirect you to another page.  Please return here 
 </details>
 
 <details>
-	<summary>Exercise 6: DL Streamer</summary>
+	<summary>Exercise 5: DL Streamer</summary>
 	
 The DL Streamer is a command-line tool and API for integrating OpenVINO into a media analytics pipeline.  It supports OpenVINO, GStreamer, Mosquitto, Kafka, and a variety of other technologies.
 
