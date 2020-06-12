@@ -26,8 +26,10 @@ The steps below use a quick way to get everything you need to use the sample app
    ```
 
 2.	Set the path to store the models we download.
-	`export MODELS_PATH=~/gva/models`
-
+    ```sh	
+    export MODELS_PATH=~/gva/models
+    ```
+   
 3.	Download the models:
 	```
 	cd ~/gva/models
