@@ -15,7 +15,7 @@ Before beginning the exercises, you must [download the models and videos](#acqui
 
 <details>
 	<summary>Prepare the System</summary>
-
+<br>
 
 NOTE: The recommended way to install DL Streamer is through OpenVINO.  DL Streamer is included with OpenVINO 2020.r2 and newer.  If you have not installed OpenVINO, refer to the [DL Streamer Install Guide](Install_Guide.md).
 
@@ -69,6 +69,7 @@ The steps below use a quick way to get everything you need to use the sample app
 <details>
 	<summary>Learn about the Video Analytics Pipeline and the GVA Elements</summary>
 
+<br>
 The diagram below shows the data flow of a typical video analytics pipeline.
 
 ![Typical GVA pipeline](typical_pipeline.png)
@@ -116,7 +117,7 @@ You are ready to try creating your own pipeline. Continue with the next section 
 
 <details>
 	<summary>Build a Simple Pipeline</summary>
-
+<br>
 
 This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  
 
@@ -179,7 +180,7 @@ You're done building and running this pipeline. To expand on this exercise, use 
 
 <details>
 	<summary>Simple Pipeline with a Web Camera Video Stream</summary>
-
+<br>
 
 GStreamer supports connected video devices, like Web cameras, which means you use a web camera to perform real-time inference.
 
@@ -220,7 +221,8 @@ This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentati
 
 <details>
 	<summary>Build a Classification Pipeline</summary>
-	
+<br>	
+
 This exercise uses the scenario, video, and IR files from Exercise 1 to help you create a pipeline with classification applied to the ROIs. In Exercise 2, detected objects use `gvadetect` as inputs for `gvaclassify` for inference to identify additional attributes.
 
 This exercises uses the following additional GVA element:
@@ -302,7 +304,7 @@ You're done building and running this pipeline. The next exercise shows you how 
 ### Exercise 3: Publish Inference Results
 <details>
 	<summary>Publish Inference Results</summary>
-
+<br>
 
 This exercise extends the pipeline to publish your detection and classification results to a `.json` file from a GStreamer pipeline.
 
@@ -375,7 +377,7 @@ You have completed this exercise. Continue to Exercise 4, where you will learn t
 
 <details>
 	<summary>Convert a CNN to IR Format</summary>
-
+<br>
 
 This exercise changes course to show you how to:
 
