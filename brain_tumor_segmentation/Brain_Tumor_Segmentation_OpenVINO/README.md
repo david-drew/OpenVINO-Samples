@@ -108,7 +108,7 @@ Although the application runs on the CPU by default, this can also be explicitly
 ### Check Results
 Several images have been created in the results directory.  Look at them to see the output of the application.
 
-    cd results
+    cd ../results
     eog pred0.png
     eog pred1.png
     
