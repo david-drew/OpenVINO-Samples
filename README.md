@@ -39,7 +39,7 @@ In this step, your trained models are ready to run through the Model Optimizer t
 Models in the IR format always include an .xml and .bin file, and may also include other files, like .json, .mapping, or others. Make sure you have these files in the same directory for the Inference Engine to find them.
 
 REQUIRED: model_name.xml
-REQUIREDL: model_name.bin
+REQUIRED: model_name.bin
 OPTIONAL: model_name.json, model_name.mapping, etc.
 
 This guide uses the public SqueezeNet 1.1 Caffe* model to run the Image Classification Sample. See the example to download a model in the Download Models section to learn how to download this model.
@@ -56,15 +56,16 @@ The Inference Engine can perform inference on different precision formats, such 
 
 Run the Model Optimizer script:
 
+```
 cd /opt/intel/openvino/deployment_tools/model_optimizer
+```
+
 python3 ./mo.py --input_model <model_dir>/<model_file> --data_type <model_precision> --output_dir <ir_dir>
 The produced IR files are in the <ir_dir> directory.
 
 The actual command:
 ```
-python3 ./mo.py --input_model ~/squeezenet1.1_FP32 --data_type FP32 --output_dir ~/ir
-
-
+python3 ./mo.py --input_model ~/openvino_models/models/public/squeezenet1.1/squeezenet1.1.caffemodel --data_type FP32 --output_dir ~/ir
 ```
 
 ## <a name="Exercises"></a> Exercises
