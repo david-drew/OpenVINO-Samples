@@ -14,6 +14,6 @@ NOTE: No actions need to be taken with these guides, they are provided as refere
 
 
 ### Tutorial
-Follow the exercises in the tutorial below.
+Follow the link below.  Read through the reference material, then do the exercises in the tutorial.
 
-[GStreamer Video Analytics Tutorial](GStreamer_Video_Analytics_Tutorial.md)
+[GStreamer Video Analytics Documents and Tutorial](DL_Streamer/README.md)
