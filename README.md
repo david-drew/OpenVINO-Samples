@@ -32,24 +32,40 @@ cd /opt/intel/openvino/inference_engine/samples/cpp
 ./build_samples.sh
 ```
 
+# Convert the Model with Model Optimizer
 
-### Set up the DL Workbench
-This step will take about 15-20 minutes to complete.<br><br>
+In this step, your trained models are ready to run through the Model Optimizer to convert them to the Intermediate Representation format. This is required before using the Inference Engine with the model.
 
-Move to the workbench directory.<br>
-`cd /opt/intel/openvino/deployment_tools/tools/workbench`
+Models in the IR format always include an .xml and .bin file, and may also include other files, like .json, .mapping, or others. Make sure you have these files in the same directory for the Inference Engine to find them.
 
-Example Use:<br> 
-start_openvino_workbench.sh -PACKAGE_PATH \<openvino archive path\> -IMAGE_NAME \<name\>
+REQUIRED: model_name.xml
+REQUIREDL: model_name.bin
+OPTIONAL: model_name.json, model_name.mapping, etc.
 
-Use:<br>
-` sudo ./start_workbench.sh -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.3.194.tgz -IMAGE_NAME workbench`
+This guide uses the public SqueezeNet 1.1 Caffe* model to run the Image Classification Sample. See the example to download a model in the Download Models section to learn how to download this model.
 
-After setup is complete, use a web browser to access the workbench:<br>
-http://127.0.0.1:5665
+The squeezenet1.1 model is downloaded in the Caffe* format. You must use the Model Optimizer to convert the model to the IR. The vehicle-license-plate-detection-barrier-0106, vehicle-attributes-recognition-barrier-0039, license-plate-recognition-barrier-0001 models are downloaded in the Intermediate Representation format. You don't need to use the Model Optimizer to covert these models.
 
-After the first time setup, future execution will bypass setup and immediately launch the DL workbench.
+Create an <ir_dir> directory to contain the model's Intermediate Representation (IR).
 
+```
+mkdir ~/ir
+```
+
+The Inference Engine can perform inference on different precision formats, such as FP32, FP16, INT8. To prepare an IR with specific precision, run the Model Optimizer with the appropriate --data_type option.
+
+Run the Model Optimizer script:
+
+cd /opt/intel/openvino/deployment_tools/model_optimizer
+python3 ./mo.py --input_model <model_dir>/<model_file> --data_type <model_precision> --output_dir <ir_dir>
+The produced IR files are in the <ir_dir> directory.
+
+The actual command:
+```
+python3 ./mo.py --input_model ~/squeezenet1.1_FP32 --data_type FP32 --output_dir ~/ir
+
+
+```
 
 ## <a name="Exercises"></a> Exercises
 
