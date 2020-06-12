@@ -72,7 +72,7 @@ The following video shows the result of running a pipeline with:
 gst-launch-1.0 filesrc location=cut.mp4 ! decodebin ! gvadetect model=face-detection-adas-0001.xml ! gvaclassify model=emotions-recognition-retail-0003.xml model-proc=emotions-recognition-retail-0003.json ! gvawatermark ! xvimagesink sync=false
 ```
 
-<div align="center"><img src="intro.gif" width=900/></div>
+<div align="center"><img src="demo_pipeline.gif" width=900/></div>
 
 The elements in this pipeline are:
 * `filesrc` loads a video file named `cut.mp4`.
