@@ -10,7 +10,7 @@ NOTE: No actions need to be taken with these guides, they are provided as refere
 - [GStreamer Python Bindings](GStreamer_Python_Bindings.md)
 - [Supported Models](Supported_Models.md)
 - [Model Preparation](Model_Preparation.md)
-- [Glossary](Glossary.md)
+- [DL Streamer Command Reference](Command_Reference.md)
 
 
 ### Tutorial
