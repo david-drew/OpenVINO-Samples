@@ -88,7 +88,10 @@ __Note__: This command needs to be executed only once in the terminal where the 
     
 ## Run the Application
 
+```
     cd application
+    chmod +x brain_tumor_segmentation.py
+```
 
 To see a list of the various options:
 
