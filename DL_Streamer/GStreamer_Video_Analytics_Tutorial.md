@@ -30,7 +30,7 @@ The steps below use a quick way to get everything you need to use the sample app
     export MODELS_PATH=~/gva/models
     ```
    
-3.	Download the models:
+3. Download the models:
 	```
 	cd ~/gva/models
 	/opt/intel/openvino/data_processing/dl_streamer/samples/download_models.sh
@@ -42,9 +42,11 @@ The steps below use a quick way to get everything you need to use the sample app
 - Include cars, pedestrians, and people with their faces showing.
 - Keep your videos to less than 2 minutes for faster processing.
 	
+5. Download videos
+
 You can download freely licensed videos from the websites like [Pexels](https://www.pexels.com/videos).
 
-5. Put your video files in `~/gva/video`.
+Put your video files in `~/gva/video`.
 
 ## Learn about the Video Analytics Pipeline and the GVA Elements <a name="gva-pipeline"></a> 
 
