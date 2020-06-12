@@ -44,9 +44,8 @@ The steps below use a quick way to get everything you need to use the sample app
 	
 5. Download videos
 
-You can download freely licensed videos from the websites like [Pexels](https://www.pexels.com/videos).
-
-Put your video files in `~/gva/video`.
+- You can download freely licensed videos from the websites like [Pexels](https://www.pexels.com/videos).
+- Put your video files in `~/gva/video`.
 
 ## Learn about the Video Analytics Pipeline and the GVA Elements <a name="gva-pipeline"></a> 
 
@@ -155,7 +154,7 @@ Before repeating Exercise 1 with a Web camera video stream, verify the Web camer
 To use a Web camera:
 
 ```sh
-gst-launch-1.0 \
+    gst-launch-1.0 \
 	v4l2src device=<path-to-device> ! decodebin ! video/x-raw ! videoconvert ! \
 	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
 	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
@@ -248,10 +247,13 @@ In this pipeline:
 
 1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc **on every 10th frame, due to `inference-interval=10`**.
 	*`gvatrack` tracks each object detected by `gvadetect`
+	
 2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
+
 3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc, **but skips classification for already classified objects for 10 frames, using tracking information from `gvatrack` to determine whether to classify an object**:
 	* `object-class` tells `gvalcassify` which ROIs to classify. 
 	* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
+	
 4. `gvawatermark` displays the ROIs and their attributes. 
 
 You're done building and running this pipeline. The next exercise shows you how to publish your results to a .`.json`.
