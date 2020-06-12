@@ -9,7 +9,7 @@ This tutorial uses four exercises to help you:
 
 The first three exercises build on each other in increasing complexity. If you are new to using the DL Streamer, complete these in order. 
 
-Before beginning the exercises, you must [download the models and videos](#acquire-data-and-sources) that the tutorials use. You should also read the information about [the elements used in a GVA pipeline](#gva-pipeline) to help you understand the elements and options the exercises use.
+Before beginning the exercises, you must download the models and videos that the tutorials use. You should also read the information about the elements used in a GVA pipeline to help you understand the elements and options the exercises use.
 
 ### Prepare the System (Download Media, Install Requirements)
 
