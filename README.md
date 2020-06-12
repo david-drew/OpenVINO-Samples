@@ -159,7 +159,7 @@ This demo detects people and draws a stick figure to show limb positions. This m
 
 Example of Command:
 
-- ./human_pose_estimation_demo -i path/to/video -m path/to/model/human-pose-estimation-0001.xml -d CPU
+- human_pose_estimation_demo -i path/to/video -m path/to/model/human-pose-estimation-0001.xml -d CPU
 
 **Steps to Run the Human Pose Demo:**
 
