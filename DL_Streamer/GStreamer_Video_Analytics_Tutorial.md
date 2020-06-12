@@ -103,7 +103,7 @@ You are ready to try creating your own pipeline. Continue with the next section 
 ## Exercise 1: Build a Simple Pipeline <a name="simple-pipeline"></a>
 
 <details>
-	<summary>uild a Simple Pipeline</summary>
+	<summary>Build a Simple Pipeline</summary>
 
 
 This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  
