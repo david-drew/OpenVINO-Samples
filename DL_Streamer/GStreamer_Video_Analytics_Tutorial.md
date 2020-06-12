@@ -133,21 +133,21 @@ source /opt/intel/openvino/bin/setupvars.sh
 
 <b>Note</b>: You must set the environment variables each time you open a new shell unless you added the variables to the `.bashrc` file. See [Set the environment variables](https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#set-the-environment-variables)
 
-3. Export the `model` and `model_proc` files:
+2. Export the `model` and `model_proc` files:
 
 ```sh
 export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
 export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
 ```
 
-4. Export the video file path:
+3. Export the video file path:
 
 ```sh
 # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
 export VIDEO_EXAMPLE=~/gva/video/FILENAME
 ```
 
-5. Create and run the pipeline. As an option, add the `model-proc` parameter to create a `model-proc` JSON file. `model-proc` files describe the model input and output layer format. The `model-proc` file in this exercise describes the output layer name and labels (person, vehicle, and bike) on objects it detects. 
+4. Create and run the pipeline. As an option, add the `model-proc` parameter to create a `model-proc` JSON file. `model-proc` files describe the model input and output layer format. The `model-proc` file in this exercise describes the output layer name and labels (person, vehicle, and bike) on objects it detects. 
 
 See [model-proc](https://github.com/opencv/gst-video-analytics/blob/master/samples/model_proc/person-vehicle-bike-detection-crossroad-0078.json) for more information.
 
@@ -158,7 +158,7 @@ gst-launch-1.0 \
 	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
 ```
 	
-6. Review the output. Persons, vehicles, and bikes are bound by colored boxes, and detection results are displayed as video overlays. The average frame rate of the pipeline are shown as overlays at the bottom of the video.
+5. Review the output. Persons, vehicles, and bikes are bound by colored boxes, and detection results are displayed as video overlays. The average frame rate of the pipeline are shown as overlays at the bottom of the video.
 
 `gvadetect`:
 	* Used the XML model file to find the BIN file for inference.
