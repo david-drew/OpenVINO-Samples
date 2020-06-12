@@ -127,7 +127,7 @@ NOTE: In this case, it's a single image.
 
 2.  Copy a sample image to the release directory. You will use this with your optimized model:
 
-    `cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
+    `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
 
 **Run the Sample Application**
 
