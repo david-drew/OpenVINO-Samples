@@ -94,9 +94,7 @@ See [GVA elements](Elements) for more information about the GVA plug-in elements
 
 The following video shows the result of running a pipeline with:
 
-```sh
-gst-launch-1.0 filesrc location=cut.mp4 ! decodebin ! gvadetect model=face-detection-adas-0001.xml ! gvaclassify model=emotions-recognition-retail-0003.xml model-proc=emotions-recognition-retail-0003.json ! gvawatermark ! xvimagesink sync=false
-```
+- gst-launch-1.0 filesrc location=cut.mp4 ! decodebin ! gvadetect model=face-detection-adas-0001.xml ! gvaclassify model=emotions-recognition-retail-0003.xml model-proc=emotions-recognition-retail-0003.json ! gvawatermark ! xvimagesink sync=false
 
 <div align="center"><img src="demo_pipeline.gif" width=900/></div>
 
