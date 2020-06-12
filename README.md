@@ -234,20 +234,11 @@ Steps:
 </details>
 
 <details>
-    <summary>Exercise 5: Object Detection</summary>
+    <summary>Exercise 5: Brain Tumor Segmentation</summary>
 
-**Exercise 5: Object Detection (Vehicles with multiple models)**
+For this next exercise, we'll redirect you to another page.  Please return here after completion.
 
-As mentioned in the previous exercise, it's possible to chain models together and use the output of an initial object detection model as input for additional models.
-
-The following exercise uses the `security_barrier_camera_demo`.
-
-Steps:
-1. Find and download a model that supports vehicle detection.
-2. Find and download a video that contains cars to be detected.
-3. Run the `security_barrier_camera_demo` and check that vehicles are detected.
-4. Choose at least one additional model (such as attribute recognition), and run the application, now using the initial model plus the new one.
-5. **OPTIONAL:** Run the demo with vehicle detection as the primary, plus attribute recognition and license plate recognition.
+[Brain Tumor Segmentation Sample](https://github.com/david-drew/OpenVINO-Samples/tree/master/brain_tumor_segmentation/README.md)
 
 </details>
 
