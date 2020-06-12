@@ -243,9 +243,11 @@ export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_
 
 3. Export the video file path:
 
+Make sure to replace <your_downloaded_video> with the name of the video you want to use.
+
 ```sh
 # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-export VIDEO_EXAMPLE=~/gva/video/FILENAME
+export VIDEO_EXAMPLE=~/gva/video/<your_downloaded_video>
 ```
 
 4. Create and run the pipeline:
