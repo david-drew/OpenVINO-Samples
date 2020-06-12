@@ -71,7 +71,8 @@ This application uses a pre-trained model (unet_model_for_decathlon.hdf5), that 
 
 To install the dependencies of the RI and to optimize the pre-trained model, run the following command:
 
-    cd <path_to_the_Brain_Tumor_Segmentaion_OpenVINO_directory>
+    cd ~/brainseg/brain-tumor-segmentation/Braint_Tumor_Segmentation_OpenVINO
+    chmod +x setup.sh
     ./setup.sh
 
 ### What Input to use
