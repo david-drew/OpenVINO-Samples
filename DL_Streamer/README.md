@@ -1,5 +1,14 @@
 ## DL Streamer Documentation Guide
 
+This guide provides information about the Intel DL Streamer tool, which provides high-level functionality to easily create pipelines for GStreamer and OpenVINO applications.
+
+The DL Streamer plug-in contains multiple GStreamer elements to construct pipelines. Some elements run inference operations such as detection, classification, and tracking, and other elements output inference results to the display screen, file, or publish the results to the Kafka or MQTT message brokers.
+
+The following diagram shows the interactions between the Intel OpenVINO toolkit and the DL Streamer:
+
+
+![gst_va_developer_flow](uploads/a444847895bd4855571cc951974fb53d/gst_va_developer_flow.png)
+
 ### GStreamer Documentation
 To familiarize yourself with DL Streamer, read through the following files:
 
