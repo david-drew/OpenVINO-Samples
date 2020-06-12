@@ -43,6 +43,12 @@ U-Net is designed like an [auto-encoder]( https://en.wikipedia.org/wiki/Autoenco
 
 ## Setup
 
+### Make a Directory for the Source
+```
+mkdir ~/brainseg
+cd ~/brainseg
+```
+
 ### Get the code
 
 Clone the reference implementation:
@@ -82,7 +88,7 @@ Though we are activating OpenVINO environment variables, this is just for the co
 ## Run the Application
 Change the current directory to the git-cloned application code location on your system:
 ```
-cd <path_to_the_brain_tumor_segmentation_MKL-DNN>/application
+cd ~/brainseg/brain-tumor-segmentation/Brain_Tumor_Segmentation_MKL-DNN/application
 ```
 
 To see a list of the various options:
