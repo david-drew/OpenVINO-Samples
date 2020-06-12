@@ -42,9 +42,15 @@ U-Net is designed like an [auto-encoder]( https://en.wikipedia.org/wiki/Autoenco
 
 ## Setup
 
+### Move to the tutorial directory
+```
+mkdir ~/brainseg
+cd ~/brainseg
+```
+
 ### Get the code
 
-Clone the reference implementation: 
+If the MKL-DNN sample was NOT completed, clone the reference implementation:
 ```
 sudo apt-get update && sudo apt-get install git
 git clone https://github.com/intel-iot-devkit/brain-tumor-segmentations.git
