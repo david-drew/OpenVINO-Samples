@@ -43,7 +43,7 @@ Example Use:<br>
 start_openvino_workbench.sh -PACKAGE_PATH \<openvino archive path\> -IMAGE_NAME \<name\>
 
 Use:<br>
-` sudo ./start_workbench.sh -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.3.194.tgz` -IMAGE_NAME workbench
+` sudo ./start_workbench.sh -PACKAGE_PATH ~/Downloads/l_openvino_toolkit_p_2020.3.194.tgz -IMAGE_NAME workbench`
 
 After setup is complete, use a web browser to access the workbench:<br>
 http://127.0.0.1:5665
