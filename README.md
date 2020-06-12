@@ -157,7 +157,7 @@ This demo detects people and draws a stick figure to show limb positions. This m
 - Requires downloading the human-pose-estimation-0001 (ICV) Model.
 - Requires video or camera input.
 
-Example of Command:
+Example Syntax:
 
 - human_pose_estimation_demo -i path/to/video -m path/to/model/human-pose-estimation-0001.xml -d CPU
 
@@ -218,9 +218,8 @@ The Face Detection Demo supports face detection, plus optional functions:
 - Head pose
 - Facial landmark display
 
-Syntax:
-
-`./interactive_face_detection_demo -i path/to/video -m path/to/face/model -d CPU`
+Example Syntax:
+- interactive_face_detection_demo -i path/to/video -m path/to/face/model -d CPU
 
 Steps:
 
