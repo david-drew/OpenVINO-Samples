@@ -141,10 +141,6 @@ NOTE: In this case, it's a single image.
 
 </details>
 
-
-
-
-
 ## Additional Samples for Linux* using Model Optimizer Command Line
 
 NOTE: When using OpenVINO™ from the command line, you must set up your environment whenever you change users or launch a new terminal.
@@ -161,10 +157,9 @@ This demo detects people and draws a stick figure to show limb positions. This m
 - Requires downloading the human-pose-estimation-0001 (ICV) Model.
 - Requires video or camera input.
 
-General Syntax:
+Example of Command:
 
-`./human_pose_estimation_demo -i path/to/video -m \
-path/to/model/human-pose-estimation-0001.xml -d CPU`
+- ./human_pose_estimation_demo -i path/to/video -m path/to/model/human-pose-estimation-0001.xml -d CPU
 
 **Steps to Run the Human Pose Demo:**
 
