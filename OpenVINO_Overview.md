@@ -54,7 +54,9 @@ The simplified OpenVINO™ workflow is:
 2. **Run the trained model through the Model Optimizer** to convert the model to an Intermediate Representation, which consists of a pair of `.xml` and `.bin` files that are used Inference Engine input.
 3. **Use the Inference Engine API in the application** to run inference against the Intermediate Representation (pptimized model) and output inference results. The application can be an OpenVINO™ sample, demo, or your own application. 
 <br>
+
 ![OpenVINO Workflow Diagram](OV_Workflow_FastPath_1.png)
+
 <br>
 
 ## How to Use the Demo Scripts to Learn the Workflow
