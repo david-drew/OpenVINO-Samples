@@ -7,8 +7,9 @@ The DL Streamer plug-in contains multiple GStreamer elements to construct pipeli
 
 The following diagram shows the interactions between the Intel OpenVINO toolkit and the DL Streamer:
 
-
-![gst_va_developer_flow](uploads/a444847895bd4855571cc951974fb53d/gst_va_developer_flow.png)
+<br>
+![Typical Pipeline Workflow](typical_pipeline.png)
+<br>
 
 This guide and the related tutorials and development information address the information on the Runtime part of the diagram. This is on the right side of the dashed line.
 
