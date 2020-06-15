@@ -387,18 +387,9 @@ This exercise changes course to show you how to:
 
 This example provides examples of converting Caffe and Tensorflow models to the IR format. see the [Model Optimizer documentation](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_Converting_Model.html) for information about converting other models, such as MXNet, ONNX, and Kaldi.
 
-1. Git clone the [Model Optimizer](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html):
-
-```sh
-git clone https://github.com/opencv/dldt.git ~/gva/dldt  # contains folder model-optimizer
+1. If your environment has not been setup, source the environment script.
 ```
-
-2. Use the [Installation instructions](https://github.com/opencv/dldt/blob/2020/model-optimizer/README.md) to set up the environment.
-
-3. Install Tensorflow version 1.12.0 if you don't have it installed already:
-
-```sh
-pip install tensorflow==1.12.0 --upgrade
+	source /opt/intel/openvino/bin/setupvar.sh
 ```
 
 #### Convert a Caffe model <a name="convert-caffe-models"></a>
@@ -406,17 +397,16 @@ pip install tensorflow==1.12.0 --upgrade
 <b>Example of converting a ssd300 model</b>
 
 ```sh
-mkdir -p ~/gva/data/models/non_ir/ssd300  # to hold downloads
+mkdir -p ~/gva/models/ssd300  # to hold downloads
 cd ~/gva/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
-python3 downloader.py --name ssd300 -o ~/gva/data/models/non_ir/ssd300  # download ssd300
+python3 downloader.py --name ssd300 -o ~/gva/models/ssd300  # download ssd300
 
 # convert model
-cd ~/gva/dldt/model-optimizer  # was cloned on step 5.1 of current instruction
-python3 mo.py --framework caffe --input_model ~/gva/data/models/non_ir/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.caffemodel --input_proto ~/gva/data/models/non_ir/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/deploy.prototxt --data_type FP32 --mean_values data[104.0,117.0,123.0] --output_dir ~/gva/data/models/common/ssd300-fp32/
+python3 mo.py --framework caffe --input_model ~/gva/models/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.caffemodel --input_proto ~/gva/models/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/deploy.prototxt --data_type FP32 --mean_values data[104.0,117.0,123.0] --output_dir ~/gva/models/ssd300-fp32/
 
 # give handy names
-mv ~/gva/data/models/common/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.xml ~/gva/data/models/common/ssd300-fp32/ssd300.xml
-mv ~/gva/data/models/common/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.bin ~/gva/data/models/common/ssd300-fp32/ssd300.bin
+mv ~/gva/models/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.xml ~/gva/models/ssd300-fp32/ssd300.xml
+mv ~/gva/models/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.bin ~/gva/models/ssd300-fp32/ssd300.bin
 
 rm -rf ~/gva/data/models/non_ir/ssd300  # delete ssd300 in Caffe format
 
@@ -426,9 +416,9 @@ rm -rf ~/gva/data/models/non_ir/ssd300  # delete ssd300 in Caffe format
 <b>Example of converting a mobilenet-ssd model</b>
 
 ```sh
-mkdir -p ~/gva/data/models/non_ir/mobilenet-ssd  # to hold downloads
+mkdir -p ~/gva/models/mobilenet-ssd  # to hold downloads
 cd ~/gva/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
-python3 downloader.py --name mobilenet-ssd -o ~/gva/data/models/non_ir/mobilenet-ssd  # download mobilenet-ssd
+python3 downloader.py --name mobilenet-ssd -o ~/gva/models/mobilenet-ssd  # download mobilenet-ssd
 
 # convert model
 cd ~/gva/dldt/model-optimizer  # was cloned on step 5.1 of current instruction
