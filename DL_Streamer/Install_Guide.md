@@ -6,10 +6,11 @@ to use DL Streamer, a GStreamer Video Analytics (GVA) plug-in and a part of the 
 The DL Streamer plug-in contains multiple GStreamer elements to construct pipelines. Some elements run inference operations such as detection, classification, and tracking, and other elements output inference results to the display screen, file, or publish the results to the Kafka or MQTT message brokers.
 
 The following diagram shows the interactions between the Intel OpenVINO toolkit and the DL Streamer:
-<br>
-![Typical Pipeline Workflow](typical_pipeline.png)
+
 <br>
 
+![GStreamer - OpenVINO Developer Workflow](gst_ov_flow.png)
+<br>
 
 This guide and the related tutorials and development information address the information on the Runtime part of the diagram. This is on the right side of the dashed line.
 
