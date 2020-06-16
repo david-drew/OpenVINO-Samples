@@ -131,12 +131,10 @@ This exercise introduces you to using the following GVA elements:
 source /opt/intel/openvino/bin/setupvars.sh
 ```
 
-<b>Note</b>: You must set the environment variables each time you open a new shell unless you added the variables to the `.bashrc` file. See [Set the environment variables](https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#set-the-environment-variables)
-
 2. Export the `model` and `model_proc` files:
 
 ```sh
-export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
+export DETECTION_MODEL=~/gva/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
 export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
 ```
 
