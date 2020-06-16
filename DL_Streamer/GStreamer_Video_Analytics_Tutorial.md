@@ -142,7 +142,7 @@ export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samp
 
 ```sh
 # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-export VIDEO_EXAMPLE=~/gva/video/FILENAME
+export VIDEO_EXAMPLE=~/gva/video/<your_video>
 ```
 
 4. Create and run the pipeline. As an option, add the `model-proc` parameter to create a `model-proc` JSON file. `model-proc` files describe the model input and output layer format. The `model-proc` file in this exercise describes the output layer name and labels (person, vehicle, and bike) on objects it detects. 
