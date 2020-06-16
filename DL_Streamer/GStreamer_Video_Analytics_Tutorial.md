@@ -324,7 +324,7 @@ source ~/gva/gst-video-analytics/scripts/setup_env.sh
 
 2. Export the `model` and `model_proc` files:
 ```sh
-export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
+export DETECTION_MODEL=~/gva/models/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
 export DETECTION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
 export VEHICLE_CLASSIFICATION_MODEL=~/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
 export VEHICLE_CLASSIFICATION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
@@ -334,7 +334,7 @@ export VEHICLE_CLASSIFICATION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-l
 
 ```sh
 # # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-export VIDEO_EXAMPLE=~/gva/video/FILENAME
+export VIDEO_EXAMPLE=~/gva/video/<your_downloaded_video>
 ```
 
 4. Export the output file path:
