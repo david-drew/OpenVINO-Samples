@@ -172,7 +172,7 @@ You're done building and running this pipeline. To expand on this exercise, use 
 </details>
 
 
-#### Simple Pipeline with a Web Camera Video Stream (First optional add-on to Exercise 1)
+#### Simple Pipeline with a Web Camera Video Stream (Optional - Requires WebCam)
 
 <details>
 	<summary>Simple Pipeline with a Web Camera Video Stream</summary>
