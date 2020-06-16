@@ -1,5 +1,7 @@
 # Install DL Streamer
 
+NOTE: The recommended method of installing DL Streamer is through OpenVINO.  If you have installed OpenVINO 2020.r2 or later, DL Streamer is already installed on your system.  This guide is only needed if a second installation is desired.
+
 This guide provides instructions to prepare a computer running Ubuntu Linux 18.04.x (LTS) 64-bit 
 to use DL Streamer, a GStreamer Video Analytics (GVA) plug-in and a part of the Intel® Distribution of OpenVINO<sup>&#8482;</sup> toolkit.
 
