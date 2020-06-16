@@ -325,7 +325,7 @@ source /opt/intel/openvino/data_processing/gstreamer/bin/gstreamer-setupvars.sh
 ```sh
 export DETECTION_MODEL=~/gva/models/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
 export DETECTION_MODEL_PROC=~/gva/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-export VEHICLE_CLASSIFICATION_MODEL=~/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
+export VEHICLE_CLASSIFICATION_MODEL=~/gva/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
 export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
 ```
 
@@ -369,91 +369,7 @@ You have completed this exercise. Continue to Exercise 4, where you will learn t
 
 </details>
 
-
-### Exercise 4: Convert Convolutional Neural Network (CNN) Models to the Intermediate Representation (IR) Format <a name="convert-CNN"></a>
-
-<details>
-	<summary>Convert a CNN to IR Format</summary>
-<br>
-
-This exercise changes course to show you how to:
-
-- Download a CNN model
-- Use the Model Optimizer to convert the model to the IR format
-- Use the GVA plug-in
-
-This example provides examples of converting Caffe and Tensorflow models to the IR format. see the [Model Optimizer documentation](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_Converting_Model.html) for information about converting other models, such as MXNet, ONNX, and Kaldi.
-
-1. If your environment has not been setup, source the environment script.
-```
-	source /opt/intel/openvino/bin/setupvar.sh
-```
-
-#### Convert a Caffe model <a name="convert-caffe-models"></a>
-
-<b>Example of converting a ssd300 model</b>
-
-```sh
-mkdir -p ~/gva/models/ssd300  # to hold downloads
-cd ~/open_model_zoo/tools/downloader
-python3 downloader.py --name ssd300 -o ~/gva/models/ssd300  # download ssd300
-
-# convert model
-python3 mo.py --framework caffe --input_model ~/gva/models/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.caffemodel --input_proto ~/gva/models/ssd300/object_detection/common/ssd/300/caffe/models/VGGNet/VOC0712Plus/SSD_300x300_ft/deploy.prototxt --data_type FP32 --mean_values data[104.0,117.0,123.0] --output_dir ~/gva/models/ssd300-fp32/
-
-# give handy names
-mv ~/gva/models/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.xml ~/gva/models/ssd300-fp32/ssd300.xml
-mv ~/gva/models/ssd300-fp32/VGG_VOC0712Plus_SSD_300x300_ft_iter_160000.bin ~/gva/models/ssd300-fp32/ssd300.bin
-
-rm -rf ~/gva/data/models/non_ir/ssd300  # delete ssd300 in Caffe format
-
-# done
-```
-
-<b>Example of converting a mobilenet-ssd model</b>
-
-```sh
-mkdir -p ~/gva/models/mobilenet-ssd  # to hold downloads
-cd ~/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
-python3 downloader.py --name mobilenet-ssd -o ~/gva/models/mobilenet-ssd  # download mobilenet-ssd
-
-# convert model
-mo.py --framework caffe --input_model ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.caffemodel --input_proto ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.prototxt --data_type FP32 --mean_values data[127.5,127.5,127.5] --scale_values data[127.50223128904757] --output_dir ~/gva/data/models/common/mobilenet-ssd-fp32/
-
-rm -rf ~/gva/data/models/non_ir/mobilenet-ssd  # delete mobilenet-ssd in Caffe format
-
-# done
-```
-
-#### Convert a TensorFlow model <a name="use-tensorflow-models"></a>
-
-<b>Example of converting a Yolov3 model</b>
-
-```sh
-git clone https://github.com/mystic123/tensorflow-yolo-v3.git ~/gva/data/models/non_ir/yolov3  # download yolov3
-cd ~/gva/data/models/non_ir/yolov3
-git checkout ed60b90  # choose particular commit
-wget https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names  # download coco labels
-wget https://pjreddie.com/media/files/yolov3.weights  # download weights
-
-# convert weights
-python3 convert_weights_pb.py --class_names coco.names --data_format NHWC --weights_file yolov3.weights --size 416
-
-# convert model
-cd ~/gva/dldt/model-optimizer  # was cloned on step 5 of current instruction
-python3 mo.py --framework tf --input_model ~/gva/data/models/non_ir/yolov3/frozen_darknet_yolov3_model.pb --tensorflow_use_custom_operations_config ~/gva/gst-video-analytics/samples/model_optimizer_configs/yolo_v3.json --input_shape [1,416,416,3] --data_type=FP32 -o ~/gva/data/models/common/yolov3-fp32
-
-rm -rf ~/gva/data/models/non_ir/yolov3  # delete yolov3 in TensorFlow format
-
-# done
-```
-
-For detailed instructions to convert models, [look here](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow.html)
-
-</details>
-
-
-### Exercise 5: Create a Face Detection Pipeline <a name="face-detect"></a>
+### Exercise 4: Create a Face Detection Pipeline <a name="face-detect"></a>
 
 <details>
 	<summary>Create a Face Detection Pipeline</summary>
@@ -469,4 +385,14 @@ This exercise asks you to combine the knowledge you've learned in the previous t
 
 </details>
 
+### Exercise 5: Create a Vehicle Detection Pipeline <a name="vehicle-detect"></a>
 
+<details>
+	<summary>Create a Vehicle Detection Pipeline</summary>
+<br>
+	
+1. Download video and vehicle detection models.
+2. Run a pipeline.
+3. Optional: run a pipeline with an additional vehicle attributes model.
+
+</details>
