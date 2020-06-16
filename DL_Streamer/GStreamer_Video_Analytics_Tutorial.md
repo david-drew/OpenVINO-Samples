@@ -224,7 +224,7 @@ This exercise uses the scenario, video, and IR files from Exercise 1 to help you
 This exercises uses the following additional GVA element:
 - `gvaclassify`
 	
-1. Set the environment variables:
+1. If not already setup, set the environment variables:
 
 ```sh
 source /opt/intel/openvino/bin/setupvars.sh
@@ -315,9 +315,10 @@ The script for this exercise is in the [`metapublish`](https://github.com/opencv
 
 1. Set the OpenVINO environment:
 
+If these are not already setup, set environment variables:
 ```sh
 source /opt/intel/openvino/bin/setupvars.sh
-source ~/gva/gst-video-analytics/scripts/setup_env.sh
+source /opt/intel/openvino/data_processing/gstreamer/bin/gstreamer-setupvars.sh
 ```
 	
 <b>Note</b>: You must set the environment variables each time you open a new shell unless you added the variables to the `.bashrc` file. See [Set the environment variables](https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#set-the-environment-variables)
@@ -334,7 +335,7 @@ export VEHICLE_CLASSIFICATION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-l
 
 ```sh
 # # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-export VIDEO_EXAMPLE=~/gva/video/<your_downloaded_video>
+export VIDEO_EXAMPLE=~/gva/video/FILENAME
 ```
 
 4. Export the output file path:
