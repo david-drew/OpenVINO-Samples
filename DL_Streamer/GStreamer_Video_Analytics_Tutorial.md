@@ -193,11 +193,11 @@ To use a Web camera:
 
 This command uses [`v4l2src`](https://gstreamer.freedesktop.org/documentation/video4linux2/v4l2src.html?gi-language=c) instead of `filesrc` to capture video from web camera.
 
-#### Simple Pipeline with an RTSP Device (Second optional add-on to Exercise 1)
+#### Simple Pipeline with an RTSP Device (Optional - Requires RTSP Device)
 
 GStreamer supports RTSP devices that specify an RTSP URI, which means you can point to this URL to perform real-time inference.
 
-Before repeating Exercise 1 with an RSTP URI, verify the RSTP URL. 
+Before repeating Exercise 1 with an RTSP URI, verify the RTSP URL. 
 
 **To repeat Exercise 1 with a RTSP URI**, verify the path to the RTSP URI, and run the pipeline with the RTSP URI: 
 
@@ -233,9 +233,9 @@ source /opt/intel/openvino/bin/setupvars.sh
 2. Export the model and model_proc files:
 
 ```sh
-export DETECTION_MODEL=~/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
+export DETECTION_MODEL=~/gva/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
 export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
-export VEHICLE_CLASSIFICATION_MODEL=~/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
+export VEHICLE_CLASSIFICATION_MODEL=~/gva/models/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039xml
 export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
 ```
 
