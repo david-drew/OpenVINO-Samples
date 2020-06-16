@@ -320,22 +320,20 @@ If these are not already setup, set environment variables:
 source /opt/intel/openvino/bin/setupvars.sh
 source /opt/intel/openvino/data_processing/gstreamer/bin/gstreamer-setupvars.sh
 ```
-	
-<b>Note</b>: You must set the environment variables each time you open a new shell unless you added the variables to the `.bashrc` file. See [Set the environment variables](https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#set-the-environment-variables)
 
 2. Export the `model` and `model_proc` files:
 ```sh
 export DETECTION_MODEL=~/gva/models/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-export DETECTION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
+export DETECTION_MODEL_PROC=~/gva/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
 export VEHICLE_CLASSIFICATION_MODEL=~/intel/dl_streamer/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
-export VEHICLE_CLASSIFICATION_MODEL_PROC=~/gva/gst-video-analytics/samples/gst-launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
+export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
 ```
 
 3. Export the video file path:
 
 ```sh
 # # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-export VIDEO_EXAMPLE=~/gva/video/FILENAME
+export VIDEO_EXAMPLE=~/gva/video/<your_downloaded_video>
 ```
 
 4. Export the output file path:
@@ -397,7 +395,7 @@ This example provides examples of converting Caffe and Tensorflow models to the 
 
 ```sh
 mkdir -p ~/gva/models/ssd300  # to hold downloads
-cd ~/gva/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
+cd ~/open_model_zoo/tools/downloader
 python3 downloader.py --name ssd300 -o ~/gva/models/ssd300  # download ssd300
 
 # convert model
@@ -416,12 +414,11 @@ rm -rf ~/gva/data/models/non_ir/ssd300  # delete ssd300 in Caffe format
 
 ```sh
 mkdir -p ~/gva/models/mobilenet-ssd  # to hold downloads
-cd ~/gva/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
+cd ~/open_model_zoo/tools/downloader  # was cloned on step 2.2 of current instruction
 python3 downloader.py --name mobilenet-ssd -o ~/gva/models/mobilenet-ssd  # download mobilenet-ssd
 
 # convert model
-cd ~/gva/dldt/model-optimizer  # was cloned on step 5.1 of current instruction
-python3 mo.py --framework caffe --input_model ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.caffemodel --input_proto ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.prototxt --data_type FP32 --mean_values data[127.5,127.5,127.5] --scale_values data[127.50223128904757] --output_dir ~/gva/data/models/common/mobilenet-ssd-fp32/
+mo.py --framework caffe --input_model ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.caffemodel --input_proto ~/gva/data/models/non_ir/mobilenet-ssd/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.prototxt --data_type FP32 --mean_values data[127.5,127.5,127.5] --scale_values data[127.50223128904757] --output_dir ~/gva/data/models/common/mobilenet-ssd-fp32/
 
 rm -rf ~/gva/data/models/non_ir/mobilenet-ssd  # delete mobilenet-ssd in Caffe format
 
