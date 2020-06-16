@@ -452,3 +452,21 @@ For detailed instructions to convert models, [look here](https://docs.openvinoto
 
 </details>
 
+
+### Exercise 5: Create a Face Detection Pipeline <a name="face-detect"></a>
+
+<details>
+	<summary>Create a Face Detection Pipeline</summary>
+<br>
+
+This exercise asks you to combine the knowledge you've learned in the previous tutorials to create your own pipeline using a face detection model.  Feel free to review previous material, such as the [OpenVINO Samples Guide](../README.md) or the [OpenVINO Overview](../OpenVINO_Overview.md)
+
+1. Download a video with faces from Pexels.
+2. Select a suitable face detection model (download if necessary)
+2. Update environment variables to point to the new video, model, and associated json file.
+3. Run the new pipeline using the `gst-launch-1.0` command.
+4. Add a head pose element to the above pipeline and run it.
+
+</details>
+
+
