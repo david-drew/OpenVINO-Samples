@@ -325,7 +325,8 @@ The script for this exercise is in the [`metapublish`](https://github.com/opencv
 
 1. Set the OpenVINO environment:
 
-If these are not already setup, set environment variables:
+> NOTE: For this exercise, you must reset the env variables as described below.
+
 ```sh
 source /opt/intel/openvino/data_processing/gstreamer/bin/gstreamer-setupvars.sh
 source /opt/intel/openvino/bin/setupvars.sh
@@ -376,6 +377,10 @@ In this step:
 5. Run the pipeline. After the pipeline completes, a JSON file of the inference results is available. 
 
 6. Review the JSON file (defined by $OUTFILE).
+
+```sh
+gedit $OUTFILE
+```
 
 You have completed this exercise. Continue to Exercise 4, where you will learn to convert Cafe and Tensorflow CNN models.
 
