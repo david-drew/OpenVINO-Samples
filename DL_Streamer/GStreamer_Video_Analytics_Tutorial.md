@@ -34,6 +34,11 @@ You can either train your own CNN models and convert them to the IR format or us
 
 The steps below use a quick way to get everything you need to use the sample applications. For instructions to use your own models, download models from the Model Zoo and use the Model Downloader, see LINK TO OPENVINO CONTENT. 
 
+Remember to source your environment:
+   ```sh
+   source /opt/intel/openvino/bin/setupvars.sh
+   ```
+
 1. Create directories for the models and videos. The following is an example. If you use a different structure, remember to change the path in the instructions to match your location:
    ```sh
    mkdir -p ~/gva/models
