@@ -327,8 +327,8 @@ The script for this exercise is in the [`metapublish`](https://github.com/opencv
 
 If these are not already setup, set environment variables:
 ```sh
-source /opt/intel/openvino/bin/setupvars.sh
 source /opt/intel/openvino/data_processing/gstreamer/bin/gstreamer-setupvars.sh
+source /opt/intel/openvino/bin/setupvars.sh
 ```
 
 2. Export the `model` and `model_proc` files:
