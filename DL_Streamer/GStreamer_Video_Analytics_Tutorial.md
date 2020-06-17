@@ -46,8 +46,10 @@ The steps below use a quick way to get everything you need to use the sample app
     ```
    
 3. Download the models:
-	```
+	```sh
 	cd ~/gva/models
+	```
+	```sh
 	/opt/intel/openvino/data_processing/dl_streamer/samples/download_models.sh
 	```
 
