@@ -334,7 +334,7 @@ source /opt/intel/openvino/data_processing/gstreamer/bin/gstreamer-setupvars.sh
 2. Export the `model` and `model_proc` files:
 ```sh
 export DETECTION_MODEL=~/gva/models/intel/dl_streamer/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/person-vehicle-bike-detection-crossroad-0078.xml
+export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/person-vehicle-bike-detection-crossroad-0078.json
 export VEHICLE_CLASSIFICATION_MODEL=~/gva/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
 export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
 ```
