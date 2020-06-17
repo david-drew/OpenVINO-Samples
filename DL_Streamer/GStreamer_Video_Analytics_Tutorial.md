@@ -279,6 +279,8 @@ In this pipeline:
 
 See [model-proc](https://github.com/opencv/gst-video-analytics/tree/master/samples/model_proc) for the model-procs and its input and output specifications.
 
+> NOTE: Skip this optional pipeline.
+
 **Optional replacement command to create and run the pipeline**: Include `gvatrack` to increase the pipeline performance. With this, object tracking performance increases by running inference on object detection and classification models at a defined frequently.
 
 To use this optional replacement command, create and run the pipeline as follows:
