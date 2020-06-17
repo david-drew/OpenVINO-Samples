@@ -348,6 +348,8 @@ export VIDEO_EXAMPLE=~/gva/video/<your_downloaded_video>
 
 4. Export the output file path:
 
+The $OUTFILE target can be any path and name.  We suggest: `~/gva/out.json`
+
 ```sh
 # This example uses ~/gva/video as the video path and FILENAME as the placeholder for an output file name. Change this information to fit your setup. 
 export OUTFILE=<path-to-FILENAME>
@@ -373,7 +375,7 @@ In this step:
 	
 5. Run the pipeline. After the pipeline completes, a JSON file of the inference results is available. 
 
-6. Review the JSON file.
+6. Review the JSON file (defined by $OUTFILE).
 
 You have completed this exercise. Continue to Exercise 4, where you will learn to convert Cafe and Tensorflow CNN models.
 
