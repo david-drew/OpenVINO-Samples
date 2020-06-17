@@ -253,8 +253,8 @@ export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_
 
 Make sure to replace <your_downloaded_video> with the name of the video you want to use.
 
+This example uses ~/gva/video as the video path and <your_downloaded_video> as the placeholder for a video file name. Change this information to fit your setup.
 ```sh
-# This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
 export VIDEO_EXAMPLE=~/gva/video/<your_downloaded_video>
 ```
 
@@ -270,12 +270,12 @@ gst-launch-1.0 \
 
 In this pipeline:
 
-	1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc. 
-	2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
-	3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc:
-		* `object-class` tells `gvalcassify` which ROIs to classify. 
-		* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
-	4 `gvawatermark` displays the ROIs and their attributes. 
+1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc. 
+2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
+3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc:
+	* `object-class` tells `gvalcassify` which ROIs to classify. 
+	* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
+4 `gvawatermark` displays the ROIs and their attributes. 
 
 See [model-proc](https://github.com/opencv/gst-video-analytics/tree/master/samples/model_proc) for the model-procs and its input and output specifications.
 
