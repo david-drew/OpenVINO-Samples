@@ -142,13 +142,16 @@ source /opt/intel/openvino/bin/setupvars.sh
 
 ```sh
 export DETECTION_MODEL=~/gva/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
+```
+```sh
 export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
 ```
 
 3. Export the video file path:
 
+This example uses ~/gva/video as the video path and <your_video> as the placeholder for a video file name. Change this information to fit your setup.
+
 ```sh
-# This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
 export VIDEO_EXAMPLE=~/gva/video/<your_video>
 ```
 
