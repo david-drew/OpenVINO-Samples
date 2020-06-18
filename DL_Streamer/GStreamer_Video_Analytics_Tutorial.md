@@ -400,7 +400,7 @@ This exercise asks you to combine the knowledge you've learned in the previous t
 2. Select a suitable face detection model (download if necessary)
 2. Update environment variables to point to the new video, model, and associated json file.
 3. Run the new pipeline using the `gst-launch-1.0` command.
-4. Add a head pose element to the above pipeline and run it.
+4. Add another element (either age-gender or emotion) to the above pipeline and run it.
 
 </details>
 
