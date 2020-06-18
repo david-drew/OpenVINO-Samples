@@ -371,7 +371,7 @@ gst-launch-1.0 \
 ```
 
 In this step:
-- `gvametaconvert` uses the optional parameter `converter=json` to convert inferenced data to `GstGVAJSONMeta`. 
+- `gvametaconvert` uses the optional parameter `format=json` to convert inferenced data to `GstGVAJSONMeta`. 
 - `GstGVAJSONMeta` is a custom data structure that represents JSON metadata. 
 - `gvametapublish` uses the optional parameter `method=file` to publish inference results to a file.
 - `filepath=${OUTFILE}` is a JSON file to which the inference results are published.
