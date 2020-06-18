@@ -279,8 +279,6 @@ In this pipeline:
 
 See [model-proc](https://github.com/opencv/gst-video-analytics/tree/master/samples/model_proc) for the model-procs and its input and output specifications.
 
-### NOTE: Skip the following (optional) pipeline.
-
 **Optional replacement command to create and run the pipeline**: Include `gvatrack` to increase the pipeline performance. With this, object tracking performance increases by running inference on object detection and classification models at a defined frequently.
 
 To use this optional replacement command, create and run the pipeline as follows:
@@ -398,10 +396,10 @@ You have completed this exercise. Continue to Exercise 4, where you will learn t
 This exercise asks you to combine the knowledge you've learned in the previous tutorials to create your own pipeline using a face detection model.  Feel free to review previous material, such as the [OpenVINO Samples Guide](../README.md) or the [OpenVINO Overview](../OpenVINO_Overview.md)
 
 1. Download a video with faces from Pexels.
-2. Select a suitable face detection model (download if necessary)
+2. Select a suitable face detection model (download if necessary).
 2. Update environment variables to point to the new video, model, and associated json file.
 3. Run the new pipeline using the `gst-launch-1.0` command.
-4. Add another element (either age-gender or emotion) to the above pipeline and run it.
+4. Add another element (either age-gender or emotion) for classification to the above pipeline and run it.
 
 </details>
 
