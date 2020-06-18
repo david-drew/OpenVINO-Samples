@@ -287,11 +287,12 @@ To use this optional replacement command, create and run the pipeline as follows
 
 ```sh
 gst-launch-1.0 \
-	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU inference-interval=10 ! queue ! \
-	gvatrack tracking-type=short-term ! queue ! \
-	gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle reclassify-interval=10 ! queue ! \
-	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
+    filesrc location=${VIDEO_EXAMPLE} ! decodebin ! videoconvert ! video/x-raw,format=BGRx ! \
+    gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU inference-interval=10 ! queue ! \
+    gvatrack tracking-type=short-term ! queue ! \
+    gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle reclassify-interval=10 ! queue ! \
+    gvawatermark ! videoconvert ! fpsdisplaysink video-sink=xvimagesink sync=false
+
 ```
 
 In this pipeline:
