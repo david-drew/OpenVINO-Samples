@@ -2,10 +2,8 @@
 
 This tutorial uses four exercises to help you:
 
-- Build a Audio analytics pipeline with the GStreamer* gst-launch tool and GStreamer Audio Analytics (GAA) plug-in. 
-- Add classifications to the pipeline.
+- Build an Audio analytics pipeline with the GStreamer* gst-launch tool and GStreamer Audio Analytics (GAA) plug-in. 
 - Publish the inference results to a `.json` file.
-- Convert a deep learning model to the Intermediate Representation format that is required for the Inference Engine.
 
 The first three exercises build on each other in increasing complexity. If you are new to using the DL Streamer, complete these in order. 
 
@@ -42,7 +40,7 @@ Remember to source your environment:
 1. Create directories for the models and videos. The following is an example. If you use a different structure, remember to change the path in the instructions to match your location:
    ```sh
    mkdir -p ~/gva/models
-   mkdir -p ~/gva/video
+   mkdir -p ~/gva/audio
    ```
 
 2.	Set the path to store the models we download.
@@ -50,34 +48,33 @@ Remember to source your environment:
     export MODELS_PATH=~/gva/models
     ```
    
-3. Download the models:
+3. Download the model:
 	```sh
 	cd ~/gva/models
 	```
 	```sh
-	/opt/intel/openvino/data_processing/dl_streamer/samples/download_models.sh
+	wget https://download.01.org/opencv/models_contrib/sound_classification/aclnet/pytorch/15062020/aclnet_des_53_fp32.onnx
 	```
 
-4. The samples require video files that:
+4. The samples require audio files that:
 
-- Are in h264 or mp4 format.
-- Include cars, pedestrians, and people with their faces showing.
-- Keep your videos to less than 2 minutes for faster processing.
+- Are in 16-bit wav format. You can convert other formats to wav with ffmpeg and similar tools.
+- Are relatively short (a few minutes long), for convenience. 
 	
 5. Download videos
 
-- You can download freely licensed videos from the websites like [Pexels](https://www.pexels.com/videos).
-- Put your video files in `~/gva/video`.
+- You can download freely licensed audio from the websites like [FreeSound](https://freesound.org/browse/).
+- Put your audio files in `~/gva/audio`.
 
 </details>
 
-### Learn about the Video Analytics Pipeline and the GAA Elements <a name="gva-pipeline"></a> 
+### Learn about the Audio Analytics Pipeline and the GAA Elements <a name="gva-pipeline"></a> 
 
 <details>
-	<summary>Learn about the Video Analytics Pipeline and the GAA Elements</summary>
+	<summary>Learn about the Audio Analytics Pipeline and the GAA Elements</summary>
 
 <br>
-The diagram below shows the data flow of a typical video analytics pipeline.
+The diagram below shows the data flow of a typical video/audio analytics pipeline.
 
 ![Typical GAA pipeline](typical_pipeline.png)
 
@@ -181,27 +178,6 @@ You're done building and running this pipeline. To expand on this exercise, use 
 
 </details>
 
-
-#### Simple Pipeline with a Web Camera Video Stream (Optional - Requires WebCam)
-
-<details>
-	<summary>Simple Pipeline with a Web Camera Video Stream</summary>
-<br>
-
-GStreamer supports connected video devices, like Web cameras, which means you use a web camera to perform real-time inference.
-
-Before repeating Exercise 1 with a Web camera video stream, verify the Web camera path. The Web camera stream is usually in the `/dev/` directory. 
-
-To use a Web camera:
-
-```sh
-    gst-launch-1.0 \
-	v4l2src device=<path-to-device> ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-```
-
-This command uses [`v4l2src`](https://gstreamer.freedesktop.org/documentation/video4linux2/v4l2src.html?gi-language=c) instead of `filesrc` to capture video from web camera.
 
 #### Simple Pipeline with an RTSP Device (Optional - Requires RTSP Device)
 

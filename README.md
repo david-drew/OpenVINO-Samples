@@ -239,7 +239,21 @@ For this next exercise, we'll redirect you to another page.  Please return here 
 </details>
 
 <details>
-	<summary>Exercise 5: DL Streamer</summary>
+	<summary>Exercise 5: Speech Recognition</summary>
+For this exercise, we'll redirect you to the 
+
+For more information about how OpenVINO works with audio, review [this page](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Speech_libs_and_demos.html).
+Then read through the documentation for the [Speech Recognition Demo](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Live_speech_recognition_demo.html).
+
+To run the demo:
+1. Download the gettysburg address from [here](https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav).
+2. Launch the demo, point it at the wav file, and execute it. 
+
+
+</details>
+
+<details>
+	<summary>Exercise 6: DL Streamer</summary>
 	
 The DL Streamer is a command-line tool and API for integrating OpenVINO into a media analytics pipeline.  It supports OpenVINO, GStreamer, Mosquitto, Kafka, and a variety of other technologies.
 
@@ -259,3 +273,4 @@ Use these resources to learn more about the OpenVINO™ toolkit:
 * [Inference Engine Samples Overview](./docs/IE_DG/Samples_Overview.md)
 * [Overview of OpenVINO™ Toolkit Pre-Trained Models](./docs/Pre_Trained_Models.md)
 * [OpenVINO™ Hello World Face Detection Exercise](https://github.com/intel-iot-devkit/inference-tutorials-generic)
+
