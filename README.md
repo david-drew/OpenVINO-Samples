@@ -241,6 +241,7 @@ For this next exercise, we'll redirect you to another page.  Please return here 
 <details>
 	<summary>Exercise 5: Speech Recognition</summary>
 
+<br>
 For this exercise, we'll redirect you to the 
 
 For more information about how OpenVINO works with audio, review [this page](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Speech_libs_and_demos.html).
