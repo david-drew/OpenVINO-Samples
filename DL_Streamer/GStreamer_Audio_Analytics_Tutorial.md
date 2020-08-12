@@ -176,10 +176,7 @@ gst-launch-1.0 \
 
 You're done building and running this pipeline. To expand on this exercise, use one or both add-ons to this exercise to select different video sources. If the add-ons don't suit you, jump ahead to start [Exercise 2](#classification-pipeline)
 
-</details>
-
-
-#### Simple Pipeline with an RTSP Device (Optional - Requires RTSP Device)
+#### OPTIONAL: Simple Pipeline with an RTSP Device (Optional - Requires RTSP Device)
 
 GStreamer supports RTSP devices that specify an RTSP URI, which means you can point to this URL to perform real-time inference.
 
@@ -359,34 +356,29 @@ In this step:
 gedit $OUTFILE
 ```
 
-You have completed this exercise. Continue to Exercise 4, where you will learn to convert Cafe and Tensorflow CNN models.
+You have completed this exercise. Continue to Exercise 4, where you will create a custom multi-model pipeline. 
 
 </details>
-
-### Exercise 4: Create a Face Detection Pipeline <a name="face-detect"></a>
 
 <details>
-	<summary>Create a Face Detection Pipeline</summary>
+### Exercise 4: Create a Threat Detection Pipeline <a name="face-detect"></a>
+	<summary>Threat Detection Pipeline</summary>
 <br>
+For this exercise, we'll use a combination of several models to create a threat detection pipeline that includes detection of:
 
-This exercise asks you to combine the knowledge you've learned in the previous tutorials to create your own pipeline using a face detection model.  Feel free to review previous material, such as the [OpenVINO Samples Guide](../README.md) or the [OpenVINO Overview](../OpenVINO_Overview.md)
+1. Footsteps 
+2. Glass breaking
+3. Coughs 
 
-1. Download a video with faces from Pexels.
-2. Select a suitable face detection model (download if necessary).
-2. Update environment variables to point to the new video, model, and associated json file.
-3. Run the new pipeline using the `gst-launch-1.0` command.
-4. Add another element (either age-gender or emotion) for classification to the above pipeline and run it.
+You may set different thresholds for each audio category.
+
+Use these files:
+	` wget  `
+	` wget  `
+	` wget  `
+
+Then run the DL Streamer audio analytics tool using these files.
 
 </details>
 
-### Exercise 5: Create a Vehicle Detection Pipeline <a name="vehicle-detect"></a>
 
-<details>
-	<summary>Create a Vehicle Detection Pipeline</summary>
-<br>
-	
-1. Download video and vehicle detection models.
-2. Run a pipeline.
-3. Optional: run a pipeline with an additional vehicle attributes model.
-
-</details>
