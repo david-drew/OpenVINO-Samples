@@ -375,8 +375,8 @@ You have completed this exercise. Continue to Exercise 4, where you will create 
 
 </details>
 
-<details>
 ### Exercise 4: Create a Threat Detection Pipeline <a name="face-detect"></a>
+<details>
 	<summary>Threat Detection Pipeline</summary>
 <br>
 For this exercise, we'll use a combination of several models to create a threat detection pipeline that includes detection of:
