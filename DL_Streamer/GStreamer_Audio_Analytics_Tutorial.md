@@ -2,8 +2,8 @@
 
 This tutorial provides four exercises:
 
-1. Build an Audio analytics pipeline with the GStreamer* gst-launch tool and GStreamer Audio Analytics (GAA) plug-in. 
-2. Run an Audio Classification pipeline. 
+1. Build a video analytics pipeline with the GStreamer* gst-launch tool and GStreamer Video Analytics (GVA) plug-in. 
+2. Run an audio classification pipeline. 
 3. Publish the inference results to a `.json` file.
 3. Put together a custom pipeline using multiple models for a threat detection scenario. 
 
@@ -32,6 +32,10 @@ NOTE: The recommended way to install DL Streamer is usually through OpenVINO.  D
 	~/gva/gst-video-analytics/samples/gst_launch/audio_detect/
 
 
+	`cd ~/gva/gst-video-analytics/scripts`
+	`sudo ./install_dependencies.sh`
+	`sudo ./download_models.sh`
+
 
 ### Install Requirements
 ```sh
@@ -50,12 +54,13 @@ The steps below use a quick way to get everything you need to use the sample app
 Remember to source your environment:
    ```sh
    source /opt/intel/openvino/bin/setupvars.sh
+   source ~/gva/gst-video-analytics/scripts/setup_env.sh
    ```
 
 1. Create directories for the models and videos. The following is an example. If you use a different structure, remember to change the path in the instructions to match your location:
    ```sh
    mkdir -p ~/gva/models
-   mkdir -p ~/gva/audio
+   mkdir -p ~/gva/media
    ```
 
 2.	Set the path to store the models we download.
@@ -71,15 +76,25 @@ Remember to source your environment:
 	wget https://download.01.org/opencv/models_contrib/sound_classification/aclnet/pytorch/15062020/aclnet_des_53_fp32.onnx
 	```
 
+	```sh
+	~/gva/gst-video-analytics/samples/gst_launch/audio_detect/download_models.sh
+	```
+
 4. The samples require audio files that:
 
 - Are in 16-bit wav format. You can convert other formats to wav with ffmpeg and similar tools.
 - Are relatively short (a few minutes long), for convenience. 
+
+	```sh
+	cd ~/gva/media
+	wget https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav
+	```
 	
-5. Download videos
+5. Download audio and videos
 
 - You can download freely licensed audio from the websites like [FreeSound](https://freesound.org/browse/).
 - Put your audio files in `~/gva/audio`.
+
 
 </details>
 
@@ -136,7 +151,7 @@ You are ready to try creating your own pipeline. Continue with the next section 
 	<summary>Build a Simple Pipeline</summary>
 <br>
 
-This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  
+This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  This exercise will introduce the general concepts and focus on video.  The following exercises apply these concepts to audio.
 
 This exercise introduces you to using the following GAA elements:
 
@@ -144,10 +159,11 @@ This exercise introduces you to using the following GAA elements:
 - `gvadetect` 
 - `gvawatermark`
 	
-1. Set the environment variables:
+1. Set the environment variables if not already set.:
 
 ```sh
 source /opt/intel/openvino/bin/setupvars.sh
+source ~/gva/gst-video-analytics/scripts/setup_env.sh
 ```
 
 2. Export the `model` and `model_proc` files:
@@ -214,47 +230,8 @@ This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentati
 ### Exercise 2: Run an Audio Classification Pipeline <a name="classification-pipeline"></a>
 
 <details>
-	<summary>Build a Classification Pipeline</summary>
+	<summary>Run an Classification Pipeline</summary>
 <br>	
-
-This exercise uses the scenario, video, and IR files from Exercise 1 to help you create a pipeline with classification applied to the ROIs. In Exercise 2, detected objects use `gvadetect` as inputs for `gvaclassify` for inference to identify additional attributes.
-
-This exercises uses the following additional GAA element:
-- `gvaclassify`
-	
-1. If not already setup, set the environment variables:
-
-```sh
-source /opt/intel/openvino/bin/setupvars.sh
-```
-
-2. Export the model and model_proc files:
-
-```sh
-export DETECTION_MODEL=~/gva/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
-export VEHICLE_CLASSIFICATION_MODEL=~/gva/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
-export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
-```
-
-3. Export the video file path:
-
-Make sure to replace <your_downloaded_video> with the name of the video you want to use.
-
-This example uses ~/gva/video as the video path and <your_downloaded_video> as the placeholder for a video file name. Change this information to fit your setup.
-```sh
-export VIDEO_EXAMPLE=~/gva/video/<your_downloaded_video>
-```
-
-4. Create and run the pipeline:
-
-```sh
-gst-launch-1.0 \
-	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-	gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle ! queue ! \
-	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-```
 
 In this pipeline:
 
@@ -267,19 +244,6 @@ In this pipeline:
 
 See [model-proc](https://github.com/opencv/gst-video-analytics/tree/master/samples/model_proc) for the model-procs and its input and output specifications.
 
-**Optional replacement command to create and run the pipeline**: Include `gvatrack` to increase the pipeline performance. With this, object tracking performance increases by running inference on object detection and classification models at a defined frequently.
-
-To use this optional replacement command, create and run the pipeline as follows:
-
-```sh
-gst-launch-1.0 \
-    filesrc location=${VIDEO_EXAMPLE} ! decodebin ! videoconvert ! video/x-raw,format=BGRx ! \
-    gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU inference-interval=10 ! queue ! \
-    gvatrack tracking-type=short-term ! queue ! \
-    gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle reclassify-interval=10 ! queue ! \
-    gvawatermark ! videoconvert ! fpsdisplaysink video-sink=xvimagesink sync=false
-
-```
 
 In this pipeline:
 
