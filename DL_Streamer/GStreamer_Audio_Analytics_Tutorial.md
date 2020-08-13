@@ -1,10 +1,11 @@
 # GStreamer Audio Analytics Tutorial
 
-This tutorial uses three exercises to help you:
+This tutorial provides four exercises:
 
-- Build an Audio analytics pipeline with the GStreamer* gst-launch tool and GStreamer Audio Analytics (GAA) plug-in. 
-- Publish the inference results to a `.json` file.
-- Put together a custom pipeline using multiple models for a threat detection scenario. 
+1. Build an Audio analytics pipeline with the GStreamer* gst-launch tool and GStreamer Audio Analytics (GAA) plug-in. 
+2. Run an Audio Classification pipeline. 
+3. Publish the inference results to a `.json` file.
+3. Put together a custom pipeline using multiple models for a threat detection scenario. 
 
 Before beginning the exercises, you must download the models and videos that the tutorials use. You should also read the information about the elements used in a GAA pipeline to help you understand the elements and options the exercises use.
 
