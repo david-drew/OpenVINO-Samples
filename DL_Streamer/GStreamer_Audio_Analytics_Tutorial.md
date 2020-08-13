@@ -1,11 +1,10 @@
 # GStreamer Audio Analytics Tutorial
 
-This tutorial uses four exercises to help you:
+This tutorial uses three exercises to help you:
 
 - Build an Audio analytics pipeline with the GStreamer* gst-launch tool and GStreamer Audio Analytics (GAA) plug-in. 
 - Publish the inference results to a `.json` file.
-
-The first three exercises build on each other in increasing complexity. If you are new to using the DL Streamer, complete these in order. 
+- Put together a custom pipeline using multiple models for a threat detection scenario. 
 
 Before beginning the exercises, you must download the models and videos that the tutorials use. You should also read the information about the elements used in a GAA pipeline to help you understand the elements and options the exercises use.
 
@@ -15,7 +14,22 @@ Before beginning the exercises, you must download the models and videos that the
 	<summary>Prepare the System</summary>
 <br>
 
-NOTE: The recommended way to install DL Streamer is through OpenVINO.  DL Streamer is included with OpenVINO 2020.r2 and newer.  If you have not installed OpenVINO, refer to the [DL Streamer Install Guide](Install_Guide.md).
+NOTE: The recommended way to install DL Streamer is usually through OpenVINO.  DL Streamer is included with OpenVINO 2020.r2 and newer.  If you have not installed OpenVINO, refer to the [DL Streamer Install Guide](Install_Guide.md).  For these exercises, the DL Streamer components will be deleted from the OpenVINO install, and the newer github code will be used so that we may use the audio featurees.
+
+#### Setup DL Streamer with Audio Components
+
+	Remove OpenVINO DL Streamer Components
+	`cd /opt/intel/openvino/deployment_tools`
+	`rm -rf dl_streamer`
+
+	Install DL Streamer with Audio Support	
+	`cd ~`
+	`mkdir gva && cd gva` 
+	`git clone https://github.com/opencv/gst-video-analytics.git`
+
+	The DL Streamer Audio directory is located at:
+	~/gva/gst-video-analytics/samples/gst_launch/audio_detect/
+
 
 
 ### Install Requirements
@@ -196,7 +210,7 @@ This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentati
 </details>
 
 
-### Exercise 2: Build a Classification Pipeline <a name="classification-pipeline"></a>
+### Exercise 2: Run an Audio Classification Pipeline <a name="classification-pipeline"></a>
 
 <details>
 	<summary>Build a Classification Pipeline</summary>
@@ -366,9 +380,9 @@ You have completed this exercise. Continue to Exercise 4, where you will create 
 <br>
 For this exercise, we'll use a combination of several models to create a threat detection pipeline that includes detection of:
 
-1. Footsteps 
-2. Glass breaking
-3. Coughs 
+	1. Footsteps 
+	2. Glass breaking
+	3. Coughs 
 
 You may set different thresholds for each audio category.
 
