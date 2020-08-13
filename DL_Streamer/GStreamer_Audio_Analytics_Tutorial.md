@@ -348,13 +348,30 @@ For this exercise, we'll use a combination of several models to create a threat 
 	1. Footsteps 
 	2. Glass breaking
 	3. Coughs 
+	4. Dog barking
 
 You may set different thresholds for each audio category.
 
 Use these files:
+	` wget  https://www.soundjay.com/footsteps/footsteps-5.wav`
 	` wget  `
 	` wget  `
-	` wget  `
+
+	https://www.soundjay.com/footsteps/footsteps-5.wav 			shoes on rug
+	https://www.soundjay.com/footsteps/footsteps-4.wav 			two sets of shoes
+	https://www.soundjay.com/footsteps/wooden-stairs-1.wav 		walk wooden stairs
+
+	https://freesound.org/s/266019/								short cough
+	https://freesound.org/people/OwlStorm/sounds/151212/		cough
+	https://freesound.org/people/cmusounddesign/sounds/84695/	cough
+
+	https://freesound.org/people/InspectorJ/sounds/344265/		glass break (bottle)
+	https://freesound.org/s/500604/								glass breaking
+
+	https://freesound.org/people/InspectorJ/sounds/406085/		dog bark (small)
+	https://freesound.org/people/tsakanemashaba/sounds/501678/  big bark outside
+
+
 
 Then run the DL Streamer audio analytics tool using these files.
 
