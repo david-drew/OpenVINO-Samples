@@ -13,8 +13,8 @@ Follow the [Video Analytics Install Guide](https://github.com/opencv/gst-video-a
 	- Docker will be easier for redoing installs 
 		- The Docker option may not be updated to include the audio plugins
 
-- Near the beginning, the guide say to git clone the gst-video-analytics repo.  After doing this, make sure to change branches before proceeding:
-	- `git co preview/audio-detect`
+- Near the beginning, the guide says to clone the gst-video-analytics repo.  After doing this, make sure to change branches before proceeding:
+	- `git checkout preview/audio-detect`
 
 
 - The "Install message brokers [OPTIONAL]" section requires a script that needs fixes.  Ignore this step.
