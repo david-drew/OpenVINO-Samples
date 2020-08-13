@@ -17,7 +17,11 @@ Follow the [Video Analytics Install Guide](https://github.com/opencv/gst-video-a
 
 - Near the beginning, the guide says to clone the gst-video-analytics repo.  After doing this, make sure to change branches before proceeding:
 	- `git checkout preview/audio-detect`
-
+	- Make sure to change the git branch immediately!  You will have to redo all steps otherwise!
+	- To check whether this has been done, verify this directory exists:
+		```
+		~/gva/gst-video-analytics/samples/gst_launch/audio_detect
+		```
 
 - The "Install message brokers [OPTIONAL]" section requires a script that needs fixes.  Ignore this step.
 
