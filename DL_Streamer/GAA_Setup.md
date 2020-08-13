@@ -1,5 +1,7 @@
 # Gstreamer Audio Analytics Setup
 
+This is a temporary guide for compiling and installing the GStreamer Audio-Video Plugins for DL Streamer (OpenVINO analytics).  The audio plugins are not yet included in OpenVINO.
+
 
 Read the Notes and Workarounds in this doc, and use them when following the install guide. 
 
