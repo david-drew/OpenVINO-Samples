@@ -20,21 +20,40 @@ NOTE: The recommended way to install DL Streamer is usually through OpenVINO.  D
 #### Setup DL Streamer with Audio Components
 
 Remove OpenVINO DL Streamer Components
-`cd /opt/intel/openvino/deployment_tools`
-`rm -rf dl_streamer`
+
+	```sh
+	cd /opt/intel/openvino/deployment_tools
+	```
+
+	```sh
+	rm -rf dl_streamer
+	```
 
 Install DL Streamer with Audio Support	
-`cd ~`
-`mkdir gva && cd gva` 
-`git clone https://github.com/opencv/gst-video-analytics.git`
+
+```sh
+cd ~
+```
+```sh
+mkdir gva && cd gva
+```
+```sh
+git clone https://github.com/opencv/gst-video-analytics.git
+```
 
 The DL Streamer Audio directory is located at:
 ~/gva/gst-video-analytics/samples/gst_launch/audio_detect/
 
 
-`cd ~/gva/gst-video-analytics/scripts`
-`sudo ./install_dependencies.sh`
-`sudo ./download_models.sh`
+```sh
+cd ~/gva/gst-video-analytics/scripts
+```
+```sh
+sudo ./install_dependencies.sh
+```
+```sh
+sudo ./download_models.sh
+```
 
 
 ### Install Requirements
