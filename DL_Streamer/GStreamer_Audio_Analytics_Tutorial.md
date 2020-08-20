@@ -21,13 +21,13 @@ NOTE: The recommended way to install DL Streamer is usually through OpenVINO.  D
 
 Remove OpenVINO DL Streamer Components
 
-	```sh
-	cd /opt/intel/openvino/deployment_tools
-	```
+```sh
+cd /opt/intel/openvino/deployment_tools
+```
 
-	```sh
-	rm -rf dl_streamer
-	```
+```sh
+rm -rf dl_streamer
+```
 
 Install DL Streamer with Audio Support	
 
