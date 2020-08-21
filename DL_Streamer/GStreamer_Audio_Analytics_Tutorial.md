@@ -204,7 +204,6 @@ If 'clinfo' works but 'vainfo' returns an error message, try rebooting the syste
 
 5. Build the DL Streamer libraries.
 
-### build GVA plugin
 ```sh
 mkdir ~/gva/gst-video-analytics/build
 ```
@@ -222,9 +221,9 @@ sudo make install
 ```
 
 Export environment variables
+```sh
 export GST_PLUGIN_PATH=~/gva/gst-video-analytics/build/intel64/Release/lib:$GST_PLUGIN_PATH  # for GVA elements to be available system-wid
-
-
+```
 
 </details>
 
