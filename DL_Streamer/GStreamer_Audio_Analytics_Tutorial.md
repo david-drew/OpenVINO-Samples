@@ -149,7 +149,7 @@ Eventually the updated code for audio support will be included in OpenVINO, but 
 <br>
 
 
-* The following instructions are teken from the [DL Streamer Install Guide](https://github.com/opencv/gst-video-analytics/wiki/Install-Guide).
+* The following instructions are taken from the [DL Streamer Install Guide](https://github.com/opencv/gst-video-analytics/wiki/Install-Guide).
 * Make sure that the preview/audio-detect branch is checked out.
 * For ease of use, continue to use the repository checked out at `~/gva`.
 
