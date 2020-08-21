@@ -40,6 +40,15 @@ mkdir gva && cd gva
 ```sh
 git clone https://github.com/opencv/gst-video-analytics.git
 ```
+Using the preview/audio-detect branch is required because the changes haven't been merged to master yet.
+
+```sh
+cd ~/gva/gst-video-analytics
+```
+
+```sh
+git checkout preview/audio-detect
+```
 
 The DL Streamer Audio directory is located at:
 ~/gva/gst-video-analytics/samples/gst_launch/audio_detect/
