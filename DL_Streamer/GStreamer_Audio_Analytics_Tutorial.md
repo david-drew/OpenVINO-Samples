@@ -146,9 +146,11 @@ wget https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav
 Eventually the updated code for audio support will be included in OpenVINO, but for now the DL Streamer libraries must be compiled from the source code in the gva archive (in the preview/audiot-detect branch).
 
 <br>
+
 * The following instructions are teken from the [DL Streamer Install Guide](https://github.com/opencv/gst-video-analytics/wiki/Install-Guide).
 * Make sure that the preview/audio-detect branch is checked out.
 * For ease of use, continue to use the repository checked out at `~/gva`.
+
 
 1. Install dependencies
 
