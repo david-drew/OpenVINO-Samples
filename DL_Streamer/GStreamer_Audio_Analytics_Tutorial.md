@@ -112,22 +112,23 @@ Remember to source your environment:
 
 This is a proprietary model developed at Intel to categorize ambient noise, such as barking, footsteps, etc.
 
-	```sh
-	cd ~/gva/models
-	```
-	```sh
-	wget https://download.01.org/opencv/models_contrib/sound_classification/aclnet/pytorch/15062020/aclnet_des_53_fp32.onnx
-	```
+```sh
+cd ~/gva/models
+```
+	
+```sh
+wget https://download.01.org/opencv/models_contrib/sound_classification/aclnet/pytorch/15062020/aclnet_des_53_fp32.onnx
+```
 
 4. The samples require audio files that:
 
 - Are in 16-bit wav format. You can convert other formats to wav with ffmpeg and similar tools.
 - Are relatively short (a few minutes long), for convenience. 
 
-	```sh
-	cd ~/gva/media
-	wget https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav
-	```
+```sh
+cd ~/gva/media
+wget https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav
+```
 	
 5. Download audio and videos
 
