@@ -145,10 +145,86 @@ wget https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav
 <br>
 Eventually the updated code for audio support will be included in OpenVINO, but for now the DL Streamer libraries must be compiled from the source code in the gva archive (in the preview/audiot-detect branch).
 
-* Follow the instructions in the [DL Streamer Install Guide](https://github.com/opencv/gst-video-analytics/wiki/Install-Guide).
+<br>
+* The following instructions are teken from the [DL Streamer Install Guide](https://github.com/opencv/gst-video-analytics/wiki/Install-Guide).
 * Make sure that the preview/audio-detect branch is checked out.
 * For ease of use, continue to use the repository checked out at `~/gva`.
-* Return here after completing the process.
+
+1. Install dependencies
+
+```sh
+sudo apt update && sudo apt install -y --no-install-recommends \
+       wget cpio cmake lsb-release gcc g++ libpython3-dev \
+       make mesa-utils ocl-icd-libopencl1 clinfo vainfo 
+```
+
+2. Check that an OpenCL accelerator is available.
+
+```sh
+clinfo
+```
+
+ If output says 'Number of platforms: 0', install the Intel Neo GPU driver:
+
+```sh
+cd /opt/intel/openvino/install_dependencies/
+```
+
+ ```sh
+sudo -E ./install_NEO_OCL_driver.sh
+```
+
+Remember to source the environment after updating the driver.
+
+```sh
+source /opt/intel/openvino/bin/setupvars.sh
+```
+
+3. Install Python Requirements
+
+```sh
+cd ~/gva/gst-video-analytics
+```
+```sh
+pip3 install -r requirements.txt
+```
+
+
+4. Verify Install Status Again
+
+```sh
+clinfo
+```
+```sh
+vainfo
+```
+
+If 'clinfo' works but 'vainfo' returns an error message, try rebooting the system.
+
+
+5. Build the DL Streamer libraries.
+
+### build GVA plugin
+```sh
+mkdir ~/gva/gst-video-analytics/build
+```
+```sh
+cd ~/gva/gst-video-analytics/build
+```
+```sh
+cmake ..
+```
+```sh
+make -j$(nproc)
+```
+```sh
+sudo make install
+```
+
+Export environment variables
+export GST_PLUGIN_PATH=~/gva/gst-video-analytics/build/intel64/Release/lib:$GST_PLUGIN_PATH  # for GVA elements to be available system-wid
+
+
 
 </details>
 
