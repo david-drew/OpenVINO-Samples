@@ -83,7 +83,7 @@ sudo apt update && sudo apt install -y --no-install-recommends \
 	wget cpio cmake lsb-release mesa-utils gdb mc ocl-icd-libopencl1 clinfo vainfo
 ```
 
-### Get the Models and Videos for the Examples<a name="acquire-data-and-sources"></a>
+### Get the Audio Files for the Examples<a name="acquire-data-and-sources"></a>
 
 The DL Streamer plug-in uses the OpenVINO Deep Learning [Inference Engine](https://software.intel.com/en-us/articles/OpenVINO-InferEngine) to perform inference. As input, the Inference Engine accepts CNN models that are converted to the Intermediate Representation (IR) format through the OpenVINO toolkit [Model Optimizer](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html). 
 
@@ -109,15 +109,14 @@ Remember to source your environment:
     ```
    
 3. Download the model:
+
+This is a proprietary model developed at Intel to categorize ambient noise, such as barking, footsteps, etc.
+
 	```sh
 	cd ~/gva/models
 	```
 	```sh
 	wget https://download.01.org/opencv/models_contrib/sound_classification/aclnet/pytorch/15062020/aclnet_des_53_fp32.onnx
-	```
-
-	```sh
-	~/gva/gst-video-analytics/samples/gst_launch/audio_detect/download_models.sh
 	```
 
 4. The samples require audio files that:
@@ -133,7 +132,7 @@ Remember to source your environment:
 5. Download audio and videos
 
 - You can download freely licensed audio from the websites like [FreeSound](https://freesound.org/browse/).
-- Put your audio files in `~/gva/audio`.
+- Put your audio files in `~/gva/media`.
 
 
 </details>
