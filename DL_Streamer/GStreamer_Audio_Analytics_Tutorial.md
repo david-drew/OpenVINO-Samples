@@ -50,9 +50,11 @@ cd ~/gva/gst-video-analytics
 git checkout preview/audio-detect
 ```
 
-The DL Streamer Audio directory is located at:
+The DL Streamer Audio directory is now located at:
 ~/gva/gst-video-analytics/samples/gst_launch/audio_detect/
 
+
+Now we'll do some additional setup for the samples in this repository.
 
 ```sh
 cd ~/gva/gst-video-analytics/scripts
@@ -60,8 +62,18 @@ cd ~/gva/gst-video-analytics/scripts
 ```sh
 sudo ./install_dependencies.sh
 ```
+
 ```sh
-sudo ./download_models.sh
+cd ~/gva/gst-video-analytics/samples/gst_launch/audio_detect/
+```
+
+The OpenVINO environment must be active to use the model download script.
+```sh
+source /opt/intel/openvino/bin/setupvars.sh 
+```
+
+```sh
+sudo -EH ./download_audio_models.sh 
 ```
 
 
