@@ -25,7 +25,7 @@ Remove OpenVINO DL Streamer Components
 cd /opt/intel/openvino/deployment_tools
 ```
 
-*NOTE:* Deleteing the DL Streamer components from OpenVINO is a temporary step.  We're going to be building pre-release DL Streamer code with audio support for these exercises.  In the future, this code will be merged into OpenVINO, and this workaround won't be necessary.
+*NOTE:* Deleting the DL Streamer components from OpenVINO is a temporary step.  We're going to build pre-release DL Streamer code with audio support for these exercises.  In the future, this code will be merged into OpenVINO, and this workaround won't be necessary.
 ```sh
 rm -rf dl_streamer
 ```
