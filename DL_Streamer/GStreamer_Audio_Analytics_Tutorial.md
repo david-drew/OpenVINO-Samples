@@ -169,8 +169,9 @@ sudo apt update && sudo apt install -y --no-install-recommends \
 clinfo
 ```
 
- If output says 'Number of platforms: 0', install the Intel Neo GPU driver:
- <details>
+    If output says 'Number of platforms: 0', install the Intel Neo GPU driver:
+    <details>
+        <summary>Install Intel Neo GPU Driver</summary>
 
 	```sh
 	cd /opt/intel/openvino/install_dependencies/
@@ -186,7 +187,7 @@ clinfo
 	source /opt/intel/openvino/bin/setupvars.sh
 	```
 	
-</details>
+    </details>
 
 
 3. Install Python Requirements
