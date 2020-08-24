@@ -231,11 +231,13 @@ export GST_PLUGIN_PATH=~/gva/gst-video-analytics/build/intel64/Release/lib:$GST_
 
 </details>
 
-### Learn about the Audio Analytics Pipeline and the GAA Elements <a name="gva-pipeline"></a> 
+### Learn about the Video and Audio Analytics Pipeline and the GAA Elements <a name="gva-pipeline"></a> 
 
 <details>
-	<summary>Learn about the Audio Analytics Pipeline and the GAA Elements</summary>
+	<summary>Learn about the Video and Audio Analytics Pipeline and the GAA Elements</summary>
 
+<br>
+This section focuses on video, but the process for both video and audio is very similar, the only difference being a few additional audio elements that are detailed in the next section.
 <br>
 The diagram below shows the data flow of a typical video/audio analytics pipeline.
 
@@ -281,10 +283,10 @@ You are ready to try creating your own pipeline. Continue with the next section 
 ### Exercise 1: Build a Simple Pipeline <a name="simple-pipeline"></a>
 
 <details>
-	<summary>Build a Simple Pipeline</summary>
+	<summary>Build a Simple Video Pipeline</summary>
 <br>
 
-This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  This exercise will introduce the general concepts and focus on video.  The following exercises apply these concepts to audio.
+This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  This exercise will introduce the general concepts and focus on video.  
 
 This exercise introduces you to using the following GAA elements:
 
@@ -366,32 +368,11 @@ This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentati
 	<summary>Run an Classification Pipeline</summary>
 <br>	
 
-In this pipeline:
-
-1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc. 
-2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
-3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc:
-	* `object-class` tells `gvalcassify` which ROIs to classify. 
-	* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
-4 `gvawatermark` displays the ROIs and their attributes. 
-
-See [model-proc](https://github.com/opencv/gst-video-analytics/tree/master/samples/model_proc) for the model-procs and its input and output specifications.
+This exercise uses a script to categorize a variety of environmental sounds.  A 16-bit wav file is required as the input, ffmpeg or similar tools can convert other audio file types.  For this exercise we'll run the script, then open the script in a text editor to note differences.
 
 
-In this pipeline:
 
-1. `gvadetect` detects the ROIs in the video and outputs ROIs with the appropriate attributes (person, vehicle, bike) according to its model-proc **on every 10th frame, due to `inference-interval=10`**.
-	*`gvatrack` tracks each object detected by `gvadetect`
-	
-2. `gvadetect` ROIs are used as inputs for the `gvaclassify` model.
-
-3. `gvaclassify` classifies the ROIs and outputs additional attributes according to model-proc, **but skips classification for already classified objects for 10 frames, using tracking information from `gvatrack` to determine whether to classify an object**:
-	* `object-class` tells `gvalcassify` which ROIs to classify. 
-	* `object-class=vehicle` classifies ROIs that have the 'vehicle' attribute. 
-	
-4. `gvawatermark` displays the ROIs and their attributes. 
-
-You're done building and running this pipeline. The next exercise shows you how to publish your results to a .`.json`.
+You're done with this pipeline. The next exercise shows you how to publish your results in a json format.
 	
 </details>
 
