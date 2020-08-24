@@ -343,23 +343,6 @@ gst-launch-1.0 \
 
 You're done building and running this pipeline. To expand on this exercise, use one or both add-ons to this exercise to select different video sources. If the add-ons don't suit you, jump ahead to start [Exercise 2](#classification-pipeline)
 
-#### OPTIONAL: Simple Pipeline with an RTSP Device (Optional - Requires RTSP Device)
-
-GStreamer supports RTSP devices that specify an RTSP URI, which means you can point to this URL to perform real-time inference.
-
-Before repeating Exercise 1 with an RTSP URI, verify the RTSP URL. 
-
-**To repeat Exercise 1 with a RTSP URI**, verify the path to the RTSP URI, and run the pipeline with the RTSP URI: 
-
-```sh
-gst-launch-1.0 \
-	urisourcebin uri=<RTSP_uri> ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-```
-
-This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentation/playback/urisourcebin.html?gi-language=c) to access URIs. In this pipeline, the URI access is to the RTSP URI and the video stream from the link for inference.
-
 </details>
 
 
@@ -371,7 +354,38 @@ This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentati
 
 This exercise uses a script to categorize a variety of environmental sounds.  A 16-bit wav file is required as the input, ffmpeg or similar tools can convert other audio file types.  For this exercise we'll run the script, then open the script in a text editor to note differences.
 
+```sh
+cd ~/gva/gst-video-analytics/samples/gst_launch/audio_detect
+```
 
+Run the script, pointing it at the gettysburg speech file.
+```sh
+./audio_event_detection.sh ~/gva/media/gettysburg.wav
+```
+
+Note that the output is json, and their a variety of fields for timestamps, lables, and other information.  Also note that 'Speech' is being recognized.
+
+Run the script, pointing it at the animal sounds file.  **DAVID: Share files and change TBD below**
+```sh
+./audio_event_detection.sh ~/gva/media/TBD.wav
+```
+
+Note that different animal types are being classified.
+
+Open the audio_event_detection.sh script in the text editor of your choice:
+```sh
+gedit audio_event_detection.sh
+```
+
+Examine the file, and look at the environment variables that are set, as well as the gst-launch-1.0 command at the end.  If desired, modify the script to output the final gst-launch command.
+
+A few elements new to the audio process:
+* audioresample
+* audioconvert
+* audio/x-raw, channels=1,format=S16LE,rate=16000
+* gvaaudiodetect
+
+The gst-launch command may be modified to include other models or elements.
 
 You're done with this pipeline. The next exercise shows you how to publish your results in a json format.
 	
