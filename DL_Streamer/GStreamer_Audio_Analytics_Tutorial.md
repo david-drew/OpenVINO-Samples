@@ -170,20 +170,24 @@ clinfo
 ```
 
  If output says 'Number of platforms: 0', install the Intel Neo GPU driver:
+ <details>
 
-```sh
-cd /opt/intel/openvino/install_dependencies/
-```
+	```sh
+	cd /opt/intel/openvino/install_dependencies/
+	```
 
- ```sh
-sudo -E ./install_NEO_OCL_driver.sh
-```
+	 ```sh
+	sudo -E ./install_NEO_OCL_driver.sh
+	```
 
-Remember to source the environment after updating the driver.
+	Remember to source the environment after updating the driver.
 
-```sh
-source /opt/intel/openvino/bin/setupvars.sh
-```
+	```sh
+	source /opt/intel/openvino/bin/setupvars.sh
+	```
+	
+</details>
+
 
 3. Install Python Requirements
 
