@@ -1,5 +1,5 @@
 
-# Get Started with OpenVINO™ Deep Learning Workbench™ and Samples for Linux*
+# Get Started with OpenVINO™ and Examples for Linux*
 
 For an overview and details about the Intel® Distribution of OpenVINO™ toolkit, see the [OpenVINO™ Overview](OpenVINO_Overview.md)
 
