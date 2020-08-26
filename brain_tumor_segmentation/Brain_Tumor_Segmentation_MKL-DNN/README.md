@@ -70,7 +70,7 @@ This application uses a pre-trained model (unet_model_for_decathlon.hdf5), that 
 
 To install dependencies and optimize the pre-trained model, run the following command:
 
-    pip3 install scipy keras kiwisolver
+    pip3 install scipy keras==2.2.5 kiwisolver
 
 NOTE: if you experience problems with the install or accessing the libraries, you may re-run this command with 'sudo'.
 
