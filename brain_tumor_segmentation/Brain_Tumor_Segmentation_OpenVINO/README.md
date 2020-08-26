@@ -43,7 +43,7 @@ U-Net is designed like an [auto-encoder]( https://en.wikipedia.org/wiki/Autoenco
 ## Setup
 
 ### Move to the tutorial directory
-```
+```sh
 mkdir ~/brainseg
 cd ~/brainseg
 ```
@@ -51,7 +51,7 @@ cd ~/brainseg
 ### Get the code
 
 If the MKL-DNN sample was NOT completed, clone the reference implementation:
-```
+```sh
 sudo apt-get update && sudo apt-get install git
 git clone https://github.com/david-drew/OpenVINO-Samples.git
 ``` 
@@ -71,9 +71,11 @@ This application uses a pre-trained model (unet_model_for_decathlon.hdf5), that 
 
 To install the dependencies of the RI and to optimize the pre-trained model, run the following command:
 
-    cd ~/brainseg/OpenVINO-Samples/brain_tumor_segmentation/Brain_Tumor_Segmentation_OpenVINO/
-    chmod +x setup.sh
-    ./setup.sh
+```sh
+cd ~/brainseg/OpenVINO-Samples/brain_tumor_segmentation/Brain_Tumor_Segmentation_OpenVINO/
+chmod +x setup.sh
+./setup.sh
+```
 
 ### What Input to use
 
@@ -88,14 +90,16 @@ __Note__: This command needs to be executed only once in the terminal where the 
     
 ## Run the Application
 
-```
-    cd application
-    chmod +x brain_tumor_segmentation.py
+```sh
+cd application
+chmod +x brain_tumor_segmentation.py
 ```
 
 To see a list of the various options:
 
-    ./brain_tumor_segmentation.py -h
+```sh
+./brain_tumor_segmentation.py -h
+```
 
 A user can specify what target device to run on by using the device command-line argument `-d` followed by one of the values `CPU`, `GPU`, `HDDL`, `MYRIAD` or `HETERO:FPGA,CPU`.<br>
 
