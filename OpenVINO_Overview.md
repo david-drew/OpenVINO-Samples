@@ -283,7 +283,7 @@ Models in the Intermediate Representation format always include an `.xml` and `.
 This guide uses the public SqueezeNet 1.1 Caffe\* model to run the Image Classification Sample. See the example to download a model in the <a href="#download-models">Download Models</a> section to learn how to download this model.
 
 The `squeezenet1.1` model is downloaded in the Caffe* format. You must use the Model Optimizer to convert the model to the IR. 
-The `vehicle-license-plate-detection-barrier-0106`, `vehicle-attributes-recognition-barrier-0039`, `license-plate-recognition-barrier-0001` models are downloaded in the Intermediate Representation format. You don't need to use the Model Optimizer to covert these models.
+The `vehicle-license-plate-detection-barrier-0106`, `vehicle-attributes-recognition-barrier-0039`, `license-plate-recognition-barrier-0001` models are downloaded in the Intermediate Representation format. You don't need to use the Model Optimizer to convert these models.
 
 1. Create an `<ir_dir>` directory to contain the model's Intermediate Representation (IR). 
 
