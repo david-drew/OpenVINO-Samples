@@ -101,4 +101,13 @@ To run the application, use the below command:
 python3 brain_tumor_segmentation.py --data_file ../resources/Task01_BrainTumour.h5 --inference_filename ../resources/unet_model_for_decathlon.hdf5 -r ../results
 ```
 
+### Check Results
+Several images have been created in the results directory.  Look at them to see the output of the application.
+
+    cd ../results
+    eog pred0.png
+    eog pred1.png
+    
+Examine other images as desired.  
+
 
