@@ -5,8 +5,6 @@ For an overview and details about the Intel® Distribution of OpenVINO™ toolki
 
 We recommend you read the above OpenVINO™ Overview before starting this tutorial.   
 
-You should complete the [OpenVINO™ Get Started Guide](https://docs.openvinotoolkit.org/latest/_docs_get_started_get_started_linux.html) before proceeding with this document.
-
 <br>
 
 NOTE: When using OpenVINO™ from the command line, you must setup your environment whenever you change users or launch a new terminal.
@@ -16,6 +14,23 @@ NOTE: When using OpenVINO™ from the command line, you must setup your environm
 ## <a name="Setup"></a> Setup
 For using the Model Optimizer from the command line, only OpenVINO is required.  For using the Deep Learning Workbench, there is an additional requirement for docker and an initial configuration step for the Workbench.
 
+### Run Verification Demos
+
+This will show some of the features of OpenVINO, downloads files and creates directories we will use later.
+
+```sh
+cd /opt/intel/openvino/deployment_tools/demo/
+```
+
+Run the SqueezeNet classification demo.
+```sh
+./demo_squeezenet_download_convert_run.sh
+```
+
+Run the security barrier (vehicle detection, make and license plate recognition) object detection demo.
+```sh
+./demo_security_barrier_camera.sh
+```
 
 ### Build Samples
 If samples have been manually built, skip this section.  This step will take about 5-10 minutes, depending on your system.
