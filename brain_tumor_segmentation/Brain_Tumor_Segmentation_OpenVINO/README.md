@@ -53,7 +53,7 @@ cd ~/brainseg
 If the MKL-DNN sample was NOT completed, clone the reference implementation:
 ```
 sudo apt-get update && sudo apt-get install git
-git clone https://github.com/intel-iot-devkit/brain-tumor-segmentations.git
+git clone https://github.com/david-drew/OpenVINO-Samples.git
 ``` 
 
 ### Install the Intel® Distribution of OpenVINO™ toolkit
