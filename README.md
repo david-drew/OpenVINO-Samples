@@ -257,7 +257,6 @@ For this next exercise, we'll redirect you to another page.  Please return here 
 	<summary>Exercise 5: Speech Recognition</summary>
 
 <br>
-For this exercise, we'll redirect you to the 
 
 For more information about how OpenVINO works with audio, review [this page](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Speech_libs_and_demos.html).
 Then read through the documentation for the [Speech Recognition Demo](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Live_speech_recognition_demo.html).  A script. listed below, is used to run this example.
