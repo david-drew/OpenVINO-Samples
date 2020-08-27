@@ -80,7 +80,7 @@ The produced IR files are in the <ir_dir> directory.
 
 The actual command:
 ```
-python3 ./mo.py --input_model ~/models/public/squeezenet1.1/squeezenet1.1.caffemodel
+python3 ./mo.py --input_model ~/openvino_models/models/public/squeezenet1.1/squeezenet1.1.caffemodel
 ```
 
 ## <a name="Exercises"></a> Exercises
@@ -126,7 +126,7 @@ In this section, you will convert an FP32 model suitable for running on a CPU.
 Use the Model Optimizer to convert an FP32 SqueezeNet* Caffe* model into an optimized Intermediate Representation (IR):
 
 ```
-python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model  ~/models/public/squeezenet1.1/squeezenet1.1.caffemodel --data_type FP32 --output_dir .
+python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model ~/openvino_models/models/public/squeezenet1.1/squeezenet1.1.caffemodel --data_type FP32 --output_dir .
 ```
 
 **Prepare the Data (Media) or Dataset**
