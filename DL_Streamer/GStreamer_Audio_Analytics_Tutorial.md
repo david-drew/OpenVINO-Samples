@@ -395,101 +395,25 @@ You're done with this pipeline. The next exercise shows you how to publish your 
 	
 </details>
 
-### Exercise 3: Publish Inference Results
-<details>
-	<summary>Publish Inference Results</summary>
-<br>
-
-This exercise extends the pipeline to publish your detection and classification results to a `.json` file from a GStreamer pipeline.
-
-This exercises uses the following additional GAA elements:
-
-- `gvametaconvert`
-- `gvametapublish` 
-
-The script for this exercise is in the [`metapublish`](https://github.com/opencv/gst-video-analytics/blob/master/samples/gst_launch/metapublish/) directory where the GAA plug-ins sample scripts are located. The `metapublish` directory also contains scripts to publish results to Kafka and MQTT.
-
-1. Set the OpenVINO environment:
-
-> NOTE: For this exercise, you must reset the env variables as described below.
-
-```sh
-source /opt/intel/openvino/data_processing/gstreamer/bin/gstreamer-setupvars.sh
-source /opt/intel/openvino/bin/setupvars.sh
-```
-
-2. Export the `model` and `model_proc` files:
-```sh
-export DETECTION_MODEL=~/gva/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
-export VEHICLE_CLASSIFICATION_MODEL=~/gva/models/intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml
-export VEHICLE_CLASSIFICATION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/vehicle-attributes-recognition-barrier-0039.json
-```
-
-3. Export the video file path:
-
-```sh
-# # This example uses ~/gva/video as the video path and FILENAME as the placeholder for a video file name. Change this information to fit your setup.
-export VIDEO_EXAMPLE=~/gva/video/<your_downloaded_video>
-```
-
-4. Export the output file path:
-
-The $OUTFILE target can be any path and name.  We suggest: `~/gva/out.json`
-
-```sh
-# This example uses ~/gva/video as the video path and FILENAME as the placeholder for an output file name. Change this information to fit your setup. 
-export OUTFILE=<path-to-FILENAME>
-```
-
-5. Create and run the pipeline:
-
-```sh
-gst-launch-1.0 \
-	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-	gvaclassify model=${VEHICLE_CLASSIFICATION_MODEL} model-proc=${VEHICLE_CLASSIFICATION_MODEL_PROC} device=CPU object-class=vehicle ! queue ! \
-	gvametaconvert format=json ! \
-	gvametapublish method=file file-path=${OUTFILE} ! \
-	fakesink
-```
-
-In this step:
-- `gvametaconvert` uses the optional parameter `format=json` to convert inferenced data to `GstGVAJSONMeta`. 
-- `GstGVAJSONMeta` is a custom data structure that represents JSON metadata. 
-- `gvametapublish` uses the optional parameter `method=file` to publish inference results to a file.
-- `filepath=${OUTFILE}` is a JSON file to which the inference results are published.
-	
-5. Run the pipeline. After the pipeline completes, a JSON file of the inference results is available. 
-
-6. Review the JSON file (defined by $OUTFILE).
-
-```sh
-gedit $OUTFILE
-```
-
-You have completed this exercise. Continue to Exercise 4, where you will create a custom multi-model pipeline. 
-
-</details>
-
-### Exercise 4: Create a Threat Detection Pipeline <a name="face-detect"></a>
+### Exercise 3: Create a Custom Threat Detection Pipeline <a name="face-detect"></a>
 <details>
 	<summary>Threat Detection Pipeline</summary>
 <br>
-For this exercise, we'll eventually need several wav files to create a threat detection pipeline.
+For this exercise, we'll need several wav files to create a threat detection pipeline.  The goal is to put together a custom pipeline, using what you've learned in the previous exercises.  There are wav files in /tmp/sound.
 	
 First, create a pipeline that detects glass breaking and outputs JSON.
-
 	1. Glass breaking
+
+When your pipeline is detecting glass, continue.
 
 When successful, add support for the following:
 	2. Footsteps 
 	3. Coughs 
 	4. Dog barking
 
-Different thresholds may be set for each audio category if desired.  You can search on Google for wav files (or mp3 files if you convert them before use).
+The goal is to incorporate one (or more) of each type of wav file into the pipeline, but it may be easier to add one at a time.
 
-Then run the DL Streamer audio analytics tool using these files.
+Different thresholds may be set for each audio category if desired.  You can search on Google for wav files if needed (or mp3 files if you convert them before use).
 
 </details>
 
