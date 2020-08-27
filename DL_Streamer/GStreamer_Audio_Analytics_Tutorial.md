@@ -476,35 +476,18 @@ You have completed this exercise. Continue to Exercise 4, where you will create 
 <details>
 	<summary>Threat Detection Pipeline</summary>
 <br>
-For this exercise, we'll use a combination of several models to create a threat detection pipeline that includes detection of:
+For this exercise, we'll eventually need several wav files to create a threat detection pipeline.
+	
+First, create a pipeline that detects glass breaking and outputs JSON.
 
-	1. Footsteps 
-	2. Glass breaking
+	1. Glass breaking
+
+When successful, add support for the following:
+	2. Footsteps 
 	3. Coughs 
 	4. Dog barking
 
-You may set different thresholds for each audio category.
-
-Use these files:
-	` wget  https://www.soundjay.com/footsteps/footsteps-5.wav`
-	` wget  `
-	` wget  `
-
-	https://www.soundjay.com/footsteps/footsteps-5.wav 			shoes on rug
-	https://www.soundjay.com/footsteps/footsteps-4.wav 			two sets of shoes
-	https://www.soundjay.com/footsteps/wooden-stairs-1.wav 		walk wooden stairs
-
-	https://freesound.org/s/266019/								short cough
-	https://freesound.org/people/OwlStorm/sounds/151212/		cough
-	https://freesound.org/people/cmusounddesign/sounds/84695/	cough
-
-	https://freesound.org/people/InspectorJ/sounds/344265/		glass break (bottle)
-	https://freesound.org/s/500604/								glass breaking
-
-	https://freesound.org/people/InspectorJ/sounds/406085/		dog bark (small)
-	https://freesound.org/people/tsakanemashaba/sounds/501678/  big bark outside
-
-
+Different thresholds may be set for each audio category if desired.  You can search on Google for wav files (or mp3 files if you convert them before use).
 
 Then run the DL Streamer audio analytics tool using these files.
 
