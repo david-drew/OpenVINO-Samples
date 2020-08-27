@@ -367,7 +367,7 @@ Run the script, pointing it at the gettysburg speech file.
 ./audio_event_detection.sh ~/gva/media/gettysburg.wav
 ```
 
-Note that the output is json, and there are a variety of fields for timestamps, lables, and other information.  Also note that 'Speech' is being recognized.
+Note that the output is printed to the terminal window as JSON, and there are a variety of fields for timestamps, lables, and other information.  Also note that 'Speech' is being recognized.
 
 Run the script, pointing it at the animal sounds file.  **DAVID: Share files and change TBD below**
 ```sh
