@@ -260,12 +260,12 @@ For this next exercise, we'll redirect you to another page.  Please return here 
 For this exercise, we'll redirect you to the 
 
 For more information about how OpenVINO works with audio, review [this page](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Speech_libs_and_demos.html).
-Then read through the documentation for the [Speech Recognition Demo](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Live_speech_recognition_demo.html).
+Then read through the documentation for the [Speech Recognition Demo](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Live_speech_recognition_demo.html).  A script. listed below, is used to run this example.
 
 To run the demo:
 1. Download the gettysburg address from [here](https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav).
-2. Use this application:  offline_speech_recognition_app
-3. Launch the demo, point it at the wav file, and execute it. 
+2. Use this script:  `/opt/intel/openvino/deployment_tools/demo/demo_speech_recognition.sh`
+3. Launch the demo, select the wav file in the GUI, and execute it. 
 
 
 </details>
