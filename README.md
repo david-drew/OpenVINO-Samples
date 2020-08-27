@@ -264,7 +264,8 @@ Then read through the documentation for the [Speech Recognition Demo](https://do
 
 To run the demo:
 1. Download the gettysburg address from [here](https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav).
-2. Launch the demo, point it at the wav file, and execute it. 
+2. Use this application:  offline_speech_recognition_app
+3. Launch the demo, point it at the wav file, and execute it. 
 
 
 </details>
