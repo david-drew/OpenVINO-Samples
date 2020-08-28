@@ -288,64 +288,30 @@ You are ready to try creating your own pipeline. Continue with the next section 
 ### Exercise 1: Build a Simple Pipeline <a name="simple-pipeline"></a>
 
 <details>
-	<summary>Build a Simple Video Pipeline</summary>
+	<summary>Build Simple Video Pipeline</summary>
 <br>
 
 This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  This exercise will introduce the general concepts and focus on video.  
 
-This exercise introduces you to using the following GAA elements:
-
-- `filesrc`
-- `gvadetect` 
-- `gvawatermark`
-	
-1. Set the environment variables if not already set.:
+Remember to set the environment variables if not already set.:
 
 ```sh
 source /opt/intel/openvino/bin/setupvars.sh
 source ~/gva/gst-video-analytics/scripts/setup_env.sh
+export MODELS_PATH=~/gva/models
 ```
 
-2. Export the `model` and `model_proc` files:
+The included DL Streamer scripts use $MODELS_PATH as both a download target and to use models for inference.  You'll want to download at least one face video and one mixed vehicle, pedestrian, and bicycle video.  Any source is fine, but [Pexels](https://videos.pexels.com) is suggested.
 
-```sh
-export DETECTION_MODEL=~/gva/models/intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
-```
-```sh
-export DETECTION_MODEL_PROC=/opt/intel/openvino/data_processing/dl_streamer/samples/gst_launch/vehicle_pedestrian_tracking/model_proc/person-vehicle-bike-detection-crossroad-0078.json
-```
+Now run the following two sample tutorials.
 
-3. Export the video file path:
+1. [DL Streamer Face Detection](https://github.com/opencv/gst-video-analytics/tree/master/samples/gst_launch/face_detection_and_classification)
+2. [DL Streamer Vehicle Pedestrian Tracking](https://github.com/opencv/gst-video-analytics/tree/master/samples/gst_launch/vehicle_pedestrian_tracking)
 
-This example uses ~/gva/video as the video path and <your_video> as the placeholder for a video file name. Change this information to fit your setup.
 
-```sh
-export VIDEO_EXAMPLE=~/gva/video/<your_video>
-```
+Look at the scripts, and note the gst-launch-1.0 commands near the end of each script which do the actual work. 
 
-4. Create and run the pipeline. As an option, add the `model-proc` parameter to create a `model-proc` JSON file. `model-proc` files describe the model input and output layer format. The `model-proc` file in this exercise describes the output layer name and labels (person, vehicle, and bike) on objects it detects. 
-
-See [model-proc](https://github.com/opencv/gst-video-analytics/blob/master/samples/model_proc/person-vehicle-bike-detection-crossroad-0078.json) for more information.
-
-```sh
-gst-launch-1.0 \
-	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-```
-	
-5. Review the output. Persons, vehicles, and bikes are bound by colored boxes, and detection results are displayed as video overlays. The average frame rate of the pipeline are shown as overlays at the bottom of the video.
-
-`gvadetect`:
-	* Used the XML model file to find the BIN file for inference.
-	* Performed detection on each video frame.
-	* Output ROIs with labels according to `model-proc` specifications. 
-
-`gvawatermark` used the output ROIs to visually display the detected objects and their attributes.
-	* [`fpsdisplaysink`](https://gstreamer.freedesktop.org/documentation/debugutilsbad/fpsdisplaysink.html?gi-language=c) displayed the average FPS of the pipeline.
-	* [`xvimagesink`](https://gstreamer.freedesktop.org/documentation/xvimagesink/index.html?gi-language=c#xvimagesink-page) rendered the video frames.
-
-You're done building and running this pipeline. To expand on this exercise, use one or both add-ons to this exercise to select different video sources. If the add-ons don't suit you, jump ahead to start [Exercise 2](#classification-pipeline)
+Feel free to try different videos, or make modifications to the scripts.
 
 </details>
 
