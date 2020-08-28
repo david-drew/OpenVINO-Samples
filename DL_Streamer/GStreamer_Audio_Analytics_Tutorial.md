@@ -357,16 +357,16 @@ You're done with this pipeline. The next exercise shows you how to publish your 
 For this exercise, we'll need several wav files to create a threat detection pipeline.  The goal is to put together a custom pipeline, using what you've learned in the previous exercises.  There are wav files in /tmp/sound.
 	
 First, create a pipeline that detects glass breaking and outputs JSON.
-<br>
-	1. Glass breaking
-<br>
+
+1. Glass breaking
+
 When your pipeline is detecting glass, continue.
 
 When successful, add support for the following:
-<br>
-	2. Footsteps 
-	3. Coughs 
-	4. Dog barking
+
+2. Footsteps 
+3. Coughs 
+4. Dog barking
 
 The goal is to incorporate one (or more) of each type of wav file into the pipeline, but it may be easier to add one at a time.
 
