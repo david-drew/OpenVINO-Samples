@@ -353,7 +353,7 @@ You're done building and running this pipeline. To expand on this exercise, use 
 ### Exercise 2: Run an Audio Classification Pipeline <a name="classification-pipeline"></a>
 
 <details>
-	<summary>Run an Classification Pipeline</summary>
+	<summary>Run a Classification Pipeline</summary>
 <br>	
 
 This exercise uses a script to categorize a variety of environmental sounds.  A 16-bit wav file is required as the input, ffmpeg or similar tools can convert other audio file types.  For this exercise we'll run the script, then open the script in a text editor to note differences.
