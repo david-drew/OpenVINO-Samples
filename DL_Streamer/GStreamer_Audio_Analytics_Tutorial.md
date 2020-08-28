@@ -240,13 +240,21 @@ export GST_PLUGIN_PATH=~/gva/gst-video-analytics/build/intel64/Release/lib:$GST_
 
 See the [DL Streamer documentation](https://github.com/david-drew/OpenVINO-Samples/blob/master/DL_Streamer/README.md) for more details.
 
-Example DL Streamer Command (do not run):
+Simple DL Streamer Command (do not run):
 ```
 gst-launch-1.0 \
-	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
+	filesrc location=${VIDEO} ! decodebin ! video/x-raw ! videoconvert ! \
+	gvadetect model=${MOD_DET} model_proc=${MOD_DET_PROC} device=$MOD_DET_DEV ! queue ! \
+	gvaclassify model=$MOD_CLS1 model-proc=$MOD_CLS1_PROC device=$MOD_CLS1_DEV ! queue ! \
 	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
 ```
+
+Note that the variables used in the example are arbitrary and must be created by the user, or hard-coded into the command.
+
+The above command is an example of running an object detection model with a secondary model, such as:
+
+* face detection (gvadetect)
+* age/gender recognition (gvaclassify)
 
 More sophisticated versions of the above, using multiple models, can be seen in the scripts used in Exercise 1 and 2.
 
