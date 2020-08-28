@@ -360,9 +360,7 @@ First, create a pipeline that detects glass breaking and outputs JSON.
 
 1. Glass breaking
 
-When your pipeline is detecting glass, continue.
-
-When successful, add support for the following:
+When your pipeline is detecting breaking glass, continue to add additional wav files:
 
 2. Footsteps 
 3. Coughs 
