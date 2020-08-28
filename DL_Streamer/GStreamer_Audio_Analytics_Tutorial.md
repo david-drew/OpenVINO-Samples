@@ -256,7 +256,7 @@ The above command is an example of running an object detection model with a seco
 * face detection (gvadetect)
 * age/gender recognition (gvaclassify)
 
-More sophisticated versions of the above, using multiple models, can be seen in the scripts used in Exercise 1 and 2.
+More examples can be seen in the scripts used in Exercise 1 and 2.
 
 </details>
 
