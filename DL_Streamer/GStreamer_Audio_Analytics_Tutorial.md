@@ -225,6 +225,30 @@ export GST_PLUGIN_PATH=~/gva/gst-video-analytics/build/intel64/Release/lib:$GST_
 
 </details>
 
+### Quick Introduction to DL Streamer
+
+#### DL Streamer Fundamentals
+
+The `gst-launch-1.0` command is used to create and run the pipeline.  
+The model-proc JSON files describes model input and output layers, and provides labels for a model's output.
+Various 'elements' are chained together using the pipe symbol `|`.   
+Elements are parameters that call DL Streamer subsystems.
+Some elements are just toggles (on or off), others require additional settings.
+
+See the [DL Streamer documentation](https://github.com/david-drew/OpenVINO-Samples/blob/master/DL_Streamer/README.md) for more details.
+
+Example DL Streamer Command (do not run):
+```
+gst-launch-1.0 \
+	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
+	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
+	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
+```
+
+More complex versions of the above, using multiple models, can be seen in the scripts used in Exercise 1 and 2.
+
+#### Do the Exercise
+
 ### Learn about the Video and Audio Analytics Pipeline and the GAA Elements <a name="gva-pipeline"></a> 
 
 <details>
@@ -312,25 +336,6 @@ Feel free to try different videos, or make modifications to the scripts.
 <br>	
 
 This exercise uses a script to categorize a variety of environmental sounds.  A 16-bit wav file is required as the input, ffmpeg or similar tools can convert other audio file types.  For this exercise we'll run the script, then open the script in a text editor to note differences.
-
-#### DL Streamer Overview
-
-The gst-launch-1.0 command is used to create and run the pipeline.  
-The model-proc JSON files describes the model input and output layers, and provides labels for the model's output.
-
-See the previously mentioned DL Streamer documentation for more details.
-
-Example DL Streamer Command (do not run):
-```
-gst-launch-1.0 \
-	filesrc location=${VIDEO_EXAMPLE} ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-```
-
-More complex version of the above, using multiple models, can be seen in scripts in Exercise 1 and 2.
-
-#### Do the Exercise
 
 ```sh
 cd ~/gva/gst-video-analytics/samples/gst_launch/audio_detect
