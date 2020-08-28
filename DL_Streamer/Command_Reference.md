@@ -21,7 +21,7 @@
 | `model-proc` | parameter | Use with `gvaclassify` to provide a `.json` file for interpreting the results and to configure the output layer name and labels. |
 
 
-| `sync` | Property | Determines whether to run a pipeline in real-time speed. Most samples use `sync=false` to disable real-time synchronization to increase the pipeline speed. 
+| `sync` | Property | Determines whether to run a pipeline in real-time speed. Most samples use `sync=false` to disable real-time synchronization to increase the pipeline speed. |
 | `xvimagesink` | Element | Renders the video frames. |
 
 | 'video/x-raw' | | System memory frame. |
