@@ -285,13 +285,13 @@ You are ready to try creating your own pipeline. Continue with the next section 
 </details>
 
 
-### Exercise 1: Build a Simple Pipeline <a name="simple-pipeline"></a>
+### Exercise 1: Run Two Sample Pipelines <a name="simple-pipeline"></a>
 
 <details>
-	<summary>Build Simple Video Pipeline</summary>
+	<summary>Run Two Sample Pipelines</summary>
 <br>
 
-This exercise helps you create a GStreamer pipeline that uses specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect people and vehicles in a video.  This exercise will introduce the general concepts and focus on video.  
+This exercise has you run two GStreamer pipelines that use specific models to run detection on an Intermediate Representation (IR) formatted model. In this exercise you run inference to detect faces, then people and vehicles in a video.  This exercise introduce the general concepts and focuses on video.  
 
 Remember to set the environment variables if not already set.:
 
@@ -301,7 +301,7 @@ source ~/gva/gst-video-analytics/scripts/setup_env.sh
 export MODELS_PATH=~/gva/models
 ```
 
-The included DL Streamer scripts use $MODELS_PATH as both a download target and to use models for inference.  You'll want to download at least one face video and one mixed vehicle, pedestrian, and bicycle video.  Any source is fine, but [Pexels](https://videos.pexels.com) is suggested.
+The included DL Streamer scripts use $MODELS_PATH as both a download target and to use models for inference.  You'll need to download at least one face video and one mixed vehicle, pedestrian, and bicycle video.  Any source is fine, but [Pexels](https://videos.pexels.com) is suggested.
 
 Now run the following two sample tutorials.
 
@@ -309,7 +309,7 @@ Now run the following two sample tutorials.
 2. [DL Streamer Vehicle Pedestrian Tracking](https://github.com/opencv/gst-video-analytics/tree/master/samples/gst_launch/vehicle_pedestrian_tracking)
 
 
-Look at the scripts, and note the gst-launch-1.0 commands near the end of each script which do the actual work. 
+Open the scripts in a text editor, and note the gst-launch-1.0 commands near the end of each script which do the actual work. 
 
 Feel free to try different videos, or make modifications to the scripts.
 
