@@ -225,7 +225,10 @@ export GST_PLUGIN_PATH=~/gva/gst-video-analytics/build/intel64/Release/lib:$GST_
 
 </details>
 
-### Quick Introduction to DL Streamer
+### Short Introduction to DL Streamer
+
+<details>
+	<summary>Introduction to DL Streamer</summary>
 
 #### DL Streamer Fundamentals
 
@@ -245,9 +248,9 @@ gst-launch-1.0 \
 	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
 ```
 
-More complex versions of the above, using multiple models, can be seen in the scripts used in Exercise 1 and 2.
+More sophisticated versions of the above, using multiple models, can be seen in the scripts used in Exercise 1 and 2.
 
-#### Do the Exercise
+</details>
 
 ### Learn about the Video and Audio Analytics Pipeline and the GAA Elements <a name="gva-pipeline"></a> 
 
