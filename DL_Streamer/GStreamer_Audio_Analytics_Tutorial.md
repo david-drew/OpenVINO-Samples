@@ -232,11 +232,11 @@ export GST_PLUGIN_PATH=~/gva/gst-video-analytics/build/intel64/Release/lib:$GST_
 
 #### DL Streamer Fundamentals
 
-The `gst-launch-1.0` command is used to create and run the pipeline.  
-The model-proc JSON files describes model input and output layers, and provides labels for a model's output.
-Various 'elements' are chained together using the pipe symbol `|`.   
-Elements are parameters that call DL Streamer subsystems.
-Some elements are just toggles (on or off), others require additional settings.
+* The `gst-launch-1.0` command is used to create and run the pipeline. 
+* The model-proc JSON files describes model input and output layers, and provides labels for a model's output.
+* Various 'elements' are chained together using the pipe symbol `|`.   
+* Elements are parameters that call DL Streamer subsystems.
+* Some elements are just toggles (on or off), others require additional settings.
 
 See the [DL Streamer documentation](https://github.com/david-drew/OpenVINO-Samples/blob/master/DL_Streamer/README.md) for more details.
 
