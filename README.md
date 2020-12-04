@@ -245,32 +245,7 @@ Steps:
 </details>
 
 <details>
-    <summary>Exercise 4: Brain Tumor Segmentation</summary>
-
-For this next exercise, we'll redirect you to another page.  Please return here after completion.
-
-[Brain Tumor Segmentation Sample](https://github.com/david-drew/OpenVINO-Samples/tree/master/brain_tumor_segmentation/README.md)
-
-</details>
-
-<details>
-	<summary>Exercise 5: Speech Recognition</summary>
-
-<br>
-
-For more information about how OpenVINO works with audio, review [this page](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Speech_libs_and_demos.html).
-Then read through the documentation for the [Speech Recognition Demo](https://docs.openvinotoolkit.org/latest/openvino_inference_engine_samples_speech_libs_and_demos_Live_speech_recognition_demo.html).  A script. listed below, is used to run this example.
-
-To run the demo:
-1. Download the gettysburg address from [here](https://www2.cs.uic.edu/~i101/SoundFiles/gettysburg.wav).
-2. Use this script:  `/opt/intel/openvino/deployment_tools/demo/demo_speech_recognition.sh`
-3. Launch the demo, select the wav file in the GUI, and execute it. 
-
-
-</details>
-
-<details>
-	<summary>Exercise 6: DL Streamer</summary>
+	<summary>Exercise 4: DL Streamer</summary>
 	
 The DL Streamer is a command-line tool and API for integrating OpenVINO into a media analytics pipeline.  It supports OpenVINO, GStreamer, Mosquitto, Kafka, and a variety of other technologies.
 

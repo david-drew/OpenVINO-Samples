@@ -1,0 +1,39 @@
+# Gstreamer Audio Analytics Setup
+
+This is a temporary guide for compiling and installing the GStreamer Audio-Video Plugins for DL Streamer (OpenVINO analytics).  The audio plugins are not yet included in OpenVINO.
+
+
+Read the Notes and Workarounds in this doc, and use them when following the install guide. 
+
+Follow the [Video Analytics Install Guide](https://github.com/opencv/gst-video-analytics/wiki/Install-Guide)
+
+
+## Notes and Workarounds (for the install guide)
+
+- Use either Docker or Host install option
+	- Host is easier for one-time installs
+	- Docker will be easier for redoing installs 
+		- The Docker option may not be updated to include the audio plugins
+
+- Near the beginning, the guide says to clone the gst-video-analytics repo.  After doing this, make sure to change branches before proceeding:
+	- `git checkout preview/audio-detect`
+	- Make sure to change the git branch immediately!  You will have to redo all steps otherwise!
+	- To check whether this has been done, verify this directory exists:
+		```
+		~/gva/gst-video-analytics/samples/gst_launch/audio_detect
+		```
+
+- The "Install message brokers [OPTIONAL]" section requires a script that needs fixes.  Ignore this step.
+
+- The "Build GVA plugin" section
+	- The posted code is essentially a bash script
+	- Copy all of it, and paste into a new file
+	- Add this at the top of the new file, with a newline or two at the end:
+			`#!/bin/bash`
+
+- OpenVINO doesn't yet support audio analytics (which is why we have to use the install guide and compile our own version)
+- Remove (or move) the DL Streamer bits from the OpenVINO Installation
+	- `sudo rm -rf /opt/intel/openvino/data_processing/dl_streamer`
+
+
+
