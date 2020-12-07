@@ -19,10 +19,6 @@ The simplified OpenVINO™ workflow is:
 3. **Use the Inference Engine API in the application** to run inference against the Intermediate Representation (pptimized model) and output inference results. The application can be an OpenVINO™ sample, demo, or your own application. 
 <br>
 
-![OpenVINO Workflow Diagram](OV_Workflow_FastPath_1.png)
-
-<br>
-
 ## How to Use the Demo Scripts to Learn the Workflow
 
 The demo scripts in `/opt/intel/openvino/deployment_tools/demo` give you a starting point to learn the OpenVINO workflow. These scripts automatically perform the workflow steps to demonstrate running inference pipelines for different scenarios. The demo steps let you see how to: 
