@@ -414,3 +414,12 @@ This exercise asks you to combine the knowledge you've learned in the previous t
 3. Optional: run a pipeline with an additional vehicle attributes model.
 
 </details>
+
+### Exercise 6: Use DL Streamer to Offload the Processing to a Target Device
+
+<details>
+	<summary>Run DL Streamer on the VPU</summary>
+	
+Please refer to the [DL_Streamer_VPU_Sample](DL_Streamer_VPU.md) guide.
+
+</details>
