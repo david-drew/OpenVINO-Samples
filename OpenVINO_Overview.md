@@ -73,7 +73,7 @@ All samples and demos require these fundamental steps.
 
 Generally you need to keep track of the paths to all of these files.  You may want to move them into a convenient location or rename them.
 
-### <a name="finding-models"></a> Step 1.1 - Finding Models
+### <a name="finding-models"></a> Step 1.1: Finding Models
 
 You must have a model that is specific for you inference task. Example model types are:
 - Classification (AlexNet, GoogleNet, SqueezeNet, others) - Detects one type of element in a frame.
@@ -85,7 +85,7 @@ Options to find a model suitable for the OpenVINO™ toolkit are:
 - Download from GitHub*, Caffe* Zoo, TensorFlow* Zoo, etc.
 - Train your own model.
 
-### <a name="model-downloader"></a>Step 1.2 - Using the Model Downloader
+### <a name="model-downloader"></a>Step 1.2: Using the Model Downloader
 
 The Model Downloader is a tool provided with OpenVINO™ to download pre-trained models from the Open Model Zoo.
 
@@ -138,8 +138,9 @@ Many sources are available from which you can download video media to use the co
 - https://images.google.com
 
 ## Additional Resources
-
 Use these resources to learn more about the OpenVINO™ toolkit:
+
+<details>
 
 * [OpenVINO™ Release Notes](https://software.intel.com/en-us/articles/OpenVINO-RelNotes)
 * [Introduction to Intel® Deep Learning Deployment Toolkit](https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Introduction.html)
@@ -148,3 +149,5 @@ Use these resources to learn more about the OpenVINO™ toolkit:
 * [Inference Engine Samples Overview](https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Samples_Overview.html)
 * [Overview of OpenVINO™ Toolkit Pre-Trained Models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models)
 * [OpenVINO™ Hello World Face Detection Exercise](https://github.com/intel-iot-devkit/inference-tutorials-generic)
+</details>
+
