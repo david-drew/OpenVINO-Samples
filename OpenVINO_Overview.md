@@ -1,18 +1,22 @@
 
-# Get Started with OpenVINO™ on Linux
+# OpenVINO™ Overview for Linux
 
 The OpenVINO™ toolkit optimizes and runs Deep Learning Neural Network models on Intel® hardware. This guide helps you get started with the OpenVINO™ toolkit you installed on a Linux* operating system. 
 
 In this guide, you will:
 * Learn the OpenVINO™ inference workflow.
-* Run demo scripts that perform the steps for you. These demo scripts illustrate the workflow.
-* Run the workflow steps yourself, using detailed instructions with a code sample and demo application.       
+* Get an explanation of the some of the most widely used tools.
+    
 
 ## <a name="openvino-components"></a>OpenVINO™ toolkit Components
-The toolkit consists of three primary components:
+The toolkit consists of two primary components:
 * **Inference Engine:** The software libraries that run inference against the Intermediate Representation (optimized model) to produce inference results.
 * **Model Optimizer:** Optimizes models for Intel® architecture, converting models into a format compatible with the Inference Engine. This format is called an Intermediate Representation (IR).
-* **Intermediate Representation (IR):** The Model Optimizer output. A model converted to a format that has been optimized for Intel® architecture and is usable by the Inference Engine.
+
+## <a name=""></a>Other Important OpenVINO™ Assets
+* **Intermediate Representation (IR):** The Model Optimizer output. A model converted to a format that has been optimized for Intel® architecture and is usable by the Inference Engine.  A single NN model will be converted to at least a bin and xml file.  Sometimes additional json configuration files are also produced, to provide hints to the Inference Engine.
+* **IR bin files:** These are the stored network weights.  This is the current state of the model after training.
+* **IR xml files:** This is the model architecture.  This is used to execute the model.
 
 In addition, code samples and applications are provided to help you get up and running with the toolkit:
 * [**Code Samples**](https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Samples_Overview.html) - Small console applications that show you how to: 
