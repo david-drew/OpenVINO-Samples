@@ -14,6 +14,11 @@ NOTE: When using OpenVINO™ from the command line, you must setup your environm
 ## <a name="Setup"></a> Setup
 For using the Model Optimizer from the command line, only OpenVINO is required.  For using the Deep Learning Workbench, there is an additional requirement for docker and an initial configuration step for the Workbench.
 
+### Overview
+The following exercises are an introduction to using OpenVINO to run samples and demos, and a quick introduction to tools such as the Model Optimizer and DL Streamer.  The exercises are intended to become more difficult as you progress. The early exercises provide step-by-step instructions, while later exercises require more effort.  The goal is to teach developers the concepts and skills needed to use all of the resources available for OpenVINO.
+
+It might be a good idea to keep the Overview page, linked above, open in a tab for reference during the exercises.
+
 ### Run Verification Demos
 
 This will show some of the features of OpenVINO, downloads files and creates directories we will use later.
