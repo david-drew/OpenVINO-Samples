@@ -23,6 +23,8 @@ This example runs a pre-built sample GUI, with multiple channels (which could be
 3. `cd kmb_ia_sample/`
 4. `./msdkplayer -c ../config_streamingmode_fullpipeline_8.json`
 
+### Questions About the Demo
+
 Open up the json configuration file in a text editor.  Feel free to copy and "clean up" in a separate temporary text file if desired.
 
 What is the pipe element?
