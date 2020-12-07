@@ -141,6 +141,7 @@ Many sources are available from which you can download video media to use the co
 Use these resources to learn more about the OpenVINO™ toolkit:
 
 <details>
+    <summary>Resources</summary>
 
 * [OpenVINO™ Release Notes](https://software.intel.com/en-us/articles/OpenVINO-RelNotes)
 * [Introduction to Intel® Deep Learning Deployment Toolkit](https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Introduction.html)
