@@ -62,19 +62,18 @@ The simplified OpenVINO™ workflow is:
 
 <br>
 
-### Running Samples
+## Running Samples and Demos
 
-All samples and demos require these high-level steps.
+All samples and demos require these fundamental steps.
 
-1. Downloads a model or models.
+1. Download a model or models.
 2. Run the Model Optimizer to convert the model to the IR format.
 3. Download videos, audio, or images for use in the sample (in some cases, a camera will work).
-3.1 <a link="href">https://videos.pexels.com</a> or google searches can provide media to test.
 4. Run the sample, and provide it with paths to the model and media files.
 
 Generally you need to keep track of the paths to all of these files.  You may want to move them into a convenient location or rename them.
 
-### <a name="finding-models"></a> Finding Models
+### <a name="finding-models"></a> Step 1.1 - Finding Models
 
 You must have a model that is specific for you inference task. Example model types are:
 - Classification (AlexNet, GoogleNet, SqueezeNet, others) - Detects one type of element in a frame.
@@ -86,7 +85,7 @@ Options to find a model suitable for the OpenVINO™ toolkit are:
 - Download from GitHub*, Caffe* Zoo, TensorFlow* Zoo, etc.
 - Train your own model.
 
-### <a name="model-downloader"></a>Using the Model Downloader
+### <a name="model-downloader"></a>Step 1.2 - Using the Model Downloader
 
 The Model Downloader is a tool provided with OpenVINO™ to download pre-trained models from the Open Model Zoo.
 
@@ -114,7 +113,7 @@ If you have trained models that are not in Intel's IR format, they must be run t
 
 Models in the Intermediate Representation format always include an `.xml` and `.bin` file, and may also include other files, like `.json`, `.mapping`, or others. Make sure you have these files in the same directory for the Inference Engine to find them.
 - **REQUIRED:** `model_name.xml`
-- **REQUIREDL:** `model_name.bin`
+- **REQUIRED:** `model_name.bin`
 - **OPTIONAL:** `model_name.json`, `model_name.mapping`, etc.
 
 #### Model Precision
