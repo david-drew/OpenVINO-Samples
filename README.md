@@ -67,6 +67,11 @@ The simplified OpenVINO™ workflow is:
 
 <br>
 
+## Why Are There So Many Samples and Demos?
+Both Samples and Demos serve a similar purpose: to execute a neural network model by sending formatted (IR) to the Inference Engine through the API.  These applications also read input (such as video or audio), format that data to suit the model and the Inference Engine, and then determine what to do with the output. Different models may require different input, and return different types of output.  For example both SSD and yolo models return labels and bounding boxes, but the output is different and requires handling specific to the model.
+
+It's also easier to examine and understand the samples and demos when they cover smaller, more specific cases.
+
 ## Running Samples and Demos
 
 All samples and demos require these fundamental steps.
