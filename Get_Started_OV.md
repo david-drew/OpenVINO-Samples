@@ -151,7 +151,7 @@ NOTE: In this case, it's a single image.
     - Tip: The labels file contains the classes used by this SqueezeNet* model. 
     - If it's is in the same directory as the model, the inference results will show text in addition to confidence percentages.
 
-2.  Copy a sample image to the release directory. You will use this with your optimized model:
+2.  Copy a sample image to the current directory. You will use this with your optimized model:
 
     `sudo cp /opt/intel/openvino/deployment_tools/demo/car.png  .`
 
@@ -164,6 +164,10 @@ NOTE: In this case, it's a single image.
 2. **Note:** You can usually see an application's help information (parameters, etc.) by using `-h`.
 
     `~/inference_engine_samples_build/intel64/Release/classification_sample_async -h`
+    
+If desired, you can easily look at the image using the Eye of Gnome application (installed by default on Ubuntu systems):
+
+    `eog car.png`
 
 </details>
 
