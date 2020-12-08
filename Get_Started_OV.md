@@ -107,6 +107,11 @@ In these exercises, you will:
 
 **NOTE:** During this exercise you will move to multiple directories and occasionally copy files so that you don't have to specify full paths in commands.  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
 
+REMEMBER: When using OpenVINO™ from the command line, you must set up your environment whenever you change users or launch a new terminal.
+
+    source /opt/intel/openvino/bin/setupvars.sh
+
+
 <details>
    <summary>Exercise 1 - Run A Sample Application</summary>
     
@@ -160,12 +165,6 @@ NOTE: In this case, it's a single image.
     `~/inference_engine_samples_build/intel64/Release/classification_sample_async -h`
 
 </details>
-
-## Additional Samples for Linux* using Model Optimizer Command Line
-
-NOTE: When using OpenVINO™ from the command line, you must set up your environment whenever you change users or launch a new terminal.
-
-    source /opt/intel/openvino/bin/setupvars.sh
 
 <details>
     <summary>Exercise 2: Human Pose Estimation</summary>
