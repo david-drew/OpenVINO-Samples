@@ -165,7 +165,7 @@ NOTE: In this case, it's a single image.
 
     `~/inference_engine_samples_build/intel64/Release/classification_sample_async -h`
     
-If desired, you can easily look at the image using the Eye of Gnome application (installed by default on Ubuntu systems):
+If desired, you can look at the original image using the Eye of Gnome application (installed by default on Ubuntu systems):
 
     `eog car.png`
 
