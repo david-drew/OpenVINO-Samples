@@ -17,12 +17,12 @@ The toolkit consists of two primary components:
 * **Intermediate Representation (IR):** The Model Optimizer output. A model converted to a format that has been optimized for Intel® architecture and is usable by the Inference Engine.  A single NN model will be converted to at least a bin and xml file.  Sometimes additional json configuration files are also produced, to provide hints to the Inference Engine.
 
 IR Files Types:
-Required:
-* **bin files:**  These are the stored network weights.  This is the current state of the model after training.
-* **xml files:**  This is the model architecture.  This is used to execute the model.
+
+* **bin files:**  Required. These are the stored network weights.  This is the current state of the model after training.
+* **xml files:**  Required. This is the model architecture.  This is used to execute the model.
 Optional:
-* **json files:**    Sometimes json files are generated to help with unusual architectures.  They are hints for the Inference Engine.
-* **mapping files:** These provide maps of layer IO from the original model.  More hints for the Inference Engine.
+* **json files:**    Optional. Sometimes json files are generated to help with unusual architectures.  They are hints for the Inference Engine.
+* **mapping files:** Optional. These provide maps of layer IO from the original model.  More hints for the Inference Engine.
 
 In addition, code samples and applications are provided to help you get up and running with the toolkit:
 * [**Code Samples**](https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Samples_Overview.html) - Small console applications that show you how to: 
