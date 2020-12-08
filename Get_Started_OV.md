@@ -167,7 +167,7 @@ NOTE: In this case, it's a single image.
     
 If desired, you can look at the original image using the Eye of Gnome application (installed by default on Ubuntu systems):
 
-    `eog car.png`
+    eog car.png
 
 </details>
 
