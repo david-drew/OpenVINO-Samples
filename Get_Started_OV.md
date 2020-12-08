@@ -107,9 +107,9 @@ In these exercises, you will:
 
 **NOTE:** During this exercise you will move to multiple directories and occasionally copy files so that you don't have to specify full paths in commands.  You are welcome to set up environment variables to make these tasks easier, but we leave that to you.
 
-REMEMBER: When using OpenVINO™ from the command line, you must set up your environment whenever you change users or launch a new terminal.
+**REMEMBER:** When using OpenVINO™ from the command line, you must set up your environment whenever you change users or launch a new terminal.
 
-    source /opt/intel/openvino/bin/setupvars.sh
+`source /opt/intel/openvino/bin/setupvars.sh`
 
 
 <details>
