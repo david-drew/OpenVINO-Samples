@@ -142,6 +142,9 @@ Many sources are available from which you can download video media to use the co
 - https://videos.pexels.com
 - https://images.google.com
 
+### Next Steps
+After completing this Overview, try the exercises in the [Getting Started Guide](Get_Started_OV.md).
+
 ## Additional Resources
 Use these resources to learn more about the OpenVINO™ toolkit:
 
