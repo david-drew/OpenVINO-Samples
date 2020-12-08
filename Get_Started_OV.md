@@ -111,6 +111,7 @@ In these exercises, you will:
 
 `source /opt/intel/openvino/bin/setupvars.sh`
 
+<br>
 
 <details>
    <summary>Exercise 1 - Run A Sample Application</summary>
