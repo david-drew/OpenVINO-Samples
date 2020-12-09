@@ -361,19 +361,7 @@ This exercise asks you to combine the knowledge you've learned in the previous t
 
 </details>
 
-### Exercise 5: Create a Vehicle Detection Pipeline <a name="vehicle-detect"></a>
-
-<details>
-	<summary>Create a Vehicle Detection Pipeline</summary>
-<br>
-	
-1. Download video and vehicle detection models.
-2. Run a pipeline.
-3. Optional: run a pipeline with an additional vehicle attributes model.
-
-</details>
-
-### Exercise 6: Use DL Streamer to Offload the Processing to a Target Device
+### Exercise 5: Use DL Streamer to Offload the Processing to a Target Device
 
 <details>
 	<summary>Run DL Streamer on the VPU</summary>
