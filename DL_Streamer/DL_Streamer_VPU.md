@@ -12,7 +12,7 @@ This guide provides a quick overview to running DL Streamer and offloading the i
 
 The remoteoffloadbin element is required to tell DL Streamer how to offload inference requests to the VPU.  This is a new addition to DL Streamer and may be simplified in future releases.  The best practice is to save DL Streamer commands as either json files or inside shell scripts to simplify command execution.
 
-The example below has had the "!" operator replaced with newlines to improve readability.  Most of the settings should bt default remain untouched other than the injected environment variables.
+The example below has had the "!" operator replaced with newlines to improve readability.  Most of the settings should remain untouched other than the injected environment variables.
 
 ```
  remoteoffloadbin.( 
