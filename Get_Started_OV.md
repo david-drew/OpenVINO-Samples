@@ -1,7 +1,7 @@
 
 # Get Started with OpenVINO™ and Examples for Linux*
 
-For an overview and details about the Intel® Distribution of OpenVINO™ toolkit, see the [OpenVINO™ Overview](OpenVINO_Overview.md)
+For an overview and details about the Intel® Distribution of OpenVINO™ toolkit, see the [OpenVINO™ Overview](README.md)
 
 We recommend you read the above OpenVINO™ Overview before starting this tutorial.   
 
