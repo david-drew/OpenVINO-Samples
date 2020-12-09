@@ -41,7 +41,7 @@ The HDDLUnite service provides configuration, management, and communication func
 3. `cd /opt/intel/nvr_demo/hddlunite`
 4. `source ./env_host.sh`
 5. `bin/hddl_scheduler_service &`
-6 `bin/SetHDDLMode -m s`
+6. `bin/SetHDDLMode -m s`
  
 
 ### Open a New, Second Terminal and Run the Demo
