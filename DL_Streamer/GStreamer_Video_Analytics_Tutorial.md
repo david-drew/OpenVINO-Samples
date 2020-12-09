@@ -181,48 +181,6 @@ You're done building and running this pipeline. To expand on this exercise, use 
 
 </details>
 
-
-#### Simple Pipeline with a Web Camera Video Stream (Optional - Requires WebCam)
-
-<details>
-	<summary>Simple Pipeline with a Web Camera Video Stream</summary>
-<br>
-
-GStreamer supports connected video devices, like Web cameras, which means you use a web camera to perform real-time inference.
-
-Before repeating Exercise 1 with a Web camera video stream, verify the Web camera path. The Web camera stream is usually in the `/dev/` directory. 
-
-To use a Web camera:
-
-```sh
-    gst-launch-1.0 \
-	v4l2src device=<path-to-device> ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-```
-
-This command uses [`v4l2src`](https://gstreamer.freedesktop.org/documentation/video4linux2/v4l2src.html?gi-language=c) instead of `filesrc` to capture video from web camera.
-
-#### Simple Pipeline with an RTSP Device (Optional - Requires RTSP Device)
-
-GStreamer supports RTSP devices that specify an RTSP URI, which means you can point to this URL to perform real-time inference.
-
-Before repeating Exercise 1 with an RTSP URI, verify the RTSP URL. 
-
-**To repeat Exercise 1 with a RTSP URI**, verify the path to the RTSP URI, and run the pipeline with the RTSP URI: 
-
-```sh
-gst-launch-1.0 \
-	urisourcebin uri=<RTSP_uri> ! decodebin ! video/x-raw ! videoconvert ! \
-	gvadetect model=${DETECTION_MODEL} model_proc=${DETECTION_MODEL_PROC} device=CPU ! queue ! \
-	gvawatermark ! fpsdisplaysink video-sink=xvimagesink sync=false
-```
-
-This command uses [`urisourcebin`](https://gstreamer.freedesktop.org/documentation/playback/urisourcebin.html?gi-language=c) to access URIs. In this pipeline, the URI access is to the RTSP URI and the video stream from the link for inference.
-
-</details>
-
-
 ### Exercise 2: Build a Classification Pipeline <a name="classification-pipeline"></a>
 
 <details>
