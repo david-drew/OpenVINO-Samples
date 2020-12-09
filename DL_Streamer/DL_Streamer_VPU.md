@@ -29,18 +29,22 @@ The example below has had the "!" operator replaced with newlines to improve rea
 
 </details>
 
+Use two terminals for the following exercises.  The first terminal (HDDLUnite) will require root privileges.
 
 ### Start the HDDLUnite Service
 
 The HDDLUnite service provides configuration, management, and communication functionality between the host and VPU device.  This must be running before attempting to use inference or video acceleration on the VPU.
 
-1. `cd /opt/intel/nvr_demo/hddlunite`
-2. `source ./env_host.sh`
-3. `bin/hddl_scheduler_service &`
-4. `bin/SetHDDLMode -m s`
+1. `sudo su`
+2. `modprobe mxlk`
+3. `modprobe xlink`
+3. `cd /opt/intel/nvr_demo/hddlunite`
+4. `source ./env_host.sh`
+5. `bin/hddl_scheduler_service &`
+6 `bin/SetHDDLMode -m s`
  
 
-### Open a New Terminal and Run the Demo
+### Open a New, Second Terminal and Run the Demo
 
 This example runs a pre-built sample GUI, with multiple channels (which could be multiple videos, cameras, etc.).
 
