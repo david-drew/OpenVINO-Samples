@@ -27,6 +27,4 @@ This example runs a pre-built sample GUI, with multiple channels (which could be
 
 Open up the json configuration file in a text editor.  Feel free to copy and "clean up" in a separate temporary text file if desired.
 
-1. What is the pipe element?
-2. What's the difference between the pipe element, and earlier examples?
-3. How would you go about creating your own configuration file?
+* How would you go about creating your own configuration file?  What are some important elements?
