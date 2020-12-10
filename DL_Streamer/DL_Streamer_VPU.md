@@ -51,7 +51,7 @@ This example runs a pre-built sample GUI, with multiple channels (which could be
 1. `cd /opt/intel/nvr_demo/streaming/`
 2. `source ./env_host_streamingmode.sh`
 3. `cd kmb_ia_sample/`
-4. `./msdkplayer -c ../config_streamingmode_fullpipeline_8.json`
+4. `./msdkplayer -c ../config_video.json`
 
 ### Questions About the Demo
 
